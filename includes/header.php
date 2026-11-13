@@ -167,6 +167,10 @@ $current_page     = basename($_SERVER['PHP_SELF'], '.php');
     .grand-loader.is-done .grand-loader__curtain--bottom {
       transform: translateY(100%);
     }
+    .grand-loader.is-done {
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
   </style>
 </head>
 <body>

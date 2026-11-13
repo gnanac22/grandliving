@@ -188,71 +188,49 @@ const initNavigation = () => {
 // ============================================================
 
 const initMobileMenu = () => {
-  const toggle = document.querySelector('.nav__mobile-toggle');
-  const overlay = document.querySelector('.mobile-menu');
+  const hamburger = document.getElementById('navHamburger') || document.querySelector('.nav__mobile-toggle');
+  const overlay = document.getElementById('navMobile') || document.querySelector('.mobile-menu');
   const closeBtn = document.querySelector('.mobile-menu__close');
-  const menuItems = document.querySelectorAll('.mobile-menu__item');
 
-  if (!toggle || !overlay) return;
+  if (!hamburger || !overlay) return;
 
-  let isOpen = false;
-
-  const openMenu = () => {
-    isOpen = true;
-    overlay.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.classList.add('is-active');
-    document.body.classList.add('overflow-hidden');
-
-    // Stagger menu items in
-    menuItems.forEach((item, i) => {
-      item.style.transitionDelay = `${0.05 + i * 0.06}s`;
-      item.classList.add('is-visible');
-    });
-
-    // Trap focus
-    overlay.setAttribute('aria-hidden', 'false');
-    overlay.querySelector('a, button')?.focus();
+  const toggle = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    const nextState = !isOpen;
+    hamburger.setAttribute('aria-expanded', String(nextState));
+    overlay.classList.toggle('is-open', nextState);
+    overlay.setAttribute('aria-hidden', String(!nextState));
+    document.body.classList.toggle('is-menu-open', nextState);
+    document.body.style.overflow = nextState ? 'hidden' : '';
   };
 
-  const closeMenu = () => {
-    isOpen = false;
-    overlay.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.classList.remove('is-active');
-    document.body.classList.remove('overflow-hidden');
-
-    menuItems.forEach((item) => {
-      item.style.transitionDelay = '';
-      item.classList.remove('is-visible');
-    });
-
-    overlay.setAttribute('aria-hidden', 'true');
-    toggle.focus();
-  };
-
-  toggle.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
-  closeBtn?.addEventListener('click', closeMenu);
-
-  // Close on outside click
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeMenu();
+  hamburger.addEventListener('click', toggle);
+  hamburger.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    toggle(e);
   });
 
-  // Close on ESC
+  overlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-menu-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', toggle);
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen) closeMenu();
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      toggle(e);
+    }
   });
-
-  // Swipe-to-close (touch: swipe left)
-  let touchStartX = 0;
-  overlay.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-  overlay.addEventListener('touchend', (e) => {
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    if (diff > 60) closeMenu();
-  }, { passive: true });
 };
 
 // ============================================================

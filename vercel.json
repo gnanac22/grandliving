@@ -1,22 +1,24 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/about.php", "destination": "/about", "permanent": true },
+    { "source": "/catalogue.php", "destination": "/catalogue", "permanent": true },
+    { "source": "/contact.php", "destination": "/contact", "permanent": true },
+    { "source": "/custom-request.php", "destination": "/custom-request", "permanent": true },
+    { "source": "/gallery.php", "destination": "/gallery", "permanent": true },
+    { "source": "/product.php", "destination": "/catalogue", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/index.php", "destination": "/index.html" },
-    { "source": "/about.php", "destination": "/about.html" },
     { "source": "/about", "destination": "/about.html" },
-    { "source": "/catalogue.php", "destination": "/catalogue.html" },
     { "source": "/catalogue", "destination": "/catalogue.html" },
     { "source": "/collections", "destination": "/catalogue.html" },
-    { "source": "/contact.php", "destination": "/contact.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/showroom", "destination": "/contact.html" },
-    { "source": "/custom-request.php", "destination": "/custom-request.html" },
     { "source": "/custom-request", "destination": "/custom-request.html" },
     { "source": "/custom", "destination": "/custom-request.html" },
-    { "source": "/gallery.php", "destination": "/gallery.html" },
     { "source": "/gallery", "destination": "/gallery.html" },
-    { "source": "/product.php", "destination": "/product.html" },
     { "source": "/product", "destination": "/product.html" },
     { "source": "/products/:slug", "destination": "/products/:slug.html" }
   ]

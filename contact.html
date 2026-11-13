@@ -159,6 +159,10 @@
     .grand-loader.is-done .grand-loader__curtain--bottom {
       transform: translateY(100%);
     }
+    .grand-loader.is-done {
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
   </style>
 </head>
 <body>
@@ -213,11 +217,11 @@
     <!-- Desktop Links -->
     <ul class="nav__links" id="navLinks">
       <li><a href="/" class="nav__link ">Home</a></li>
-      <li><a href="/catalogue.php" class="nav__link ">Collections</a></li>
-      <li><a href="/about.php" class="nav__link ">Our Story</a></li>
-      <li><a href="/gallery.php" class="nav__link ">Gallery</a></li>
-      <li><a href="/custom-request.php" class="nav__link ">Custom Order</a></li>
-      <li><a href="/contact.php" class="nav__link is-active">Showroom</a></li>
+      <li><a href="/catalogue" class="nav__link ">Collections</a></li>
+      <li><a href="/about" class="nav__link ">Our Story</a></li>
+      <li><a href="/gallery" class="nav__link ">Gallery</a></li>
+      <li><a href="/custom-request" class="nav__link ">Custom Order</a></li>
+      <li><a href="/contact" class="nav__link is-active">Showroom</a></li>
     </ul>
 
     <!-- Actions -->
@@ -275,7 +279,7 @@
           </a>
 
           <!-- 02 Collections -->
-          <a href="/catalogue.php" class="atelier-nav__item ">
+          <a href="/catalogue" class="atelier-nav__item ">
             <span class="atelier-nav__num">02</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Collections</span>
@@ -285,7 +289,7 @@
           </a>
 
           <!-- 03 Our Story -->
-          <a href="/about.php" class="atelier-nav__item ">
+          <a href="/about" class="atelier-nav__item ">
             <span class="atelier-nav__num">03</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Our Story</span>
@@ -295,7 +299,7 @@
           </a>
 
           <!-- 04 Atelier Gallery -->
-          <a href="/gallery.php" class="atelier-nav__item ">
+          <a href="/gallery" class="atelier-nav__item ">
             <span class="atelier-nav__num">04</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Atelier Gallery</span>
@@ -305,7 +309,7 @@
           </a>
 
           <!-- 05 Bespoke Studio -->
-          <a href="/custom-request.php" class="atelier-nav__item ">
+          <a href="/custom-request" class="atelier-nav__item ">
             <span class="atelier-nav__num">05</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Bespoke Orders</span>
@@ -315,7 +319,7 @@
           </a>
 
           <!-- 06 Showroom & Directions -->
-          <a href="/contact.php" class="atelier-nav__item is-active">
+          <a href="/contact" class="atelier-nav__item is-active">
             <span class="atelier-nav__num">06</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Showroom Directions</span>
@@ -384,11 +388,11 @@
           <div class="atelier-nav__card-categories">
             <span class="atelier-nav__cat-label">QUICK CURATIONS:</span>
             <div class="atelier-nav__cat-pills">
-              <a href="/catalogue.php?category=living-room">Living Room</a>
-              <a href="/catalogue.php?category=bedroom">Bedroom</a>
-              <a href="/catalogue.php?category=dining-room">Dining</a>
-              <a href="/catalogue.php?category=home-office">Home Office</a>
-              <a href="/catalogue.php?category=outdoor">Outdoor</a>
+              <a href="/catalogue?category=living-room">Living Room</a>
+              <a href="/catalogue?category=bedroom">Bedroom</a>
+              <a href="/catalogue?category=dining-room">Dining</a>
+              <a href="/catalogue?category=home-office">Home Office</a>
+              <a href="/catalogue?category=outdoor">Outdoor</a>
             </div>
           </div>
         </div>
@@ -674,37 +678,37 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/catalogue.php?category=living-room" class="luxury-footer__link">
+            <a href="/catalogue?category=living-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Living Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=bedroom" class="luxury-footer__link">
+            <a href="/catalogue?category=bedroom" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Bedroom</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=dining-room" class="luxury-footer__link">
+            <a href="/catalogue?category=dining-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Dining Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=home-office" class="luxury-footer__link">
+            <a href="/catalogue?category=home-office" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Home Office</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=wardrobes" class="luxury-footer__link">
+            <a href="/catalogue?category=wardrobes" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Wardrobes</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=outdoor" class="luxury-footer__link">
+            <a href="/catalogue?category=outdoor" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Outdoor</span>
             </a>
@@ -720,25 +724,25 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/about.php" class="luxury-footer__link">
+            <a href="/about" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Our Story</span>
             </a>
           </li>
           <li>
-            <a href="/gallery.php" class="luxury-footer__link">
+            <a href="/gallery" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Gallery</span>
             </a>
           </li>
           <li>
-            <a href="/custom-request.php" class="luxury-footer__link">
+            <a href="/custom-request" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Custom Orders</span>
             </a>
           </li>
           <li>
-            <a href="/contact.php" class="luxury-footer__link">
+            <a href="/contact" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Contact</span>
             </a>

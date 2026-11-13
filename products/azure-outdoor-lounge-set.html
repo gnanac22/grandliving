@@ -159,6 +159,10 @@
     .grand-loader.is-done .grand-loader__curtain--bottom {
       transform: translateY(100%);
     }
+    .grand-loader.is-done {
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
   </style>
 </head>
 <body>
@@ -213,11 +217,11 @@
     <!-- Desktop Links -->
     <ul class="nav__links" id="navLinks">
       <li><a href="/" class="nav__link ">Home</a></li>
-      <li><a href="/catalogue.php" class="nav__link ">Collections</a></li>
-      <li><a href="/about.php" class="nav__link ">Our Story</a></li>
-      <li><a href="/gallery.php" class="nav__link ">Gallery</a></li>
-      <li><a href="/custom-request.php" class="nav__link ">Custom Order</a></li>
-      <li><a href="/contact.php" class="nav__link ">Showroom</a></li>
+      <li><a href="/catalogue" class="nav__link ">Collections</a></li>
+      <li><a href="/about" class="nav__link ">Our Story</a></li>
+      <li><a href="/gallery" class="nav__link ">Gallery</a></li>
+      <li><a href="/custom-request" class="nav__link ">Custom Order</a></li>
+      <li><a href="/contact" class="nav__link ">Showroom</a></li>
     </ul>
 
     <!-- Actions -->
@@ -275,7 +279,7 @@
           </a>
 
           <!-- 02 Collections -->
-          <a href="/catalogue.php" class="atelier-nav__item ">
+          <a href="/catalogue" class="atelier-nav__item ">
             <span class="atelier-nav__num">02</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Collections</span>
@@ -285,7 +289,7 @@
           </a>
 
           <!-- 03 Our Story -->
-          <a href="/about.php" class="atelier-nav__item ">
+          <a href="/about" class="atelier-nav__item ">
             <span class="atelier-nav__num">03</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Our Story</span>
@@ -295,7 +299,7 @@
           </a>
 
           <!-- 04 Atelier Gallery -->
-          <a href="/gallery.php" class="atelier-nav__item ">
+          <a href="/gallery" class="atelier-nav__item ">
             <span class="atelier-nav__num">04</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Atelier Gallery</span>
@@ -305,7 +309,7 @@
           </a>
 
           <!-- 05 Bespoke Studio -->
-          <a href="/custom-request.php" class="atelier-nav__item ">
+          <a href="/custom-request" class="atelier-nav__item ">
             <span class="atelier-nav__num">05</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Bespoke Orders</span>
@@ -315,7 +319,7 @@
           </a>
 
           <!-- 06 Showroom & Directions -->
-          <a href="/contact.php" class="atelier-nav__item ">
+          <a href="/contact" class="atelier-nav__item ">
             <span class="atelier-nav__num">06</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Showroom Directions</span>
@@ -384,11 +388,11 @@
           <div class="atelier-nav__card-categories">
             <span class="atelier-nav__cat-label">QUICK CURATIONS:</span>
             <div class="atelier-nav__cat-pills">
-              <a href="/catalogue.php?category=living-room">Living Room</a>
-              <a href="/catalogue.php?category=bedroom">Bedroom</a>
-              <a href="/catalogue.php?category=dining-room">Dining</a>
-              <a href="/catalogue.php?category=home-office">Home Office</a>
-              <a href="/catalogue.php?category=outdoor">Outdoor</a>
+              <a href="/catalogue?category=living-room">Living Room</a>
+              <a href="/catalogue?category=bedroom">Bedroom</a>
+              <a href="/catalogue?category=dining-room">Dining</a>
+              <a href="/catalogue?category=home-office">Home Office</a>
+              <a href="/catalogue?category=outdoor">Outdoor</a>
             </div>
           </div>
         </div>
@@ -418,9 +422,9 @@
     <div class="container" style="display:flex;gap:8px;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#B7AA98;">
       <a href="/" style="color:#B7AA98;text-decoration:none;">Home</a>
       <span>/</span>
-      <a href="/catalogue.php" style="color:#B7AA98;text-decoration:none;">Catalogue</a>
+      <a href="/catalogue" style="color:#B7AA98;text-decoration:none;">Catalogue</a>
       <span>/</span>
-      <a href="/catalogue.php?category=outdoor" style="color:#B7AA98;text-decoration:none;">Outdoor</a>
+      <a href="/catalogue?category=outdoor" style="color:#B7AA98;text-decoration:none;">Outdoor</a>
       <span>/</span>
       <span style="color:#D5BE9A;">Azure Outdoor Lounge Set</span>
     </div>
@@ -490,7 +494,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
               Enquire on WhatsApp
             </a>
-            <a href="/custom-request.php?product=azure-outdoor-lounge-set" 
+            <a href="/custom-request?product=azure-outdoor-lounge-set" 
                class="btn btn-primary" style="flex:1;min-width:200px;text-align:center;">
               Request Custom Dimensions
             </a>
@@ -645,37 +649,37 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/catalogue.php?category=living-room" class="luxury-footer__link">
+            <a href="/catalogue?category=living-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Living Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=bedroom" class="luxury-footer__link">
+            <a href="/catalogue?category=bedroom" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Bedroom</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=dining-room" class="luxury-footer__link">
+            <a href="/catalogue?category=dining-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Dining Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=home-office" class="luxury-footer__link">
+            <a href="/catalogue?category=home-office" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Home Office</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=wardrobes" class="luxury-footer__link">
+            <a href="/catalogue?category=wardrobes" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Wardrobes</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=outdoor" class="luxury-footer__link">
+            <a href="/catalogue?category=outdoor" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Outdoor</span>
             </a>
@@ -691,25 +695,25 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/about.php" class="luxury-footer__link">
+            <a href="/about" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Our Story</span>
             </a>
           </li>
           <li>
-            <a href="/gallery.php" class="luxury-footer__link">
+            <a href="/gallery" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Gallery</span>
             </a>
           </li>
           <li>
-            <a href="/custom-request.php" class="luxury-footer__link">
+            <a href="/custom-request" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Custom Orders</span>
             </a>
           </li>
           <li>
-            <a href="/contact.php" class="luxury-footer__link">
+            <a href="/contact" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Contact</span>
             </a>

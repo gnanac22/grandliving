@@ -159,6 +159,10 @@
     .grand-loader.is-done .grand-loader__curtain--bottom {
       transform: translateY(100%);
     }
+    .grand-loader.is-done {
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
   </style>
 </head>
 <body>
@@ -213,11 +217,11 @@
     <!-- Desktop Links -->
     <ul class="nav__links" id="navLinks">
       <li><a href="/" class="nav__link ">Home</a></li>
-      <li><a href="/catalogue.php" class="nav__link is-active">Collections</a></li>
-      <li><a href="/about.php" class="nav__link ">Our Story</a></li>
-      <li><a href="/gallery.php" class="nav__link ">Gallery</a></li>
-      <li><a href="/custom-request.php" class="nav__link ">Custom Order</a></li>
-      <li><a href="/contact.php" class="nav__link ">Showroom</a></li>
+      <li><a href="/catalogue" class="nav__link is-active">Collections</a></li>
+      <li><a href="/about" class="nav__link ">Our Story</a></li>
+      <li><a href="/gallery" class="nav__link ">Gallery</a></li>
+      <li><a href="/custom-request" class="nav__link ">Custom Order</a></li>
+      <li><a href="/contact" class="nav__link ">Showroom</a></li>
     </ul>
 
     <!-- Actions -->
@@ -275,7 +279,7 @@
           </a>
 
           <!-- 02 Collections -->
-          <a href="/catalogue.php" class="atelier-nav__item is-active">
+          <a href="/catalogue" class="atelier-nav__item is-active">
             <span class="atelier-nav__num">02</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Collections</span>
@@ -285,7 +289,7 @@
           </a>
 
           <!-- 03 Our Story -->
-          <a href="/about.php" class="atelier-nav__item ">
+          <a href="/about" class="atelier-nav__item ">
             <span class="atelier-nav__num">03</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Our Story</span>
@@ -295,7 +299,7 @@
           </a>
 
           <!-- 04 Atelier Gallery -->
-          <a href="/gallery.php" class="atelier-nav__item ">
+          <a href="/gallery" class="atelier-nav__item ">
             <span class="atelier-nav__num">04</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Atelier Gallery</span>
@@ -305,7 +309,7 @@
           </a>
 
           <!-- 05 Bespoke Studio -->
-          <a href="/custom-request.php" class="atelier-nav__item ">
+          <a href="/custom-request" class="atelier-nav__item ">
             <span class="atelier-nav__num">05</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Bespoke Orders</span>
@@ -315,7 +319,7 @@
           </a>
 
           <!-- 06 Showroom & Directions -->
-          <a href="/contact.php" class="atelier-nav__item ">
+          <a href="/contact" class="atelier-nav__item ">
             <span class="atelier-nav__num">06</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Showroom Directions</span>
@@ -384,11 +388,11 @@
           <div class="atelier-nav__card-categories">
             <span class="atelier-nav__cat-label">QUICK CURATIONS:</span>
             <div class="atelier-nav__cat-pills">
-              <a href="/catalogue.php?category=living-room">Living Room</a>
-              <a href="/catalogue.php?category=bedroom">Bedroom</a>
-              <a href="/catalogue.php?category=dining-room">Dining</a>
-              <a href="/catalogue.php?category=home-office">Home Office</a>
-              <a href="/catalogue.php?category=outdoor">Outdoor</a>
+              <a href="/catalogue?category=living-room">Living Room</a>
+              <a href="/catalogue?category=bedroom">Bedroom</a>
+              <a href="/catalogue?category=dining-room">Dining</a>
+              <a href="/catalogue?category=home-office">Home Office</a>
+              <a href="/catalogue?category=outdoor">Outdoor</a>
             </div>
           </div>
         </div>
@@ -430,32 +434,32 @@
       <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;">
         <!-- Category Pills -->
         <div class="cat-pills-wrap" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-          <a href="/catalogue.php" class="cat-pill is-active"
+          <a href="/catalogue" class="cat-pill is-active"
              style="background:#D5BE9A;color:#171614;border:1px solid #D5BE9A;">
             All (17)
           </a>
-                      <a href="/catalogue.php?category=living-room" class="cat-pill "
+                      <a href="/catalogue?category=living-room" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Living Room            </a>
-                      <a href="/catalogue.php?category=bedroom" class="cat-pill "
+                      <a href="/catalogue?category=bedroom" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Bedroom            </a>
-                      <a href="/catalogue.php?category=dining-room" class="cat-pill "
+                      <a href="/catalogue?category=dining-room" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Dining Room            </a>
-                      <a href="/catalogue.php?category=home-office" class="cat-pill "
+                      <a href="/catalogue?category=home-office" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Home Office            </a>
-                      <a href="/catalogue.php?category=outdoor" class="cat-pill "
+                      <a href="/catalogue?category=outdoor" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Outdoor            </a>
-                      <a href="/catalogue.php?category=wardrobes" class="cat-pill "
+                      <a href="/catalogue?category=wardrobes" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Wardrobes            </a>
-                      <a href="/catalogue.php?category=accent-decor" class="cat-pill "
+                      <a href="/catalogue?category=accent-decor" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Accent &amp; Decor            </a>
-                      <a href="/catalogue.php?category=kids-youth" class="cat-pill "
+                      <a href="/catalogue?category=kids-youth" class="cat-pill "
                style="background:rgba(23,22,20,0.6);border:1px solid rgba(213,190,154,0.25);color:#F5F0E8;">
               Kids &amp; Youth            </a>
                   </div>
@@ -554,7 +558,7 @@
     <div class="container">
               <div class="catalogue-grid">
                       <article class="catalogue-card">
-              <a href="/product.php?slug=meridian-sectional-sofa" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/meridian-sectional-sofa" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/meridian-sectional-sofa.jpg" alt="Meridian Sectional Sofa" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -566,7 +570,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Living Room                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=meridian-sectional-sofa" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/meridian-sectional-sofa" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Meridian Sectional Sofa                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -584,7 +588,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=meridian-sectional-sofa" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/meridian-sectional-sofa" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -592,7 +596,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=palazzo-king-bed" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/palazzo-king-bed" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/palazzo-king-bed.jpg" alt="Palazzo King Bed" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -604,7 +608,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Bedroom                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=palazzo-king-bed" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/palazzo-king-bed" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Palazzo King Bed                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -622,7 +626,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=palazzo-king-bed" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/palazzo-king-bed" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -630,7 +634,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=vesper-dining-table" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/vesper-dining-table" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/vesper-dining-table.jpg" alt="Vesper Dining Table" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -642,7 +646,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Dining Room                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=vesper-dining-table" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/vesper-dining-table" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Vesper Dining Table                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -660,7 +664,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=vesper-dining-table" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/vesper-dining-table" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -668,7 +672,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=stratton-executive-desk" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/stratton-executive-desk" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/stratton-executive-desk.jpg" alt="Stratton Executive Desk" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -680,7 +684,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Home Office                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=stratton-executive-desk" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/stratton-executive-desk" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Stratton Executive Desk                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -698,7 +702,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=stratton-executive-desk" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/stratton-executive-desk" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -706,7 +710,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=azure-outdoor-lounge-set" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/azure-outdoor-lounge-set" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/azure-outdoor-lounge-set.jpg" alt="Azure Outdoor Lounge Set" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -718,7 +722,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Outdoor                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=azure-outdoor-lounge-set" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/azure-outdoor-lounge-set" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Azure Outdoor Lounge Set                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -736,7 +740,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=azure-outdoor-lounge-set" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/azure-outdoor-lounge-set" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -744,7 +748,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=palisade-walk-in-wardrobe" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/palisade-walk-in-wardrobe" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/palisade-walk-in-wardrobe.jpg" alt="Palisade Walk-in Wardrobe System" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -756,7 +760,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Wardrobes                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=palisade-walk-in-wardrobe" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/palisade-walk-in-wardrobe" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Palisade Walk-in Wardrobe System                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -774,7 +778,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=palisade-walk-in-wardrobe" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/palisade-walk-in-wardrobe" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -782,7 +786,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=solstice-bar-cabinet" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/solstice-bar-cabinet" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/solstice-bar-cabinet.jpg" alt="Solstice Bar Cabinet" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -794,7 +798,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Accent &amp; Decor                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=solstice-bar-cabinet" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/solstice-bar-cabinet" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Solstice Bar Cabinet                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -812,7 +816,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=solstice-bar-cabinet" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/solstice-bar-cabinet" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -820,7 +824,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=dreamscape-kids-bed" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/dreamscape-kids-bed" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/dreamscape-kids-bed.jpg" alt="Dreamscape Kids Bed" class="catalogue-card__img" loading="lazy">
                                 
                                 <span style="position:absolute;bottom:16px;right:16px;background:rgba(23,22,20,0.88);color:#D5BE9A;padding:4px 10px;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(213,190,154,0.3);border-radius:2px;backdrop-filter:blur(4px);">
@@ -831,7 +835,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Kids &amp; Youth                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=dreamscape-kids-bed" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/dreamscape-kids-bed" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Dreamscape Kids Bed                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -849,7 +853,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=dreamscape-kids-bed" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/dreamscape-kids-bed" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -857,7 +861,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=aurelius-coffee-table" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/aurelius-coffee-table" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/aurelius-coffee-table.jpg" alt="Aurelius Coffee Table" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -869,7 +873,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Living Room                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=aurelius-coffee-table" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/aurelius-coffee-table" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Aurelius Coffee Table                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -887,7 +891,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=aurelius-coffee-table" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/aurelius-coffee-table" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -895,7 +899,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=lumiere-wardrobe" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/lumiere-wardrobe" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/lumiere-wardrobe.jpg" alt="Lumiere Wardrobe" class="catalogue-card__img" loading="lazy">
                                 
                                   <span style="position:absolute;top:16px;left:16px;background:#D5BE9A;color:#171614;padding:4px 10px;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;border-radius:2px;">Featured</span>
@@ -907,7 +911,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Bedroom                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=lumiere-wardrobe" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/lumiere-wardrobe" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Lumiere Wardrobe                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -925,7 +929,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=lumiere-wardrobe" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/lumiere-wardrobe" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -933,7 +937,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=contessa-dining-chair" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/contessa-dining-chair" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/contessa-dining-chair.jpg" alt="Contessa Dining Chair" class="catalogue-card__img" loading="lazy">
                                 
                                 <span style="position:absolute;bottom:16px;right:16px;background:rgba(23,22,20,0.88);color:#D5BE9A;padding:4px 10px;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(213,190,154,0.3);border-radius:2px;backdrop-filter:blur(4px);">
@@ -944,7 +948,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Dining Room                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=contessa-dining-chair" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/contessa-dining-chair" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Contessa Dining Chair                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -962,7 +966,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=contessa-dining-chair" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/contessa-dining-chair" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -970,7 +974,7 @@
                               </div>
             </article>
                       <article class="catalogue-card">
-              <a href="/product.php?slug=luminary-bookshelf" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
+              <a href="/products/luminary-bookshelf" style="display:block;position:relative;aspect-ratio:4/3;background:linear-gradient(145deg, #29221D, #171614);overflow:hidden;">
                                   <img src="/uploads/products/luminary-bookshelf.jpg" alt="Luminary Bookshelf" class="catalogue-card__img" loading="lazy">
                                 
                                 <span style="position:absolute;bottom:16px;right:16px;background:rgba(23,22,20,0.88);color:#D5BE9A;padding:4px 10px;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(213,190,154,0.3);border-radius:2px;backdrop-filter:blur(4px);">
@@ -981,7 +985,7 @@
                 <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#D5BE9A;margin-bottom:8px;font-weight:700;">
                   Home Office                </span>
                 <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:#F5F0E8;margin-bottom:8px;line-height:1.2;font-weight:400;">
-                  <a href="/product.php?slug=luminary-bookshelf" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
+                  <a href="/products/luminary-bookshelf" style="color:#F5F0E8;text-decoration:none;transition:color 0.3s ease;">
                     Luminary Bookshelf                  </a>
                 </h3>
                 <p style="font-size:0.86rem;color:#B7AA98;line-height:1.65;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
@@ -999,7 +1003,7 @@
                         </svg>
                         WhatsApp
                       </a>
-                      <a href="/product.php?slug=luminary-bookshelf" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
+                      <a href="/products/luminary-bookshelf" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
@@ -1010,10 +1014,10 @@
 
         <!-- Pagination -->
                   <nav style="display:flex;justify-content:center;gap:8px;margin-top:60px;">
-                          <a href="/catalogue.php?page=1" 
+                          <a href="/catalogue?page=1" 
                  style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(213,190,154,0.3);color:#171614;background:#D5BE9A;text-decoration:none;font-weight:600;font-size:0.85rem;">
                 1              </a>
-                          <a href="/catalogue.php?page=2" 
+                          <a href="/catalogue?page=2" 
                  style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(213,190,154,0.3);color:#F5F0E8;background:transparent;text-decoration:none;font-weight:600;font-size:0.85rem;">
                 2              </a>
                       </nav>
@@ -1143,37 +1147,37 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/catalogue.php?category=living-room" class="luxury-footer__link">
+            <a href="/catalogue?category=living-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Living Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=bedroom" class="luxury-footer__link">
+            <a href="/catalogue?category=bedroom" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Bedroom</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=dining-room" class="luxury-footer__link">
+            <a href="/catalogue?category=dining-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Dining Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=home-office" class="luxury-footer__link">
+            <a href="/catalogue?category=home-office" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Home Office</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=wardrobes" class="luxury-footer__link">
+            <a href="/catalogue?category=wardrobes" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Wardrobes</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=outdoor" class="luxury-footer__link">
+            <a href="/catalogue?category=outdoor" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Outdoor</span>
             </a>
@@ -1189,25 +1193,25 @@
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/about.php" class="luxury-footer__link">
+            <a href="/about" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Our Story</span>
             </a>
           </li>
           <li>
-            <a href="/gallery.php" class="luxury-footer__link">
+            <a href="/gallery" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Gallery</span>
             </a>
           </li>
           <li>
-            <a href="/custom-request.php" class="luxury-footer__link">
+            <a href="/custom-request" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Custom Orders</span>
             </a>
           </li>
           <li>
-            <a href="/contact.php" class="luxury-footer__link">
+            <a href="/contact" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Contact</span>
             </a>

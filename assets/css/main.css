@@ -702,6 +702,9 @@ blockquote {
   border: 1px solid rgba(213, 190, 154, 0.25);
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  z-index: 205;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -778,10 +781,11 @@ blockquote {
 }
 
 .nav__mobile.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+  display: flex !important;
 }
 
 /* Background Watermark */

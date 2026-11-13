@@ -159,6 +159,10 @@
     .grand-loader.is-done .grand-loader__curtain--bottom {
       transform: translateY(100%);
     }
+    .grand-loader.is-done {
+      pointer-events: none !important;
+      visibility: hidden !important;
+    }
   </style>
 </head>
 <body>
@@ -213,11 +217,11 @@
     <!-- Desktop Links -->
     <ul class="nav__links" id="navLinks">
       <li><a href="/" class="nav__link is-active">Home</a></li>
-      <li><a href="/catalogue.php" class="nav__link ">Collections</a></li>
-      <li><a href="/about.php" class="nav__link ">Our Story</a></li>
-      <li><a href="/gallery.php" class="nav__link ">Gallery</a></li>
-      <li><a href="/custom-request.php" class="nav__link ">Custom Order</a></li>
-      <li><a href="/contact.php" class="nav__link ">Showroom</a></li>
+      <li><a href="/catalogue" class="nav__link ">Collections</a></li>
+      <li><a href="/about" class="nav__link ">Our Story</a></li>
+      <li><a href="/gallery" class="nav__link ">Gallery</a></li>
+      <li><a href="/custom-request" class="nav__link ">Custom Order</a></li>
+      <li><a href="/contact" class="nav__link ">Showroom</a></li>
     </ul>
 
     <!-- Actions -->
@@ -275,7 +279,7 @@
           </a>
 
           <!-- 02 Collections -->
-          <a href="/catalogue.php" class="atelier-nav__item ">
+          <a href="/catalogue" class="atelier-nav__item ">
             <span class="atelier-nav__num">02</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Collections</span>
@@ -285,7 +289,7 @@
           </a>
 
           <!-- 03 Our Story -->
-          <a href="/about.php" class="atelier-nav__item ">
+          <a href="/about" class="atelier-nav__item ">
             <span class="atelier-nav__num">03</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Our Story</span>
@@ -295,7 +299,7 @@
           </a>
 
           <!-- 04 Atelier Gallery -->
-          <a href="/gallery.php" class="atelier-nav__item ">
+          <a href="/gallery" class="atelier-nav__item ">
             <span class="atelier-nav__num">04</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Atelier Gallery</span>
@@ -305,7 +309,7 @@
           </a>
 
           <!-- 05 Bespoke Studio -->
-          <a href="/custom-request.php" class="atelier-nav__item ">
+          <a href="/custom-request" class="atelier-nav__item ">
             <span class="atelier-nav__num">05</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Bespoke Orders</span>
@@ -315,7 +319,7 @@
           </a>
 
           <!-- 06 Showroom & Directions -->
-          <a href="/contact.php" class="atelier-nav__item ">
+          <a href="/contact" class="atelier-nav__item ">
             <span class="atelier-nav__num">06</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Showroom Directions</span>
@@ -384,11 +388,11 @@
           <div class="atelier-nav__card-categories">
             <span class="atelier-nav__cat-label">QUICK CURATIONS:</span>
             <div class="atelier-nav__cat-pills">
-              <a href="/catalogue.php?category=living-room">Living Room</a>
-              <a href="/catalogue.php?category=bedroom">Bedroom</a>
-              <a href="/catalogue.php?category=dining-room">Dining</a>
-              <a href="/catalogue.php?category=home-office">Home Office</a>
-              <a href="/catalogue.php?category=outdoor">Outdoor</a>
+              <a href="/catalogue?category=living-room">Living Room</a>
+              <a href="/catalogue?category=bedroom">Bedroom</a>
+              <a href="/catalogue?category=dining-room">Dining</a>
+              <a href="/catalogue?category=home-office">Home Office</a>
+              <a href="/catalogue?category=outdoor">Outdoor</a>
             </div>
           </div>
         </div>
@@ -1831,8 +1835,8 @@ h1, h2, h3, h4, h5, h6 {
       Discover furniture that transforms everyday spaces into extraordinary experiences.    </p>
 
     <div class="hero__ctas" id="heroCtas">
-      <a href="/catalogue.php" class="btn btn-primary">Explore Collection</a>
-      <a href="/about.php" class="btn btn-ghost">Discover Our World</a>
+      <a href="/catalogue" class="btn btn-primary">Explore Collection</a>
+      <a href="/about" class="btn btn-ghost">Discover Our World</a>
     </div>
   </div>
 
@@ -1882,7 +1886,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
 
     <div class="collections__grid">
-            <a href="catalogue.php?category=living-room" class="collection-card">
+            <a href="/catalogue?category=living-room" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#76543B 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/meridian-sectional-sofa.jpg"
@@ -1894,7 +1898,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="catalogue.php?category=bedroom" class="collection-card">
+            <a href="/catalogue?category=bedroom" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#76543B 0%,#D5BE9A 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/palazzo-king-bed.jpg"
@@ -1906,7 +1910,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="catalogue.php?category=dining-room" class="collection-card">
+            <a href="/catalogue?category=dining-room" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#B7AA98 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/vesper-dining-table.jpg"
@@ -1918,7 +1922,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="catalogue.php?category=home-office" class="collection-card">
+            <a href="/catalogue?category=home-office" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#3D2B1F 0%,#76543B 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/stratton-executive-desk.jpg"
@@ -1930,7 +1934,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="catalogue.php?category=outdoor" class="collection-card">
+            <a href="/catalogue?category=outdoor" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#D5BE9A 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/azure-outdoor-lounge-set.jpg"
@@ -1942,7 +1946,7 @@ h1, h2, h3, h4, h5, h6 {
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="catalogue.php?category=wardrobes" class="collection-card">
+            <a href="/catalogue?category=wardrobes" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#54392A 0%,#B7AA98 100%);"></div>
                   <img class="collection-card__img"
                src="/uploads/products/palisade-walk-in-wardrobe.jpg"
@@ -2247,7 +2251,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="products-grid">
             <div class="product-card">
-        <a href="product.php?slug=meridian-sectional-sofa" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/meridian-sectional-sofa" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/meridian-sectional-sofa.jpg"
                  alt="Meridian Sectional Sofa"
@@ -2256,11 +2260,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=meridian-sectional-sofa" style="color:inherit;text-decoration:none;">Meridian Sectional Sofa</a>
+            <a href="/products/meridian-sectional-sofa" style="color:inherit;text-decoration:none;">Meridian Sectional Sofa</a>
           </h3>
                       <p class="product-card__desc">A sweeping L-shaped sectional upholstered in full-grain Italian leather with solid teak frame.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Meridian%20Sectional%20Sofa" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2274,7 +2278,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=palazzo-king-bed" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/palazzo-king-bed" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/palazzo-king-bed.jpg"
                  alt="Palazzo King Bed"
@@ -2283,11 +2287,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=palazzo-king-bed" style="color:inherit;text-decoration:none;">Palazzo King Bed</a>
+            <a href="/products/palazzo-king-bed" style="color:inherit;text-decoration:none;">Palazzo King Bed</a>
           </h3>
                       <p class="product-card__desc">An upholstered platform bed with a dramatic high headboard in hand-quilted velvet and solid sheesham legs.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Palazzo%20King%20Bed" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2301,7 +2305,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=vesper-dining-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/vesper-dining-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/vesper-dining-table.jpg"
                  alt="Vesper Dining Table"
@@ -2310,11 +2314,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=vesper-dining-table" style="color:inherit;text-decoration:none;">Vesper Dining Table</a>
+            <a href="/products/vesper-dining-table" style="color:inherit;text-decoration:none;">Vesper Dining Table</a>
           </h3>
                       <p class="product-card__desc">A live-edge solid mango wood dining table with a hairpin steel base — seats 8 comfortably.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Vesper%20Dining%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2328,7 +2332,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=stratton-executive-desk" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/stratton-executive-desk" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/stratton-executive-desk.jpg"
                  alt="Stratton Executive Desk"
@@ -2337,11 +2341,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=stratton-executive-desk" style="color:inherit;text-decoration:none;">Stratton Executive Desk</a>
+            <a href="/products/stratton-executive-desk" style="color:inherit;text-decoration:none;">Stratton Executive Desk</a>
           </h3>
                       <p class="product-card__desc">A broad executive desk in solid walnut with integrated cable management and a leather writing surface.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=stratton-executive-desk" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/stratton-executive-desk" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Stratton%20Executive%20Desk" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2355,7 +2359,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=azure-outdoor-lounge-set" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/azure-outdoor-lounge-set" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/azure-outdoor-lounge-set.jpg"
                  alt="Azure Outdoor Lounge Set"
@@ -2364,11 +2368,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=azure-outdoor-lounge-set" style="color:inherit;text-decoration:none;">Azure Outdoor Lounge Set</a>
+            <a href="/products/azure-outdoor-lounge-set" style="color:inherit;text-decoration:none;">Azure Outdoor Lounge Set</a>
           </h3>
                       <p class="product-card__desc">All-weather teak and aluminium outdoor lounge with quick-dry foam cushions.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=azure-outdoor-lounge-set" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/azure-outdoor-lounge-set" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Azure%20Outdoor%20Lounge%20Set" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2382,7 +2386,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=palisade-walk-in-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/palisade-walk-in-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/palisade-walk-in-wardrobe.jpg"
                  alt="Palisade Walk-in Wardrobe System"
@@ -2391,11 +2395,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=palisade-walk-in-wardrobe" style="color:inherit;text-decoration:none;">Palisade Walk-in Wardrobe System</a>
+            <a href="/products/palisade-walk-in-wardrobe" style="color:inherit;text-decoration:none;">Palisade Walk-in Wardrobe System</a>
           </h3>
                       <p class="product-card__desc">A complete walk-in wardrobe system with island dresser, velvet-lined drawers, and LED vanity lighting.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Palisade%20Walk-in%20Wardrobe%20System" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2409,7 +2413,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=solstice-bar-cabinet" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/solstice-bar-cabinet" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/solstice-bar-cabinet.jpg"
                  alt="Solstice Bar Cabinet"
@@ -2418,11 +2422,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=solstice-bar-cabinet" style="color:inherit;text-decoration:none;">Solstice Bar Cabinet</a>
+            <a href="/products/solstice-bar-cabinet" style="color:inherit;text-decoration:none;">Solstice Bar Cabinet</a>
           </h3>
                       <p class="product-card__desc">A fluted-front bar cabinet with a marble interior, brass-framed glass doors, and a mirrored back panel.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=solstice-bar-cabinet" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/solstice-bar-cabinet" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Solstice%20Bar%20Cabinet" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2436,7 +2440,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=aurelius-coffee-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/aurelius-coffee-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/aurelius-coffee-table.jpg"
                  alt="Aurelius Coffee Table"
@@ -2445,11 +2449,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=aurelius-coffee-table" style="color:inherit;text-decoration:none;">Aurelius Coffee Table</a>
+            <a href="/products/aurelius-coffee-table" style="color:inherit;text-decoration:none;">Aurelius Coffee Table</a>
           </h3>
                       <p class="product-card__desc">Hand-carved marble-top coffee table with a brushed brass base — a sculptural centrepiece.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=aurelius-coffee-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/aurelius-coffee-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Aurelius%20Coffee%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2463,7 +2467,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=lumiere-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/lumiere-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/lumiere-wardrobe.jpg"
                  alt="Lumiere Wardrobe"
@@ -2472,11 +2476,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=lumiere-wardrobe" style="color:inherit;text-decoration:none;">Lumiere Wardrobe</a>
+            <a href="/products/lumiere-wardrobe" style="color:inherit;text-decoration:none;">Lumiere Wardrobe</a>
           </h3>
                       <p class="product-card__desc">Six-door sliding wardrobe with mirrored panels, soft-close mechanisms, and modular interior fittings.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=lumiere-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/lumiere-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Lumiere%20Wardrobe" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2490,7 +2494,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=riviera-accent-chair" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/riviera-accent-chair" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/riviera-accent-chair.jpg"
                  alt="Riviera Accent Chair"
@@ -2499,11 +2503,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=riviera-accent-chair" style="color:inherit;text-decoration:none;">Riviera Accent Chair</a>
+            <a href="/products/riviera-accent-chair" style="color:inherit;text-decoration:none;">Riviera Accent Chair</a>
           </h3>
                       <p class="product-card__desc">Barrel-back accent chair in boucle fabric with solid walnut legs — sculptural and supremely comfortable.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=riviera-accent-chair" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/riviera-accent-chair" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Riviera%20Accent%20Chair" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -2517,7 +2521,7 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="product.php?slug=classic-teak-cot" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+        <a href="/products/classic-teak-cot" class="product-card__img-wrap" style="text-decoration:none;display:block;">
                       <img class="product-card__img"
                  src="/uploads/products/classic-teak-cot.jpg"
                  alt="Classic Teak Cot"
@@ -2526,11 +2530,11 @@ h1, h2, h3, h4, h5, h6 {
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="product.php?slug=classic-teak-cot" style="color:inherit;text-decoration:none;">Classic Teak Cot</a>
+            <a href="/products/classic-teak-cot" style="color:inherit;text-decoration:none;">Classic Teak Cot</a>
           </h3>
                       <p class="product-card__desc">A clean-lined solid teak cot with a supportive slatted base and handcrafted joinery.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="product.php?slug=classic-teak-cot" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/classic-teak-cot" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
             <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Classic%20Teak%20Cot" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
@@ -3204,37 +3208,37 @@ h1, h2, h3, h4, h5, h6 {
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/catalogue.php?category=living-room" class="luxury-footer__link">
+            <a href="/catalogue?category=living-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Living Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=bedroom" class="luxury-footer__link">
+            <a href="/catalogue?category=bedroom" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Bedroom</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=dining-room" class="luxury-footer__link">
+            <a href="/catalogue?category=dining-room" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Dining Room</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=home-office" class="luxury-footer__link">
+            <a href="/catalogue?category=home-office" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Home Office</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=wardrobes" class="luxury-footer__link">
+            <a href="/catalogue?category=wardrobes" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Wardrobes</span>
             </a>
           </li>
           <li>
-            <a href="/catalogue.php?category=outdoor" class="luxury-footer__link">
+            <a href="/catalogue?category=outdoor" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Outdoor</span>
             </a>
@@ -3250,25 +3254,25 @@ h1, h2, h3, h4, h5, h6 {
         </h4>
         <ul class="luxury-footer__links">
           <li>
-            <a href="/about.php" class="luxury-footer__link">
+            <a href="/about" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Our Story</span>
             </a>
           </li>
           <li>
-            <a href="/gallery.php" class="luxury-footer__link">
+            <a href="/gallery" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Gallery</span>
             </a>
           </li>
           <li>
-            <a href="/custom-request.php" class="luxury-footer__link">
+            <a href="/custom-request" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Custom Orders</span>
             </a>
           </li>
           <li>
-            <a href="/contact.php" class="luxury-footer__link">
+            <a href="/contact" class="luxury-footer__link">
               <span class="luxury-footer__link-arrow">&rarr;</span>
               <span>Contact</span>
             </a>
