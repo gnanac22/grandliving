@@ -936,6 +936,86 @@ const initRevealObserver = () => {
 };
 
 // ============================================================
+// QUICK SHOWROOM ENQUIRY -> DIRECT WHATSAPP INTEGRATION
+// ============================================================
+
+const initQuickEnquiryToWhatsApp = () => {
+  const enquiryForms = document.querySelectorAll('form[action*="process-enquiry"]');
+
+  enquiryForms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      const nameInput = form.querySelector('[name="name"]');
+      const phoneInput = form.querySelector('[name="phone"]');
+      const emailInput = form.querySelector('[name="email"]');
+      const msgInput = form.querySelector('[name="message"]');
+      const productInput = form.querySelector('[name="product_name"]');
+      const subjectInput = form.querySelector('[name="subject"]');
+
+      const name = (nameInput ? nameInput.value : '').trim();
+      const phone = (phoneInput ? phoneInput.value : '').trim();
+      const email = (emailInput ? emailInput.value : '').trim();
+      const message = (msgInput ? msgInput.value : '').trim();
+      
+      let productName = (productInput ? productInput.value : '').trim();
+      if (!productName) {
+        const pageH1 = document.querySelector('h1');
+        if (pageH1) productName = pageH1.textContent.trim();
+      }
+
+      const subject = (subjectInput ? subjectInput.value : '').trim();
+
+      if (!name || !phone) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      let waText = '🏛️ *Grand Living Vizag — Quick Showroom Enquiry*\n\n';
+      if (productName) {
+        waText += '• *Piece:* ' + productName + '\n';
+      }
+      if (subject && subject !== 'Enquiry for ' + productName) {
+        waText += '• *Subject:* ' + subject + '\n';
+      }
+      waText += '• *Client Name:* ' + name + '\n';
+      waText += '• *Phone Number:* ' + phone + '\n';
+      if (email) {
+        waText += '• *Email:* ' + email + '\n';
+      }
+      if (message) {
+        waText += '• *Enquiry / Requirements:* ' + message + '\n';
+      }
+      waText += '\n_Sent via Grand Living Showroom Concierge_';
+
+      const whatsappNumber = '919052751666';
+      const encodedMsg = encodeURIComponent(waText);
+      const waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMsg;
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        const origText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Connecting to WhatsApp…';
+        submitBtn.style.opacity = '0.85';
+        setTimeout(() => {
+          submitBtn.innerHTML = origText;
+          submitBtn.style.opacity = '1';
+        }, 4000);
+      }
+
+      if (window.location.protocol.startsWith('http') && !window.location.hostname.includes('vercel.app')) {
+        try {
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+          }).catch(() => {});
+        } catch (_) {}
+      }
+
+      window.open(waUrl, '_blank');
+    });
+  });
+};
+
+// ============================================================
 // INIT
 // ============================================================
 
@@ -945,6 +1025,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initFlashMessages();
   initForms();
+  initQuickEnquiryToWhatsApp();
   initProductGallery();
   initLightbox();
   initCatalogueFilters();

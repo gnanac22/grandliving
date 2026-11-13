@@ -162,6 +162,29 @@ include 'includes/header.php';
               <textarea name="message" rows="3" placeholder="Any questions regarding dimensions, fabrics, or delivery timeline?" style="background:#171614;border:1px solid rgba(213,190,154,0.3);color:#F5F0E8;padding:10px 14px;font-size:0.85rem;resize:vertical;"></textarea>
               <button type="submit" class="btn btn-champagne" style="padding:12px;font-size:0.8rem;">Send Showroom Request</button>
             </form>
+            <script>
+              (function() {
+                var qForm = document.currentScript ? document.currentScript.previousElementSibling : null;
+                if (!qForm || qForm.tagName !== "FORM") qForm = document.querySelector("form[action*=\"process-enquiry\"]");
+                if (!qForm) return;
+                qForm.addEventListener("submit", function(e) {
+                  var name = (qForm.elements["name"] && qForm.elements["name"].value) || "";
+                  var phone = (qForm.elements["phone"] && qForm.elements["phone"].value) || "";
+                  if (!name || !phone) return;
+                  e.preventDefault();
+                  var email = (qForm.elements["email"] && qForm.elements["email"].value) || "";
+                  var msg = (qForm.elements["message"] && qForm.elements["message"].value) || "";
+                  var prod = (qForm.elements["product_name"] && qForm.elements["product_name"].value) || (document.querySelector("h1") ? document.querySelector("h1").textContent : "");
+                  var text = encodeURIComponent("🏛️ *Grand Living Vizag — Quick Showroom Enquiry*\n\n" +
+                    "• *Piece:* " + prod.trim() + "\n" +
+                    "• *Client Name:* " + name.trim() + "\n" +
+                    "• *Phone:* " + phone.trim() + "\n" +
+                    (email ? "• *Email:* " + email.trim() + "\n" : "") +
+                    (msg ? "• *Questions / Notes:* " + msg.trim() + "\n" : ""));
+                  window.open("https://wa.me/919052751666?text=" + text, "_blank");
+                });
+              })();
+            </script>
           </div>
 
         </div>
