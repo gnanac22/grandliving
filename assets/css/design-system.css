@@ -1,0 +1,250 @@
+/**
+ * GRAND FURNITURE VIZAG — Design System
+ * CSS Custom Properties (Design Tokens)
+ * Version: 1.0.0
+ */
+
+/* ============================================================
+   GOOGLE FONTS IMPORT
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   ROOT DESIGN TOKENS
+   ============================================================ */
+:root {
+
+  /* ----------------------------------------------------------
+     COLOR PALETTE — Brand Core
+     ---------------------------------------------------------- */
+  --color-obsidian:    #171614;
+  --color-espresso:    #29221D;
+  --color-ivory:       #F5F0E8;
+  --color-champagne:   #D5BE9A;
+  --color-walnut:      #76543B;
+  --color-stone:       #B7AA98;
+  --color-sand:        #E8DFD2;
+  --color-white:       #FFFFFF;
+
+  /* Extended Palette — Tints & Shades */
+  --color-obsidian-90: rgba(23, 22, 20, 0.90);
+  --color-obsidian-80: rgba(23, 22, 20, 0.80);
+  --color-obsidian-60: rgba(23, 22, 20, 0.60);
+  --color-obsidian-40: rgba(23, 22, 20, 0.40);
+  --color-obsidian-20: rgba(23, 22, 20, 0.20);
+  --color-obsidian-10: rgba(23, 22, 20, 0.10);
+
+  --color-champagne-dark:  #BFA880;
+  --color-champagne-light: #E8D9BC;
+  --color-champagne-pale:  #F4EEE2;
+
+  --color-walnut-dark:   #5A3E2B;
+  --color-walnut-light:  #9B7357;
+
+  --color-ivory-dark:   #EAE3D5;
+  --color-ivory-light:  #FAF8F4;
+
+  /* Semantic Colors */
+  --color-success:   #4A7C59;
+  --color-success-bg:#EAF3ED;
+  --color-warning:   #B8860B;
+  --color-warning-bg:#FDF6E3;
+  --color-error:     #A33B2A;
+  --color-error-bg:  #FAEAE8;
+  --color-info:      #2D6A8A;
+  --color-info-bg:   #E8F3F9;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — Font Families
+     ---------------------------------------------------------- */
+  --font-display:  'Cormorant Garamond', 'Georgia', serif;
+  --font-body:     'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-utility:  'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:     'JetBrains Mono', 'Courier New', monospace;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — Scale
+     ---------------------------------------------------------- */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-md:   1.125rem;   /* 18px */
+  --text-lg:   1.25rem;    /* 20px */
+  --text-xl:   1.5rem;     /* 24px */
+  --text-2xl:  1.875rem;   /* 30px */
+  --text-3xl:  2.25rem;    /* 36px */
+  --text-4xl:  3rem;       /* 48px */
+  --text-5xl:  3.75rem;    /* 60px */
+  --text-6xl:  4.5rem;     /* 72px */
+  --text-7xl:  6rem;       /* 96px */
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — Line Heights
+     ---------------------------------------------------------- */
+  --leading-none:    1;
+  --leading-tight:   1.1;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose:   2;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — Letter Spacing
+     ---------------------------------------------------------- */
+  --tracking-tighter: -0.05em;
+  --tracking-tight:   -0.025em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.05em;
+  --tracking-wider:    0.1em;
+  --tracking-widest:   0.2em;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — Font Weights
+     ---------------------------------------------------------- */
+  --weight-thin:       200;
+  --weight-light:      300;
+  --weight-regular:    400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+  --weight-extrabold:  800;
+
+  /* ----------------------------------------------------------
+     SPACING SCALE
+     ---------------------------------------------------------- */
+  --space-px:  1px;
+  --space-0:   0;
+  --space-1:   0.25rem;    /* 4px */
+  --space-2:   0.5rem;     /* 8px */
+  --space-3:   0.75rem;    /* 12px */
+  --space-4:   1rem;       /* 16px */
+  --space-5:   1.25rem;    /* 20px */
+  --space-6:   1.5rem;     /* 24px */
+  --space-7:   1.75rem;    /* 28px */
+  --space-8:   2rem;       /* 32px */
+  --space-10:  2.5rem;     /* 40px */
+  --space-12:  3rem;       /* 48px */
+  --space-14:  3.5rem;     /* 56px */
+  --space-16:  4rem;       /* 64px */
+  --space-20:  5rem;       /* 80px */
+  --space-24:  6rem;       /* 96px */
+  --space-28:  7rem;       /* 112px */
+  --space-32:  8rem;       /* 128px */
+  --space-40:  10rem;      /* 160px */
+  --space-48:  12rem;      /* 192px */
+  --space-64:  16rem;      /* 256px */
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS TOKENS
+     ---------------------------------------------------------- */
+  --radius-none:  0;
+  --radius-sm:    2px;
+  --radius-base:  4px;
+  --radius-md:    6px;
+  --radius-lg:    8px;
+  --radius-xl:    12px;
+  --radius-2xl:   16px;
+  --radius-3xl:   24px;
+  --radius-full:  9999px;
+
+  /* ----------------------------------------------------------
+     SHADOW TOKENS
+     ---------------------------------------------------------- */
+  --shadow-xs:   0 1px 2px rgba(23, 22, 20, 0.05);
+  --shadow-sm:   0 1px 3px rgba(23, 22, 20, 0.08), 0 1px 2px rgba(23, 22, 20, 0.04);
+  --shadow-base: 0 4px 6px rgba(23, 22, 20, 0.07), 0 2px 4px rgba(23, 22, 20, 0.04);
+  --shadow-md:   0 10px 15px rgba(23, 22, 20, 0.08), 0 4px 6px rgba(23, 22, 20, 0.04);
+  --shadow-lg:   0 20px 25px rgba(23, 22, 20, 0.09), 0 8px 10px rgba(23, 22, 20, 0.04);
+  --shadow-xl:   0 25px 50px rgba(23, 22, 20, 0.14);
+  --shadow-2xl:  0 50px 100px rgba(23, 22, 20, 0.20);
+  --shadow-inner: inset 0 2px 4px rgba(23, 22, 20, 0.08);
+  --shadow-none:  none;
+
+  /* Luxury Glow Shadows */
+  --shadow-champagne: 0 0 30px rgba(213, 190, 154, 0.25);
+  --shadow-champagne-lg: 0 0 60px rgba(213, 190, 154, 0.35);
+
+  /* ----------------------------------------------------------
+     Z-INDEX SCALE
+     ---------------------------------------------------------- */
+  --z-below:      -1;
+  --z-base:        0;
+  --z-raised:     10;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-overlay:    300;
+  --z-modal:      400;
+  --z-toast:      500;
+  --z-tooltip:    600;
+  --z-cursor:     9000;
+
+  /* ----------------------------------------------------------
+     ANIMATION TOKENS — Duration
+     ---------------------------------------------------------- */
+  --duration-instant:   50ms;
+  --duration-fast:     150ms;
+  --duration-normal:   300ms;
+  --duration-slow:     500ms;
+  --duration-slower:   700ms;
+  --duration-slowest: 1000ms;
+  --duration-long:    1500ms;
+
+  /* ----------------------------------------------------------
+     ANIMATION TOKENS — Easing
+     ---------------------------------------------------------- */
+  --ease-linear:  linear;
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-luxury:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snap:    cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* ----------------------------------------------------------
+     GRID SYSTEM TOKENS
+     ---------------------------------------------------------- */
+  --grid-columns:    12;
+  --grid-gutter:     var(--space-6);
+  --grid-gutter-sm:  var(--space-4);
+  --grid-gutter-lg:  var(--space-8);
+
+  --container-sm:    640px;
+  --container-md:    768px;
+  --container-lg:    1024px;
+  --container-xl:    1280px;
+  --container-2xl:   1440px;
+  --container-pad:   var(--space-6);
+  --container-pad-lg: var(--space-10);
+
+  /* ----------------------------------------------------------
+     BREAKPOINT TOKENS (reference — used in JS/comments)
+     ---------------------------------------------------------- */
+  --bp-xs:   480px;
+  --bp-sm:   640px;
+  --bp-md:   768px;
+  --bp-lg:   1024px;
+  --bp-xl:   1280px;
+  --bp-2xl:  1440px;
+
+  /* ----------------------------------------------------------
+     BORDER TOKENS
+     ---------------------------------------------------------- */
+  --border-thin:    1px solid;
+  --border-base:    1.5px solid;
+  --border-thick:   2px solid;
+  --border-color:         var(--color-sand);
+  --border-color-dark:    var(--color-stone);
+  --border-color-accent:  var(--color-champagne);
+
+  /* ----------------------------------------------------------
+     NAVBAR TOKENS
+     ---------------------------------------------------------- */
+  --nav-height:        80px;
+  --nav-height-scroll: 64px;
+
+  /* ----------------------------------------------------------
+     SIDEBAR TOKENS (Admin)
+     ---------------------------------------------------------- */
+  --sidebar-width:         280px;
+  --sidebar-collapsed-width: 72px;
+}
