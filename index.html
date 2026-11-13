@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/split-type"></script>
 
   <!-- CSRF Meta -->
-  <meta name="csrf-token" content="0d854d5403163ae272eef6b96c47d10b523e35383de743025e20c055b6ed5965">
+  <meta name="csrf-token" content="5444601fdf089380001596ab86ddb7b86887655606695b4bc6b89025f062609e">
   
   <style>
     /* ============================================================
@@ -1766,9 +1766,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
-  .container { width: 94%; }
+  .container { width: 92%; }
   .section-title { margin-bottom: 2rem; }
   .hero__scroll { display: none; }
+  .hero__headline { font-size: clamp(2.4rem, 9.5vw, 3.2rem) !important; }
+  .hero__ctas { width: 100%; gap: 12px; }
+  .hero__ctas .btn { width: 100%; max-width: 320px; text-align: center; }
+  .signature-deco {
+    min-height: 420px;
+    padding: 24px 12px;
+  }
+  .signature-deco__ring--outer {
+    width: 290px;
+    height: 290px;
+  }
+  .signature-deco__ring--middle {
+    width: 230px;
+    height: 230px;
+  }
+  .signature-deco__ring--inner {
+    width: 170px;
+    height: 170px;
+  }
+  .signature-deco__glow {
+    width: 220px;
+    height: 220px;
+  }
+  .signature-deco__content {
+    padding: 1.5rem 0.5rem;
+  }
+  .signature-deco__year {
+    font-size: 4.8rem !important;
+  }
+  .brand-stats__row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+  .stat-item {
+    padding: 1rem 0.5rem !important;
+    flex: auto !important;
+  }
 }
 </style>
 

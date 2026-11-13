@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Custom Furniture Request | Grand Furniture Vizag</title>
+  <meta name="description" content="Request bespoke, custom-made furniture tailored to your exact specifications.">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Custom Furniture Request | Grand Furniture Vizag">
+  <meta property="og:description" content="Request bespoke, custom-made furniture tailored to your exact specifications.">
+  <meta property="og:site_name" content="Grand Living Vizag">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cursor.css">
+  
+  <!-- GSAP & SplitType -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+  <!-- CSRF Meta -->
+  <meta name="csrf-token" content="4f0bced3ed846291ddf7dc16247668f2db7ad2df2af5b6f6f9071dc0553c6e0f">
+  
+  <style>
+    /* ============================================================
+       HAUTE-COUTURE ARCHITECTURAL CURTAIN PRELOADER
+       ============================================================ */
+    .grand-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    .grand-loader__curtain {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 50.5%;
+      background: #171614;
+      z-index: 1;
+      will-change: transform;
+      transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    
+    .grand-loader__curtain--top {
+      top: 0;
+      border-bottom: 1px solid rgba(213, 190, 154, 0.2);
+    }
+    
+    .grand-loader__curtain--bottom {
+      bottom: 0;
+      border-top: 1px solid rgba(213, 190, 154, 0.2);
+    }
+    
+    .grand-loader__inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .grand-loader__crest {
+      margin-bottom: 24px;
+      animation: crestRotate 12s linear infinite;
+    }
+    
+    @keyframes crestRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .grand-loader__title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: #F5F0E8;
+      display: block;
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 0 4px 25px rgba(0,0,0,0.8);
+    }
+    
+    .grand-loader__sub {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      color: #D5BE9A;
+      display: block;
+      margin-top: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .grand-loader__progress-bar {
+      width: 220px;
+      height: 1.5px;
+      background: rgba(213, 190, 154, 0.15);
+      margin-top: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .grand-loader__progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: #D5BE9A;
+      box-shadow: 0 0 12px rgba(213, 190, 154, 0.9);
+      transition: width 0.08s ease-out;
+    }
+    
+    .grand-loader__counter-wrap {
+      margin-top: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #D5BE9A;
+      letter-spacing: 0.12em;
+    }
+    
+    /* Reveal Animation State */
+    .grand-loader.is-done .grand-loader__inner {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+    
+    .grand-loader.is-done .grand-loader__curtain--top {
+      transform: translateY(-100%);
+    }
+    
+    .grand-loader.is-done .grand-loader__curtain--bottom {
+      transform: translateY(100%);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Haute-Couture Architectural Curtain Loader -->
+<div class="grand-loader" id="grandLoader" aria-hidden="true">
+  <div class="grand-loader__curtain grand-loader__curtain--top"></div>
+  <div class="grand-loader__curtain grand-loader__curtain--bottom"></div>
+  
+  <div class="grand-loader__inner">
+    <!-- Geometric Gold Monogram Crest -->
+    <div class="grand-loader__crest">
+      <svg width="68" height="68" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="48" stroke="#D5BE9A" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.6"/>
+        <circle cx="50" cy="50" r="41" stroke="#D5BE9A" stroke-width="0.6" opacity="0.4"/>
+        <path d="M64 34 C 56 28, 40 28, 34 38 C 28 47, 28 57, 34 65 C 40 73, 56 73, 64 66 L 64 50 L 48 50" stroke="#D5BE9A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Editorial Brand Name -->
+    <div class="grand-loader__brand-wrap">
+      <span class="grand-loader__title">GRAND LIVING</span>
+      <span class="grand-loader__sub">VISAKHAPATNAM &bull; ARCHITECTURAL LUXURY</span>
+    </div>
+
+    <!-- Hairline progress bar & percentage counter -->
+    <div class="grand-loader__progress-bar">
+      <div class="grand-loader__progress-fill" id="loaderFill"></div>
+    </div>
+    
+    <div class="grand-loader__counter-wrap">
+      <span class="grand-loader__counter" id="loaderCounter">00</span>
+      <span class="grand-loader__counter-symbol">%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="nav__inner">
+    
+    <!-- Logo -->
+    <a href="/" class="nav__logo" aria-label="Grand Living Home">
+      <span class="nav__logo-text">
+        <span style="display:block;font-size:1.15em;letter-spacing:0.2em;font-weight:400;">GRAND LIVING</span>
+        <span style="display:block;font-size:0.52em;letter-spacing:0.42em;opacity:0.75;margin-top:2px;color:#D5BE9A;">VISAKHAPATNAM</span>
+      </span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav__links" id="navLinks">
+      <li><a href="/" class="nav__link ">Home</a></li>
+      <li><a href="/catalogue.php" class="nav__link ">Collections</a></li>
+      <li><a href="/about.php" class="nav__link ">Our Story</a></li>
+      <li><a href="/gallery.php" class="nav__link ">Gallery</a></li>
+      <li><a href="/custom-request.php" class="nav__link is-active">Custom Order</a></li>
+      <li><a href="/contact.php" class="nav__link ">Showroom</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919052751666" 
+         class="nav__action-btn" target="_blank" rel="noopener" aria-label="WhatsApp Assistant" title="WhatsApp Concierge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
+        </svg>
+      </a>
+
+      <!-- Google Maps Button -->
+      <a href="https://maps.app.goo.gl/4H7RJMT3GGWLZR7R7" target="_blank" rel="noopener" class="nav__action-btn" aria-label="Showroom Directions" title="Find Showroom on Google Maps">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </a>
+      
+      <!-- Hamburger -->
+      <button class="nav__hamburger" id="navHamburger" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle navigation menu">
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Full-Screen Haute-Couture Architectural Atelier Navigation -->
+<div class="nav__mobile" id="navMobile" aria-hidden="true">
+  <!-- Subtle Background Geometric Monogram Watermark -->
+  <div class="atelier-nav__watermark" aria-hidden="true">G</div>
+
+  <div class="atelier-nav__container">
+    <div class="atelier-nav__grid">
+      
+      <!-- Left Column: Numbered Architectural Navigation -->
+      <div class="atelier-nav__left">
+        <div class="atelier-nav__eyebrow">
+          <span class="atelier-nav__eyebrow-line"></span>
+          <span>THE GRAND ATELIER DIRECTORY &bull; VIZAG</span>
+        </div>
+
+        <nav class="atelier-nav__menu" aria-label="Expanded site navigation">
+          <!-- 01 Home -->
+          <a href="/" class="atelier-nav__item ">
+            <span class="atelier-nav__num">01</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Home</span>
+              <span class="atelier-nav__sub">The Art of Living Beautifully</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 02 Collections -->
+          <a href="/catalogue.php" class="atelier-nav__item ">
+            <span class="atelier-nav__num">02</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Collections</span>
+              <span class="atelier-nav__sub">Living, Bedroom, Dining, Office &amp; Outdoor</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 03 Our Story -->
+          <a href="/about.php" class="atelier-nav__item ">
+            <span class="atelier-nav__num">03</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Our Story</span>
+              <span class="atelier-nav__sub">Artisanal Legacy, Architecture &amp; Heritage</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 04 Atelier Gallery -->
+          <a href="/gallery.php" class="atelier-nav__item ">
+            <span class="atelier-nav__num">04</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Atelier Gallery</span>
+              <span class="atelier-nav__sub">Curated Spatial Photography &amp; Showroom</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 05 Bespoke Studio -->
+          <a href="/custom-request.php" class="atelier-nav__item is-active">
+            <span class="atelier-nav__num">05</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Bespoke Orders</span>
+              <span class="atelier-nav__sub">Custom Architectural Furniture Studio</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 06 Showroom & Directions -->
+          <a href="/contact.php" class="atelier-nav__item ">
+            <span class="atelier-nav__num">06</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title">Showroom Directions</span>
+              <span class="atelier-nav__sub">Dwaraka Nagar Flagship, Visakhapatnam</span>
+            </div>
+            <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Right Column: Flagship Showroom & Concierge Showcase (Desktop & Tablet) -->
+      <div class="atelier-nav__right">
+        <div class="atelier-nav__card">
+          <div class="atelier-nav__card-header">
+            <span class="atelier-nav__card-badge">FLAGSHIP SHOWROOM</span>
+            <h3 class="atelier-nav__card-title">Grand Living Visakhapatnam</h3>
+            <p class="atelier-nav__card-desc">
+              Experience the tactile weight of handcrafted teak, imported Italian leathers, and sculpted marble in person.
+            </p>
+          </div>
+
+          <!-- Location & Hours -->
+          <div class="atelier-nav__card-details">
+            <div class="atelier-nav__detail-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Grand Living, Dwaraka Nagar Main Road, Visakhapatnam, AP – 530 016</span>
+            </div>
+            <div class="atelier-nav__detail-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon–Sat: 10:00 AM – 8:00 PM &nbsp;|&nbsp; Sun: 11:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Direct CTAs -->
+          <div class="atelier-nav__card-actions">
+            <a href="https://maps.app.goo.gl/4H7RJMT3GGWLZR7R7" target="_blank" rel="noopener noreferrer" class="atelier-nav__btn atelier-nav__btn--primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Open in Google Maps
+            </a>
+            <div class="atelier-nav__btn-group">
+              <a href="tel:09052751666" class="atelier-nav__btn atelier-nav__btn--outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                Call Concierge
+              </a>
+              <a href="https://wa.me/919052751666" target="_blank" rel="noopener noreferrer" class="atelier-nav__btn atelier-nav__btn--whatsapp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Category Tags -->
+          <div class="atelier-nav__card-categories">
+            <span class="atelier-nav__cat-label">QUICK CURATIONS:</span>
+            <div class="atelier-nav__cat-pills">
+              <a href="/catalogue.php?category=living-room">Living Room</a>
+              <a href="/catalogue.php?category=bedroom">Bedroom</a>
+              <a href="/catalogue.php?category=dining-room">Dining</a>
+              <a href="/catalogue.php?category=home-office">Home Office</a>
+              <a href="/catalogue.php?category=outdoor">Outdoor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /atelier-nav__grid -->
+
+    <!-- Menu Footer Bar -->
+    <div class="atelier-nav__footer">
+      <div class="atelier-nav__footer-brand">
+        <span class="atelier-nav__footer-title">THE ART OF LIVING BEAUTIFULLY.</span>
+        <span class="atelier-nav__footer-loc">ESTABLISHED IN VISAKHAPATNAM, ANDHRA PRADESH</span>
+      </div>
+      <div class="atelier-nav__footer-credit">
+        DONE BY GNANACHANDRA &bull; <a href="#" target="_blank" rel="noopener">GNANACREATS</a>
+      </div>
+    </div>
+
+  </div><!-- /atelier-nav__container -->
+</div>
+
+<main>
+
+<style>
+/* ============================================================
+   CUSTOM REQUEST PAGE — Grand Furniture Vizag
+   Design System: Obsidian #171614, Espresso #29221D,
+   Ivory #F5F0E8, Champagne #D5BE9A, Walnut #76543B,
+   Stone #B7AA98, Sand #E8DFD2
+   Fonts: Cormorant Garamond (display), Manrope (body)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- HERO ---- */
+.cr-hero {
+    min-height: 60vh;
+    background: linear-gradient(135deg, #171614 0%, #29221D 60%, #76543B 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cr-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(213,190,154,0.07) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.cr-hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.cr-hero__label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #D5BE9A;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.cr-hero__headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 300;
+    color: #F5F0E8;
+    line-height: 1.0;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+}
+
+.cr-hero__subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #B7AA98;
+    line-height: 1.75;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* ---- INTRO STRIP ---- */
+.cr-strip {
+    background: #29221D;
+    padding: 60px 0;
+}
+
+.cr-strip__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.cr-strip__item {
+    text-align: center;
+    padding: 32px 24px;
+    border: 1px solid rgba(213,190,154,0.12);
+    border-radius: 2px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.cr-strip__item:hover {
+    border-color: rgba(213,190,154,0.3);
+    background: rgba(213,190,154,0.04);
+}
+
+.cr-strip__icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 20px;
+    color: #D5BE9A;
+}
+
+.cr-strip__icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #D5BE9A;
+    fill: none;
+}
+
+.cr-strip__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #F5F0E8;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+}
+
+.cr-strip__desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #B7AA98;
+    line-height: 1.65;
+}
+
+/* ---- FORM SECTION ---- */
+.cr-form-section {
+    background: #171614;
+    padding: 100px 0;
+}
+
+.cr-form-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 0;
+    align-items: start;
+}
+
+/* Left Info Panel */
+.cr-info-panel {
+    background: #29221D;
+    padding: 48px;
+    position: sticky;
+    top: 80px;
+    border-right: 1px solid rgba(213,190,154,0.1);
+}
+
+.cr-info-panel__eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #D5BE9A;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.cr-info-panel__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #F5F0E8;
+    line-height: 1.4;
+    margin-bottom: 32px;
+}
+
+.cr-info-panel__divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(213,190,154,0.4);
+    margin-bottom: 32px;
+}
+
+.cr-info-panel__list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.cr-info-panel__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #B7AA98;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(213,190,154,0.08);
+}
+
+.cr-info-panel__list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cr-info-panel__list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    border-radius: 50%;
+    background: #D5BE9A;
+    margin-top: 7px;
+}
+
+.cr-info-panel__contact-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgba(213,190,154,0.6);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.cr-info-panel__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #D5BE9A;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.cr-info-panel__phone:hover {
+    color: #F5F0E8;
+}
+
+.cr-info-panel__phone svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+}
+
+/* Right Form Panel */
+.cr-form-panel {
+    padding: 48px 56px;
+    background: #171614;
+}
+
+.cr-form-panel__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #F5F0E8;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+}
+
+.cr-form-panel__subheading {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: #B7AA98;
+    margin-bottom: 48px;
+    line-height: 1.6;
+}
+
+/* ---- FORM FIELDS ---- */
+.cr-form {
+    width: 100%;
+}
+
+.cr-form__group {
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.cr-form__label {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #D5BE9A;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cr-form__label .optional-tag {
+    font-size: 0.65rem;
+    color: rgba(183,170,152,0.6);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 6px;
+}
+
+.cr-form__input,
+.cr-form__select,
+.cr-form__textarea {
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #F5F0E8;
+    background: rgba(255,255,255,0.03);
+    border: none;
+    border-bottom: 1px solid rgba(213,190,154,0.25);
+    border-radius: 0;
+    padding: 12px 0;
+    outline: none;
+    transition: border-color 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.cr-form__input::placeholder,
+.cr-form__textarea::placeholder {
+    color: rgba(183,170,152,0.45);
+    font-size: 0.9rem;
+}
+
+.cr-form__input:focus,
+.cr-form__select:focus,
+.cr-form__textarea:focus {
+    border-bottom-color: #D5BE9A;
+    background: rgba(213,190,154,0.03);
+}
+
+.cr-form__select {
+    cursor: pointer;
+    color: rgba(245,240,232,0.8);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D5BE9A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    padding-right: 28px;
+}
+
+.cr-form__select option {
+    background: #29221D;
+    color: #F5F0E8;
+}
+
+.cr-form__select option:disabled {
+    color: rgba(183,170,152,0.5);
+}
+
+.cr-form__textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.65;
+}
+
+.cr-form__helper {
+    display: block;
+    margin-top: 7px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(183,170,152,0.55);
+    line-height: 1.5;
+}
+
+/* File Input */
+.cr-file-input__native {
+    display: none;
+}
+
+.cr-file-input__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #D5BE9A;
+    border: 1px solid rgba(213,190,154,0.35);
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+.cr-file-input__trigger:hover {
+    background: rgba(213,190,154,0.08);
+    border-color: rgba(213,190,154,0.6);
+}
+
+.cr-file-input__trigger svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.cr-file-input__name {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: #B7AA98;
+}
+
+.cr-file-preview {
+    margin-top: 16px;
+    display: none;
+}
+
+.cr-file-preview img {
+    max-width: 160px;
+    max-height: 120px;
+    object-fit: cover;
+    border: 1px solid rgba(213,190,154,0.25);
+    display: block;
+}
+
+/* Field error */
+.field-error {
+    display: block;
+    margin-top: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    color: #ff6b6b;
+    letter-spacing: 0.03em;
+}
+
+.cr-form__input.has-error,
+.cr-form__select.has-error,
+.cr-form__textarea.has-error {
+    border-bottom-color: #ff6b6b;
+}
+
+/* Row layout for two inputs */
+.cr-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Submit Button */
+.cr-form__submit {
+    display: block;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #171614;
+    background: #D5BE9A;
+    border: none;
+    padding: 20px 32px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cr-form__submit:hover {
+    background: #c4ad89;
+    transform: translateY(-1px);
+}
+
+.cr-form__submit:active {
+    transform: translateY(0);
+}
+
+.cr-form__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cr-form__submit .btn-loading {
+    display: none;
+}
+
+.cr-form__submit.is-loading .btn-text {
+    display: none;
+}
+
+.cr-form__submit.is-loading .btn-loading {
+    display: inline-block;
+}
+
+/* Flash / Result Messages */
+.cr-message {
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.cr-message--success {
+    background: rgba(76,175,80,0.1);
+    border: 1px solid rgba(76,175,80,0.3);
+    color: #a5d6a7;
+}
+
+.cr-message--error {
+    background: rgba(244,67,54,0.1);
+    border: 1px solid rgba(244,67,54,0.3);
+    color: #ef9a9a;
+}
+
+.cr-message__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    margin-top: 1px;
+}
+
+.cr-message.is-hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .cr-form-section__container {
+        grid-template-columns: 1fr;
+    }
+    .cr-info-panel {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid rgba(213,190,154,0.1);
+    }
+    .cr-form-panel {
+        padding: 48px 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cr-strip__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .cr-form-section {
+        padding: 70px 0;
+    }
+    .cr-form__row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .cr-strip__container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .cr-info-panel {
+        padding: 32px 24px;
+    }
+    .cr-form-panel {
+        padding: 36px 20px;
+    }
+    .cr-hero__headline {
+        font-size: clamp(2.8rem, 10vw, 4rem);
+    }
+    .cr-form-section {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .cr-hero {
+        min-height: 55vh;
+        padding: 60px 20px;
+    }
+    .cr-strip {
+        padding: 40px 0;
+    }
+    .cr-strip__item {
+        padding: 24px 16px;
+    }
+    .cr-form-panel {
+        padding: 28px 16px;
+    }
+    .cr-info-panel {
+        padding: 28px 16px;
+    }
+    .cr-form__submit {
+        font-size: 0.78rem;
+        padding: 18px 24px;
+    }
+}
+</style>
+
+<!-- ===================== HERO ===================== -->
+<section class="cr-hero">
+    <div class="cr-hero__inner">
+        <span class="cr-hero__label">Bespoke Furniture</span>
+        <h1 class="cr-hero__headline">MADE FOR YOU.</h1>
+        <p class="cr-hero__subtitle">Every detail crafted to your vision. Tell us your dream, and we'll bring it to life.</p>
+    </div>
+</section>
+
+<!-- ===================== INTRO STRIP ===================== -->
+<section class="cr-strip">
+    <div class="cr-strip__container">
+
+        <!-- Design Consultation -->
+        <div class="cr-strip__item">
+            <div class="cr-strip__icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+            </div>
+            <h3 class="cr-strip__title">Design Consultation</h3>
+            <p class="cr-strip__desc">Expert guidance to translate your ideas into refined, functional designs.</p>
+        </div>
+
+        <!-- Custom Fabrication -->
+        <div class="cr-strip__item">
+            <div class="cr-strip__icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+            </div>
+            <h3 class="cr-strip__title">Custom Fabrication</h3>
+            <p class="cr-strip__desc">Handcrafted by master artisans using premium materials to your exact specifications.</p>
+        </div>
+
+        <!-- White Glove Delivery -->
+        <div class="cr-strip__item">
+            <div class="cr-strip__icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="1"/>
+                    <path d="M16 8h4l3 4v4h-7V8z"/>
+                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+            </div>
+            <h3 class="cr-strip__title">White Glove Delivery</h3>
+            <p class="cr-strip__desc">Safe, professional delivery and in-home assembly at your convenience.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== FORM SECTION ===================== -->
+<section class="cr-form-section">
+    <div class="cr-form-section__container">
+
+        <!-- LEFT: Info Panel -->
+        <aside class="cr-info-panel">
+            <span class="cr-info-panel__eyebrow">Why Choose Custom?</span>
+            <p class="cr-info-panel__heading">"Your space is unique. Your furniture should be too."</p>
+            <div class="cr-info-panel__divider"></div>
+            <ul class="cr-info-panel__list">
+                <li>Exact dimensions for your space</li>
+                <li>Choice of wood, fabric &amp; finish</li>
+                <li>Built by master craftsmen</li>
+                <li>Delivered and assembled</li>
+            </ul>
+            <span class="cr-info-panel__contact-label">Have questions? Call us</span>
+            <a href="tel:09052751666" class="cr-info-panel__phone">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.03 6.03l.72-.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                09052751666
+            </a>
+        </aside>
+
+        <!-- RIGHT: Form Panel -->
+        <div class="cr-form-panel">
+            <h2 class="cr-form-panel__heading">Request Your Custom Piece</h2>
+            <p class="cr-form-panel__subheading">Fill in the details below and our design team will reach out within 24 hours.</p>
+
+            <!-- PHP Flash Messages -->
+            
+            
+            <!-- AJAX Result Messages -->
+            <div id="ajaxSuccess" class="cr-message cr-message--success is-hidden" role="alert">
+                <svg class="cr-message__icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span id="ajaxSuccessText">Your request has been submitted! We'll contact you within 24 hours.</span>
+            </div>
+            <div id="ajaxError" class="cr-message cr-message--error is-hidden" role="alert">
+                <svg class="cr-message__icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span id="ajaxErrorText">Something went wrong. Please try again.</span>
+            </div>
+
+            <form
+                action="/process-custom-request.php"
+                method="POST"
+                enctype="multipart/form-data"
+                id="customRequestForm"
+                novalidate
+            >
+                <input type="hidden" name="csrf_token" value="4f0bced3ed846291ddf7dc16247668f2db7ad2df2af5b6f6f9071dc0553c6e0f">
+
+                <!-- Row: Name + Phone -->
+                <div class="cr-form__row">
+                    <div class="cr-form__group">
+                        <label class="cr-form__label" for="name">Full Name <span aria-hidden="true">*</span></label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="cr-form__input"
+                            placeholder="Your full name"
+                            autocomplete="name"
+                            maxlength="100"
+                        >
+                        <span class="field-error" id="name-error" aria-live="polite"></span>
+                    </div>
+                    <div class="cr-form__group">
+                        <label class="cr-form__label" for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            class="cr-form__input"
+                            placeholder="+91 XXXXX XXXXX"
+                            autocomplete="tel"
+                            maxlength="15"
+                        >
+                        <span class="field-error" id="phone-error" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="cr-form__group">
+                    <label class="cr-form__label" for="email">Email Address <span class="optional-tag">(Optional)</span></label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="cr-form__input"
+                        placeholder="your@email.com"
+                        autocomplete="email"
+                        maxlength="254"
+                    >
+                    <span class="field-error" id="email-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Category -->
+                <div class="cr-form__group">
+                    <label class="cr-form__label" for="category">Furniture Category <span aria-hidden="true">*</span></label>
+                    <select name="category" id="category" class="cr-form__select">
+                        <option value="" disabled selected>— Select Category —</option>
+                        <option value="Living Room">Living Room</option>
+                        <option value="Bedroom">Bedroom</option>
+                        <option value="Dining Room">Dining Room</option>
+                        <option value="Home Office">Home Office</option>
+                        <option value="Kids Room">Kids Room</option>
+                        <option value="Outdoor">Outdoor</option>
+                        <option value="Storage &amp; Cabinets">Storage &amp; Cabinets</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="field-error" id="category-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Row: Dimensions + Material -->
+                <div class="cr-form__row">
+                    <div class="cr-form__group">
+                        <label class="cr-form__label" for="dimensions">Preferred Dimensions <span class="optional-tag">(Optional)</span></label>
+                        <input
+                            type="text"
+                            name="dimensions"
+                            id="dimensions"
+                            class="cr-form__input"
+                            placeholder="e.g., 6ft × 3ft × 4ft (L×W×H)"
+                            maxlength="200"
+                        >
+                        <span class="cr-form__helper">Length × Width × Height in ft or cm</span>
+                        <span class="field-error" id="dimensions-error" aria-live="polite"></span>
+                    </div>
+                    <div class="cr-form__group">
+                        <label class="cr-form__label" for="material">Material Preference <span class="optional-tag">(Optional)</span></label>
+                        <input
+                            type="text"
+                            name="material"
+                            id="material"
+                            class="cr-form__input"
+                            placeholder="e.g., Teak wood, Sheesham, Fabric sofa"
+                            maxlength="200"
+                        >
+                        <span class="field-error" id="material-error" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <!-- Budget Range -->
+                <div class="cr-form__group">
+                    <label class="cr-form__label" for="budget_range">Budget Range <span aria-hidden="true">*</span></label>
+                    <select name="budget_range" id="budget_range" class="cr-form__select">
+                        <option value="" disabled selected>— Select Budget —</option>
+                        <option value="Under ₹50,000">Under ₹50,000</option>
+                        <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                        <option value="₹1,00,000 – ₹2,00,000">₹1,00,000 – ₹2,00,000</option>
+                        <option value="Above ₹2,00,000">Above ₹2,00,000</option>
+                    </select>
+                    <span class="field-error" id="budget_range-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Project Description -->
+                <div class="cr-form__group">
+                    <label class="cr-form__label" for="description">Project Description <span aria-hidden="true">*</span></label>
+                    <textarea
+                        name="description"
+                        id="description"
+                        class="cr-form__textarea"
+                        rows="5"
+                        placeholder="Describe your vision in detail — style, purpose, special requirements..."
+                        maxlength="2000"
+                    ></textarea>
+                    <span class="cr-form__helper">Minimum 20 characters. The more detail, the better!</span>
+                    <span class="field-error" id="description-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Reference Image -->
+                <div class="cr-form__group">
+                    <label class="cr-form__label">Reference Image <span class="optional-tag">(Optional)</span></label>
+                    <input
+                        type="file"
+                        name="reference_image"
+                        id="reference_image"
+                        class="cr-file-input__native"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                    <label for="reference_image" class="cr-file-input__trigger">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                        Choose Image
+                    </label>
+                    <span class="cr-file-input__name" id="fileName">No file chosen</span>
+                    <span class="cr-form__helper">JPG, PNG, or WEBP · Max 5MB</span>
+                    <div class="cr-file-preview" id="filePreview">
+                        <img id="previewImg" src="" alt="Reference preview">
+                    </div>
+                    <span class="field-error" id="reference_image-error" aria-live="polite"></span>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="cr-form__submit" id="submitBtn">
+                    <span class="btn-text">SUBMIT REQUEST &nbsp;→</span>
+                    <span class="btn-loading">Submitting…</span>
+                </button>
+
+            </form>
+            <script>
+                (function() {
+                  var crForm = document.getElementById('customRequestForm');
+                  if (crForm) {
+                    crForm.addEventListener('submit', function(e) {
+                      if (window.location.hostname.includes('vercel.app') || window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
+                        e.preventDefault();
+                        var name = (crForm.elements['client_name'] && crForm.elements['client_name'].value) || '';
+                        var phone = (crForm.elements['phone'] && crForm.elements['phone'].value) || '';
+                        var email = (crForm.elements['email'] && crForm.elements['email'].value) || '';
+                        var category = (crForm.elements['category_id'] && crForm.elements['category_id'].options[crForm.elements['category_id'].selectedIndex]?.text) || '';
+                        var wood = (crForm.elements['preferred_wood'] && crForm.elements['preferred_wood'].value) || '';
+                        var budget = (crForm.elements['budget_range'] && crForm.elements['budget_range'].value) || '';
+                        var brief = (crForm.elements['design_brief'] && crForm.elements['design_brief'].value) || '';
+                        
+                        var text = encodeURIComponent('🪵 *Grand Living Vizag — Bespoke Furniture Commission*\n\n' +
+                          '• *Client:* ' + name + '\n' +
+                          '• *Phone:* ' + phone + '\n' +
+                          '• *Email:* ' + (email || 'Not specified') + '\n' +
+                          '• *Category:* ' + category + '\n' +
+                          '• *Preferred Wood:* ' + wood + '\n' +
+                          '• *Budget Range:* ' + budget + '\n' +
+                          '• *Design Brief:* ' + brief);
+                        
+                        alert('Thank you, ' + (name || 'valued client') + '! Opening WhatsApp to connect your bespoke commission directly with our Master Craftsmen...');
+                        window.open('https://wa.me/919052751666?text=' + text, '_blank');
+                      }
+                    });
+                  }
+                })();
+            </script>
+        </div><!-- /.cr-form-panel -->
+
+    </div><!-- /.cr-form-section__container -->
+</section>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ---- Helpers ---- */
+    function el(id) { return document.getElementById(id); }
+    function showError(fieldId, msg) {
+        var errEl = el(fieldId + '-error');
+        var inputEl = el(fieldId);
+        if (errEl) errEl.textContent = msg;
+        if (inputEl) inputEl.classList.add('has-error');
+    }
+    function clearError(fieldId) {
+        var errEl = el(fieldId + '-error');
+        var inputEl = el(fieldId);
+        if (errEl) errEl.textContent = '';
+        if (inputEl) inputEl.classList.remove('has-error');
+    }
+    function clearAllErrors() {
+        ['name','phone','email','category','budget_range','description','reference_image'].forEach(clearError);
+    }
+
+    /* ---- Live clear on input ---- */
+    ['name','phone','email','category','budget_range','description'].forEach(function(id) {
+        var el_ = el(id);
+        if (!el_) return;
+        el_.addEventListener('input', function() { clearError(id); });
+        el_.addEventListener('change', function() { clearError(id); });
+    });
+
+    /* ---- File Input Handling ---- */
+    var fileInput  = el('reference_image');
+    var fileNameEl = el('fileName');
+    var filePreviewEl = el('filePreview');
+    var previewImg = el('previewImg');
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            clearError('reference_image');
+            var file = fileInput.files[0];
+            if (!file) {
+                fileNameEl.textContent = 'No file chosen';
+                filePreviewEl.style.display = 'none';
+                return;
+            }
+
+            /* Validate type */
+            var allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!allowedTypes.includes(file.type)) {
+                showError('reference_image', 'Please upload a JPG, PNG, or WEBP image.');
+                fileInput.value = '';
+                fileNameEl.textContent = 'No file chosen';
+                filePreviewEl.style.display = 'none';
+                return;
+            }
+
+            /* Validate size 5MB */
+            if (file.size > 5 * 1024 * 1024) {
+                showError('reference_image', 'Image must be under 5MB.');
+                fileInput.value = '';
+                fileNameEl.textContent = 'No file chosen';
+                filePreviewEl.style.display = 'none';
+                return;
+            }
+
+            fileNameEl.textContent = file.name;
+
+            /* Preview */
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                previewImg.src = e.target.result;
+                filePreviewEl.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    /* ---- Validation ---- */
+    function validate() {
+        var valid = true;
+
+        /* Name */
+        var name = el('name').value.trim();
+        if (name.length < 2) {
+            showError('name', 'Please enter your full name (at least 2 characters).');
+            valid = false;
+        }
+
+        /* Phone */
+        var phone = el('phone').value.replace(/\s+/g, '').replace(/^\+91/, '');
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            showError('phone', 'Enter a valid 10-digit Indian mobile number.');
+            valid = false;
+        }
+
+        /* Email — optional but validate if filled */
+        var email = el('email').value.trim();
+        if (email.length > 0) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email', 'Please enter a valid email address.');
+                valid = false;
+            }
+        }
+
+        /* Category */
+        var category = el('category').value;
+        if (!category) {
+            showError('category', 'Please select a furniture category.');
+            valid = false;
+        }
+
+        /* Budget */
+        var budget = el('budget_range').value;
+        if (!budget) {
+            showError('budget_range', 'Please select a budget range.');
+            valid = false;
+        }
+
+        /* Description */
+        var desc = el('description').value.trim();
+        if (desc.length < 20) {
+            showError('description', 'Please describe your project in at least 20 characters.');
+            valid = false;
+        }
+
+        /* File — revalidate if present */
+        if (fileInput && fileInput.files[0]) {
+            var file = fileInput.files[0];
+            var allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!allowedTypes.includes(file.type)) {
+                showError('reference_image', 'Please upload a JPG, PNG, or WEBP image.');
+                valid = false;
+            } else if (file.size > 5 * 1024 * 1024) {
+                showError('reference_image', 'Image must be under 5MB.');
+                valid = false;
+            }
+        }
+
+        return valid;
+    }
+
+    /* ---- Show result messages ---- */
+    function showSuccess(msg) {
+        var box = el('ajaxSuccess');
+        var txt = el('ajaxSuccessText');
+        if (txt) txt.textContent = msg;
+        if (box) box.classList.remove('is-hidden');
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function showAjaxError(msg) {
+        var box = el('ajaxError');
+        var txt = el('ajaxErrorText');
+        if (txt) txt.textContent = msg;
+        if (box) box.classList.remove('is-hidden');
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function hideMessages() {
+        var s = el('ajaxSuccess'); if (s) s.classList.add('is-hidden');
+        var e = el('ajaxError'); if (e) e.classList.add('is-hidden');
+    }
+
+    /* ---- Form Submit ---- */
+    var form = el('customRequestForm');
+    var submitBtn = el('submitBtn');
+
+    if (form) {
+        form.addEventListener('submit', function (evt) {
+            evt.preventDefault();
+            clearAllErrors();
+            hideMessages();
+
+            if (!validate()) {
+                /* Scroll to first error */
+                var firstErr = form.querySelector('.field-error:not(:empty)');
+                if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            /* Loading state */
+            submitBtn.disabled = true;
+            submitBtn.classList.add('is-loading');
+
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (data) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('is-loading');
+
+                if (data.success) {
+                    var msg = data.message || 'Your custom request has been submitted! We\'ll contact you within 24 hours.';
+                    if (data.reference_id) {
+                        msg = 'Your request has been submitted! Reference ID: #' + data.reference_id + '. We will contact you within 24 hours.';
+                    }
+                    showSuccess(msg);
+                    form.reset();
+                    fileNameEl.textContent = 'No file chosen';
+                    filePreviewEl.style.display = 'none';
+                } else {
+                    showAjaxError(data.message || 'Something went wrong. Please try again.');
+                }
+            })
+            .catch(function (err) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('is-loading');
+                showAjaxError('A network error occurred. Please check your connection and try again.');
+                console.error('Request error:', err);
+            });
+        });
+    }
+
+})();
+</script>
+
+</main>
+
+<!-- ============================================================
+     HAUTE-COUTURE LUXURY ATELIER FOOTER
+     ============================================================ -->
+<footer class="footer luxury-footer" id="siteFooter">
+
+  <!-- BACK SIDE STORE NAME ANIMATED: Dual-Track Architectural Kinetic Typography -->
+  <div class="luxury-footer__backdrop" aria-hidden="true">
+    <!-- Primary Giant Outline Typography: GRAND FURNITURE VIZAG -->
+    <div class="luxury-footer__marquee-track luxury-footer__marquee-track--primary">
+      <div class="luxury-footer__marquee-content">
+        <span class="marquee-brand">GRAND FURNITURE VIZAG</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">THE ART OF LIVING BEAUTIFULLY</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-brand">GRAND LIVING</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">VISAKHAPATNAM</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-brand">GRAND FURNITURE VIZAG</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">THE ART OF LIVING BEAUTIFULLY</span>
+        <span class="marquee-bullet">&bull;</span>
+      </div>
+      <div class="luxury-footer__marquee-content" aria-hidden="true">
+        <span class="marquee-brand">GRAND FURNITURE VIZAG</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">THE ART OF LIVING BEAUTIFULLY</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-brand">GRAND LIVING</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">VISAKHAPATNAM</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-brand">GRAND FURNITURE VIZAG</span>
+        <span class="marquee-bullet">&bull;</span>
+        <span class="marquee-tagline">THE ART OF LIVING BEAUTIFULLY</span>
+        <span class="marquee-bullet">&bull;</span>
+      </div>
+    </div>
+
+    <!-- Secondary Reverse Track: ARCHITECTURAL ATELIER -->
+    <div class="luxury-footer__marquee-track luxury-footer__marquee-track--secondary">
+      <div class="luxury-footer__marquee-content luxury-footer__marquee-content--reverse">
+        <span>ARCHITECTURAL FURNITURE ATELIER</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>VISAKHAPATNAM FLAGSHIP SHOWROOM</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>MASTER CRAFTSMANSHIP &amp; HERITAGE</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>TIMELESS LUXURY DESIGN</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>ARCHITECTURAL FURNITURE ATELIER</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>VISAKHAPATNAM FLAGSHIP SHOWROOM</span>
+        <span class="marquee-sep">&mdash;</span>
+      </div>
+      <div class="luxury-footer__marquee-content luxury-footer__marquee-content--reverse" aria-hidden="true">
+        <span>ARCHITECTURAL FURNITURE ATELIER</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>VISAKHAPATNAM FLAGSHIP SHOWROOM</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>MASTER CRAFTSMANSHIP &amp; HERITAGE</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>TIMELESS LUXURY DESIGN</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>ARCHITECTURAL FURNITURE ATELIER</span>
+        <span class="marquee-sep">&mdash;</span>
+        <span>VISAKHAPATNAM FLAGSHIP SHOWROOM</span>
+        <span class="marquee-sep">&mdash;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Hairline Border with Centered Gold Monogram Crest -->
+  <div class="luxury-footer__top-accent">
+    <div class="luxury-footer__accent-line"></div>
+    <div class="luxury-footer__crest-badge">
+      <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="44" stroke="#D5BE9A" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7"/>
+        <circle cx="50" cy="50" r="37" stroke="#D5BE9A" stroke-width="0.6" opacity="0.4"/>
+        <path d="M62 34 C 55 28, 41 28, 35 38 C 29 47, 29 57, 35 65 C 41 73, 55 73, 62 66 L 62 50 L 48 50" stroke="#D5BE9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="luxury-footer__accent-line"></div>
+  </div>
+
+  <div class="container luxury-footer__foreground">
+    <div class="luxury-footer__grid">
+      
+      <!-- Brand Column -->
+      <div class="luxury-footer__col luxury-footer__col--brand">
+        <a href="/" class="luxury-footer__brand-title">
+          <span class="luxury-footer__brand-main">GRAND FURNITURE VIZAG</span>
+          <span class="luxury-footer__brand-sub">THE ART OF LIVING BEAUTIFULLY</span>
+        </a>
+        <p class="luxury-footer__brand-text">
+          Visakhapatnam's premier destination for luxury, handcrafted furniture. Each piece is designed and crafted by master artisans.
+        </p>
+
+        <!-- Social Icons with orbital hover animation -->
+        <div class="luxury-footer__socials">
+          <a href="#" aria-label="Facebook" class="luxury-footer__social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="luxury-footer__social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="luxury-footer__social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Collections Column -->
+      <div class="luxury-footer__col">
+        <h4 class="luxury-footer__heading">
+          <span class="luxury-footer__heading-dot"></span>
+          Collections
+        </h4>
+        <ul class="luxury-footer__links">
+          <li>
+            <a href="/catalogue.php?category=living-room" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Living Room</span>
+            </a>
+          </li>
+          <li>
+            <a href="/catalogue.php?category=bedroom" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Bedroom</span>
+            </a>
+          </li>
+          <li>
+            <a href="/catalogue.php?category=dining-room" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Dining Room</span>
+            </a>
+          </li>
+          <li>
+            <a href="/catalogue.php?category=home-office" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Home Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="/catalogue.php?category=wardrobes" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Wardrobes</span>
+            </a>
+          </li>
+          <li>
+            <a href="/catalogue.php?category=outdoor" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Outdoor</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="luxury-footer__col">
+        <h4 class="luxury-footer__heading">
+          <span class="luxury-footer__heading-dot"></span>
+          Quick Links
+        </h4>
+        <ul class="luxury-footer__links">
+          <li>
+            <a href="/about.php" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Our Story</span>
+            </a>
+          </li>
+          <li>
+            <a href="/gallery.php" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Gallery</span>
+            </a>
+          </li>
+          <li>
+            <a href="/custom-request.php" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Custom Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact.php" class="luxury-footer__link">
+              <span class="luxury-footer__link-arrow">&rarr;</span>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Visit Us Column -->
+      <div class="luxury-footer__col luxury-footer__col--visit">
+        <h4 class="luxury-footer__heading">
+          <span class="luxury-footer__heading-dot"></span>
+          Visit Us
+        </h4>
+        
+        <p class="luxury-footer__address">
+          Grand Living, Dwaraka Nagar Main Road,<br>
+          Visakhapatnam, AP – 530 016
+        </p>
+
+        <!-- Direct Maps Button with glowing hover -->
+        <a href="https://maps.app.goo.gl/4H7RJMT3GGWLZR7R7" target="_blank" rel="noopener noreferrer" class="luxury-footer__maps-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Get Directions on Maps &rarr;
+        </a>
+
+        <!-- Phone & Email -->
+        <div class="luxury-footer__contacts">
+          <a href="tel:09052751666" class="luxury-footer__contact-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            09052751666
+          </a>
+          <a href="mailto:hello@grandfurniturevizag.com" class="luxury-footer__contact-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            hello@grandfurniturevizag.com
+          </a>
+        </div>
+
+        <!-- Hours -->
+        <div class="luxury-footer__hours">
+          <span>Mon–Sat: 10 AM – 8 PM</span>
+          <span>Sunday: 11 AM – 6 PM</span>
+        </div>
+      </div>
+
+    </div><!-- /luxury-footer__grid -->
+
+    <!-- Bottom Bar ("at last") -->
+    <div class="luxury-footer__bottom">
+      <div class="luxury-footer__copyright">
+        &copy; 2026 Grand Furniture Vizag. All rights reserved.
+      </div>
+      <div class="luxury-footer__partner">
+        Done by Gnanachandra &bull; <a href="#" target="_blank" rel="noopener">Gnanacreats</a>
+      </div>
+    </div>
+  </div><!-- /container -->
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919052751666"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp"
+   style="
+     position: fixed;
+     bottom: 1.5rem;
+     right: 1.5rem;
+     z-index: 500;
+     width: 56px;
+     height: 56px;
+     border-radius: 50%;
+     background: #25D366;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   ">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
+  </svg>
+</a>
+
+<!-- Scroll to Top -->
+<button id="scrollTop" aria-label="Scroll to top" style="
+  position: fixed;
+  bottom: 1.5rem;
+  right: 5rem;
+  z-index: 500;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(23,22,20,0.8);
+  border: 1px solid rgba(213,190,154,0.3);
+  color: #D5BE9A;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+// --- Haute-Couture Architectural Curtain Loader ---
+(function() {
+  var loader = document.getElementById('grandLoader');
+  var fill = document.getElementById('loaderFill');
+  var counter = document.getElementById('loaderCounter');
+  if (!loader) return;
+
+  var progress = 0;
+  var interval = setInterval(function() {
+    progress += Math.floor(Math.random() * 8) + 4;
+    if (progress > 100) progress = 100;
+    
+    if (fill) fill.style.width = progress + '%';
+    if (counter) counter.textContent = (progress < 10 ? '0' : '') + progress;
+    
+    if (progress >= 100) {
+      clearInterval(interval);
+      setTimeout(function() {
+        loader.classList.add('is-done');
+        
+        // Trigger cinematic scale-down on hero background
+        var heroBg = document.getElementById('heroBg');
+        if (heroBg && typeof gsap !== 'undefined') {
+          gsap.fromTo(heroBg, 
+            { scale: 1.15 }, 
+            { scale: 1.0, duration: 2.2, ease: 'power2.out' }
+          );
+        }
+      }, 300);
+
+      setTimeout(function() {
+        loader.remove();
+      }, 1500);
+    }
+  }, 40);
+})();
+
+// --- Sticky nav ---
+(function() {
+  var nav = document.getElementById('mainNav');
+  if (!nav) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 80) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
+  }, { passive: true });
+})();
+
+// --- Architectural Atelier Menu Toggle ---
+(function() {
+  var hamburger = document.getElementById('navHamburger');
+  var mobile = document.getElementById('navMobile');
+  if (!hamburger || !mobile) return;
+  
+  hamburger.addEventListener('click', function() {
+    var isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    var nextState = !isOpen;
+    hamburger.setAttribute('aria-expanded', nextState);
+    mobile.classList.toggle('is-open', nextState);
+    mobile.setAttribute('aria-hidden', !nextState);
+    document.body.classList.toggle('is-menu-open', nextState);
+    document.body.style.overflow = nextState ? 'hidden' : '';
+  });
+  
+  // Close on link click
+  mobile.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobile.classList.remove('is-open');
+      mobile.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-menu-open');
+      document.body.style.overflow = '';
+    });
+  });
+  
+  // Close on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobile.classList.contains('is-open')) {
+      hamburger.click();
+    }
+  });
+})();
+
+// --- Scroll to top ---
+(function() {
+  var btn = document.getElementById('scrollTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 600) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
+    }
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+</script>
+
+<!-- Footer responsive fix -->
+<style>
+  @media (max-width: 992px) {
+    .footer > .container > div:first-child {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 576px) {
+    .footer > .container > div:first-child {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 30px rgba(37,211,102,0.5) !important;
+  }
+</style>
+
+<script src="/assets/js/cursor.js" defer></script>
+
+</body>
+</html>
