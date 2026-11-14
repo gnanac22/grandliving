@@ -2,35 +2,131 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/index.php", "destination": "/", "permanent": true },
-    { "source": "/about.php", "destination": "/about", "permanent": true },
-    { "source": "/catalogue.php", "destination": "/catalogue", "permanent": true },
-    { "source": "/contact.php", "destination": "/contact", "permanent": true },
-    { "source": "/custom-request.php", "destination": "/custom-request", "permanent": true },
-    { "source": "/gallery.php", "destination": "/gallery", "permanent": true },
-    { "source": "/product.php", "destination": "/catalogue", "permanent": true },
-    { "source": "/blindfold-sale-offer.php", "destination": "/blindfold-sale-offer", "permanent": true },
-    { "source": "/login.php", "destination": "/login", "permanent": true },
-    { "source": "/register.php", "destination": "/register", "permanent": true }
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.php",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/catalogue.php",
+      "destination": "/catalogue",
+      "permanent": true
+    },
+    {
+      "source": "/contact.php",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/custom-request.php",
+      "destination": "/custom-request",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.php",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/product.php",
+      "destination": "/catalogue",
+      "permanent": true
+    },
+    {
+      "source": "/blindfold-sale-offer.php",
+      "destination": "/blindfold-sale-offer",
+      "permanent": true
+    },
+    {
+      "source": "/login.php",
+      "destination": "/login",
+      "permanent": true
+    },
+    {
+      "source": "/register.php",
+      "destination": "/register",
+      "permanent": true
+    },
+    {
+      "source": "/customer/account/create",
+      "destination": "/register",
+      "permanent": true
+    },
+    {
+      "source": "/customer/account/login",
+      "destination": "/login",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/catalogue", "destination": "/catalogue.html" },
-    { "source": "/collections", "destination": "/catalogue.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/showroom", "destination": "/contact.html" },
-    { "source": "/custom-request", "destination": "/custom-request.html" },
-    { "source": "/custom", "destination": "/custom-request.html" },
-    { "source": "/gallery", "destination": "/gallery.html" },
-    { "source": "/product", "destination": "/product.html" },
-    { "source": "/blindfold-sale-offer", "destination": "/blindfold-sale-offer.html" },
-    { "source": "/blindfold", "destination": "/blindfold-sale-offer.html" },
-    { "source": "/offers", "destination": "/blindfold-sale-offer.html" },
-    { "source": "/login", "destination": "/login.html" },
-    { "source": "/register", "destination": "/register.html" },
-    { "source": "/signup", "destination": "/register.html" },
-    { "source": "/customer/account/create", "destination": "/register.html" },
-    { "source": "/customer/account/login", "destination": "/login.html" },
-    { "source": "/products/:slug", "destination": "/products/:slug.html" }
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/catalogue",
+      "destination": "/catalogue.html"
+    },
+    {
+      "source": "/collections",
+      "destination": "/catalogue.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/showroom",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/custom-request",
+      "destination": "/custom-request.html"
+    },
+    {
+      "source": "/custom",
+      "destination": "/custom-request.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery.html"
+    },
+    {
+      "source": "/product",
+      "destination": "/product.html"
+    },
+    {
+      "source": "/blindfold-sale-offer",
+      "destination": "/blindfold-sale-offer.html"
+    },
+    {
+      "source": "/blindfold",
+      "destination": "/blindfold-sale-offer.html"
+    },
+    {
+      "source": "/offers",
+      "destination": "/blindfold-sale-offer.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/register",
+      "destination": "/register.html"
+    },
+    {
+      "source": "/signup",
+      "destination": "/register.html"
+    },
+    {
+      "source": "/products/:slug",
+      "destination": "/products/:slug.html"
+    }
   ]
 }
