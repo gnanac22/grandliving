@@ -8,7 +8,8 @@
     { "source": "/contact.php", "destination": "/contact", "permanent": true },
     { "source": "/custom-request.php", "destination": "/custom-request", "permanent": true },
     { "source": "/gallery.php", "destination": "/gallery", "permanent": true },
-    { "source": "/product.php", "destination": "/catalogue", "permanent": true }
+    { "source": "/product.php", "destination": "/catalogue", "permanent": true },
+    { "source": "/blindfold-sale-offer.php", "destination": "/blindfold-sale-offer", "permanent": true }
   ],
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
@@ -20,6 +21,9 @@
     { "source": "/custom", "destination": "/custom-request.html" },
     { "source": "/gallery", "destination": "/gallery.html" },
     { "source": "/product", "destination": "/product.html" },
+    { "source": "/blindfold-sale-offer", "destination": "/blindfold-sale-offer.html" },
+    { "source": "/blindfold", "destination": "/blindfold-sale-offer.html" },
+    { "source": "/offers", "destination": "/blindfold-sale-offer.html" },
     { "source": "/products/:slug", "destination": "/products/:slug.html" }
   ]
 }

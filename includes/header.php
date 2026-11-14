@@ -251,11 +251,12 @@ $current_page     = basename($_SERVER['PHP_SELF'], '.php');
     <!-- Desktop Links -->
     <ul class="nav__links" id="navLinks">
       <li><a href="/" class="nav__link <?= $current_page === 'index' ? 'is-active' : '' ?>">Home</a></li>
-      <li><a href="/catalogue.php" class="nav__link <?= $current_page === 'catalogue' ? 'is-active' : '' ?>">Collections</a></li>
-      <li><a href="/about.php" class="nav__link <?= $current_page === 'about' ? 'is-active' : '' ?>">Our Story</a></li>
-      <li><a href="/gallery.php" class="nav__link <?= $current_page === 'gallery' ? 'is-active' : '' ?>">Gallery</a></li>
-      <li><a href="/custom-request.php" class="nav__link <?= $current_page === 'custom-request' ? 'is-active' : '' ?>">Custom Order</a></li>
-      <li><a href="/contact.php" class="nav__link <?= $current_page === 'contact' ? 'is-active' : '' ?>">Showroom</a></li>
+      <li><a href="/catalogue" class="nav__link <?= $current_page === 'catalogue' ? 'is-active' : '' ?>">Collections</a></li>
+      <li><a href="/about" class="nav__link <?= $current_page === 'about' ? 'is-active' : '' ?>">Our Story</a></li>
+      <li><a href="/gallery" class="nav__link <?= $current_page === 'gallery' ? 'is-active' : '' ?>">Gallery</a></li>
+      <li><a href="/custom-request" class="nav__link <?= $current_page === 'custom-request' ? 'is-active' : '' ?>">Custom Order</a></li>
+      <li><a href="/contact" class="nav__link <?= $current_page === 'contact' ? 'is-active' : '' ?>">Showroom</a></li>
+      <li><a href="/blindfold-sale-offer" class="nav-blindfold-pill"><span class="nav-blindfold-pulse"></span>Blindfold Offers</a></li>
     </ul>
 
     <!-- Actions -->
@@ -353,13 +354,25 @@ $current_page     = basename($_SERVER['PHP_SELF'], '.php');
           </a>
 
           <!-- 06 Showroom & Directions -->
-          <a href="/contact.php" class="atelier-nav__item <?= $current_page === 'contact' ? 'is-active' : '' ?>">
+          <a href="/contact" class="atelier-nav__item <?= $current_page === 'contact' ? 'is-active' : '' ?>">
             <span class="atelier-nav__num">06</span>
             <div class="atelier-nav__item-content">
               <span class="atelier-nav__title">Showroom Directions</span>
               <span class="atelier-nav__sub">Dwaraka Nagar Flagship, Visakhapatnam</span>
             </div>
             <span class="atelier-nav__arrow">&rarr;</span>
+          </a>
+
+          <!-- 07 Blindfold Sale Offers (Royaloak Inspired) -->
+          <a href="/blindfold-sale-offer" class="atelier-nav__item" style="border:1px solid rgba(213,190,154,0.3);background:rgba(213,190,154,0.06);border-radius:8px;margin-top:8px;">
+            <span class="atelier-nav__num" style="color:#D5BE9A;">07</span>
+            <div class="atelier-nav__item-content">
+              <span class="atelier-nav__title" style="color:#D5BE9A;display:flex;align-items:center;gap:6px;">
+                <span class="nav-blindfold-pulse"></span>Blindfold Sale (5 Tiers)
+              </span>
+              <span class="atelier-nav__sub">Unlock Free Recliners, Tables &amp; Slabs</span>
+            </div>
+            <span class="atelier-nav__arrow" style="color:#D5BE9A;">&rarr;</span>
           </a>
         </nav>
       </div>

@@ -3937,3 +3937,478 @@ html {
   color: #F5F0E8;
   letter-spacing: 0.1em;
 }
+
+/* ============================================================
+   BLINDFOLD SALE OFFERS (5 SCROLLING TIERS - ROYALOAK STYLE)
+   ============================================================ */
+
+/* 1. Continuous Animated Marquee Ribbon */
+.blindfold-marquee-bar {
+  background: linear-gradient(90deg, #12100E 0%, #1c1814 50%, #12100E 100%);
+  border-top: 1px solid rgba(213, 190, 154, 0.2);
+  border-bottom: 1px solid rgba(213, 190, 154, 0.25);
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 15;
+}
+.blindfold-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: blindfoldMarquee 38s linear infinite;
+}
+.blindfold-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes blindfoldMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.blindfold-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #F5F0E8;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.blindfold-marquee-item:hover {
+  opacity: 0.85;
+}
+.blindfold-marquee-badge {
+  background: #D5BE9A;
+  color: #12100E;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.blindfold-marquee-dot {
+  width: 5px;
+  height: 5px;
+  background: #D5BE9A;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 12px;
+  opacity: 0.5;
+}
+
+/* 2. Blindfold Offers 5-Tier Showcase Section */
+.blindfold-section {
+  padding: clamp(48px, 6vw, 84px) 0 clamp(40px, 5vw, 72px);
+  background: radial-gradient(circle at 50% 0%, #201b16 0%, #141210 65%, #0d0c0a 100%);
+  border-bottom: 1px solid rgba(213, 190, 154, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.blindfold-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(213, 190, 154, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.blindfold-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 32px;
+  position: relative;
+  z-index: 2;
+}
+.blindfold-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(213, 190, 154, 0.12);
+  border: 1px solid rgba(213, 190, 154, 0.35);
+  color: #D5BE9A;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+}
+.blindfold-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: #F5F0E8;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.blindfold-title span {
+  font-style: italic;
+  color: #D5BE9A;
+}
+.blindfold-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(0.85rem, 1.4vw, 0.98rem);
+  color: #B7AA98;
+  line-height: 1.6;
+}
+
+/* Slab Filter Pills */
+.blindfold-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+.blindfold-filter-btn {
+  background: rgba(30, 26, 23, 0.7);
+  border: 1px solid rgba(213, 190, 154, 0.22);
+  color: #B7AA98;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.blindfold-filter-btn:hover,
+.blindfold-filter-btn.is-active {
+  background: #D5BE9A;
+  color: #12100E;
+  border-color: #D5BE9A;
+  box-shadow: 0 4px 18px rgba(213, 190, 154, 0.35);
+  font-weight: 700;
+  transform: translateY(-2px);
+}
+
+/* Carousel Scroller Container */
+.blindfold-carousel-outer {
+  position: relative;
+  margin-bottom: 24px;
+}
+.blindfold-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(23, 22, 20, 0.92);
+  border: 1px solid rgba(213, 190, 154, 0.4);
+  color: #D5BE9A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+.blindfold-carousel-nav:hover {
+  background: #D5BE9A;
+  color: #12100E;
+  transform: translateY(-50%) scale(1.08);
+}
+.blindfold-carousel-prev { left: -8px; }
+.blindfold-carousel-next { right: -8px; }
+
+@media (min-width: 1200px) {
+  .blindfold-carousel-prev { left: -22px; }
+  .blindfold-carousel-next { right: -22px; }
+}
+
+.blindfold-carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 24px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(213, 190, 154, 0.4) transparent;
+}
+.blindfold-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.blindfold-carousel-track::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.blindfold-carousel-track::-webkit-scrollbar-thumb {
+  background: rgba(213, 190, 154, 0.4);
+  border-radius: 10px;
+}
+
+/* Individual 5 Offer Cards */
+.blindfold-card {
+  flex: 0 0 clamp(290px, 31vw, 360px);
+  scroll-snap-align: start;
+  background: linear-gradient(165deg, rgba(32, 27, 23, 0.9) 0%, rgba(20, 18, 16, 0.95) 100%);
+  border: 1px solid rgba(213, 190, 154, 0.25);
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+}
+.blindfold-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(213, 190, 154, 0.6);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.7), 0 0 20px rgba(213, 190, 154, 0.2);
+}
+.blindfold-card.is-featured {
+  border-color: rgba(213, 190, 154, 0.75);
+  background: linear-gradient(165deg, rgba(45, 36, 28, 0.95) 0%, rgba(24, 21, 18, 0.95) 100%);
+  box-shadow: 0 12px 34px rgba(213, 190, 154, 0.15);
+}
+
+.blindfold-card__badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.blindfold-card__tier-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #D5BE9A;
+}
+.blindfold-card__status-tag {
+  background: rgba(213, 190, 154, 0.18);
+  border: 1px solid rgba(213, 190, 154, 0.4);
+  color: #F5F0E8;
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.blindfold-card.is-featured .blindfold-card__status-tag {
+  background: #D5BE9A;
+  color: #12100E;
+  font-weight: 800;
+}
+
+.blindfold-card__img-wrap {
+  position: relative;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #141210;
+  border: 1px solid rgba(213, 190, 154, 0.15);
+}
+.blindfold-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.blindfold-card:hover .blindfold-card__img-wrap img {
+  transform: scale(1.08);
+}
+.blindfold-card__gift-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(18, 16, 14, 0.88);
+  border: 1px solid rgba(213, 190, 154, 0.5);
+  color: #D5BE9A;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+}
+
+.blindfold-card__spend-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #B7AA98;
+  margin-bottom: 4px;
+}
+.blindfold-card__slab-amount {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: #F5F0E8;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.blindfold-card__reward-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #D5BE9A;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.blindfold-card__reward-desc {
+  font-size: 0.78rem;
+  color: #B7AA98;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* Coupon Box */
+.blindfold-coupon-box {
+  background: rgba(18, 16, 14, 0.7);
+  border: 1px dashed rgba(213, 190, 154, 0.45);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.blindfold-coupon-code {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F5F0E8;
+  letter-spacing: 0.1em;
+}
+.blindfold-coupon-copy {
+  background: transparent;
+  border: 1px solid rgba(213, 190, 154, 0.4);
+  color: #D5BE9A;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+.blindfold-coupon-copy:hover {
+  background: #D5BE9A;
+  color: #12100E;
+}
+
+/* WhatsApp Claim Button */
+.blindfold-claim-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+.blindfold-claim-btn:hover {
+  background: #1EBE5D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+/* Card Perks list */
+.blindfold-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+}
+.blindfold-perks-list li {
+  font-size: 0.74rem;
+  color: #E8DFD2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+.blindfold-perks-list li svg {
+  flex-shrink: 0;
+  color: #D5BE9A;
+}
+
+/* Bottom info & link */
+.blindfold-footer-cta {
+  text-align: center;
+  margin-top: 14px;
+}
+.blindfold-terms-link {
+  color: #D5BE9A;
+  font-size: 0.82rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+.blindfold-terms-link:hover {
+  color: #F5F0E8;
+  text-decoration: underline;
+}
+
+/* Navbar Blindfold Offer Pill */
+.nav-blindfold-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(213, 190, 154, 0.2) 0%, rgba(118, 84, 59, 0.3) 100%);
+  border: 1px solid rgba(213, 190, 154, 0.5);
+  color: #D5BE9A !important;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px rgba(213, 190, 154, 0.2);
+}
+.nav-blindfold-pill:hover {
+  background: #D5BE9A;
+  color: #12100E !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(213, 190, 154, 0.4);
+}
+.nav-blindfold-pulse {
+  width: 6px;
+  height: 6px;
+  background: #E63946;
+  border-radius: 50%;
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+

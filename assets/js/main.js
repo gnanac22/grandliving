@@ -1184,6 +1184,97 @@ const initWishlistToggle = () => {
 };
 
 // ============================================================
+// BLINDFOLD SALE OFFERS (5 SCROLLING TIERS)
+// ============================================================
+
+function initBlindfoldOffers() {
+  const track = document.getElementById('blindfoldCarouselTrack');
+  const prevBtn = document.getElementById('blindfoldPrev');
+  const nextBtn = document.getElementById('blindfoldNext');
+  const filterBtns = document.querySelectorAll('.blindfold-filter-btn');
+  const copyBtns = document.querySelectorAll('.blindfold-coupon-copy');
+
+  if (track && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      const card = track.querySelector('.blindfold-card');
+      const step = (card ? card.offsetWidth : 320) + 20;
+      track.scrollBy({ left: -step, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const card = track.querySelector('.blindfold-card');
+      const step = (card ? card.offsetWidth : 320) + 20;
+      track.scrollBy({ left: step, behavior: 'smooth' });
+    });
+  }
+
+  // Filter tabs
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const slab = btn.getAttribute('data-slab');
+      if (!track) return;
+
+      if (slab === 'all') {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        const targetCard = track.querySelector(`.blindfold-card[data-slab="${slab}"]`);
+        if (targetCard) {
+          const offset = targetCard.offsetLeft - track.offsetLeft;
+          track.scrollTo({ left: offset, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Copy offer coupon code
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.getAttribute('data-code');
+      if (!code) return;
+
+      const notifySuccess = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'COPIED!';
+        btn.style.background = '#D5BE9A';
+        btn.style.color = '#12100E';
+        if (window.GrandFurniture && typeof window.GrandFurniture.showToast === 'function') {
+          window.GrandFurniture.showToast(`Coupon "${code}" copied! Claim on WhatsApp.`, 'success');
+        }
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2200);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(notifySuccess).catch(() => {
+          fallbackCopy(code, notifySuccess);
+        });
+      } else {
+        fallbackCopy(code, notifySuccess);
+      }
+    });
+  });
+
+  function fallbackCopy(text, callback) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      callback();
+    } catch (e) {}
+    document.body.removeChild(ta);
+  }
+}
+
+// ============================================================
 // INIT
 // ============================================================
 
@@ -1205,6 +1296,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInternationalCollections();
   initEmiCalculator();
   initWishlistToggle();
+  initBlindfoldOffers();
 });
 
 // Export utilities for use in other modules
