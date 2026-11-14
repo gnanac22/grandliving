@@ -1275,6 +1275,440 @@ function initBlindfoldOffers() {
 }
 
 // ============================================================
+// CUSTOMER AUTHENTICATION (MOBILE LOGIN, REGISTER, & GUEST)
+// ============================================================
+
+const GrandAuth = {
+  getUser() {
+    try {
+      const data = localStorage.getItem('grand_user');
+      return data ? JSON.parse(data) : null;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  setUser(user) {
+    try {
+      localStorage.setItem('grand_user', JSON.stringify(user));
+      window.dispatchEvent(new CustomEvent('grand:auth_change', { detail: user }));
+    } catch (e) {}
+  },
+
+  logout() {
+    try {
+      localStorage.removeItem('grand_user');
+      window.dispatchEvent(new CustomEvent('grand:auth_change', { detail: null }));
+      if (window.GrandFurniture?.showToast) {
+        window.GrandFurniture.showToast('You have been signed out.', 'info');
+      }
+    } catch (e) {}
+  }
+};
+
+function initCustomerAuth() {
+  // 1. Ensure Auth Modal exists in DOM
+  let modalOverlay = document.getElementById('customerAuthModal');
+  if (!modalOverlay) {
+    modalOverlay = document.createElement('div');
+    modalOverlay.id = 'customerAuthModal';
+    modalOverlay.className = 'auth-modal-overlay';
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    modalOverlay.innerHTML = `
+      <div class="auth-modal-container" role="dialog" aria-modal="true" aria-labelledby="authModalHeading">
+        <button type="button" class="auth-modal-close" id="authModalClose" aria-label="Close modal">&times;</button>
+        
+        <!-- Left: Royaloak HAPPY500 Promo Image Banner -->
+        <div class="auth-modal-promo">
+          <div>
+            <div class="auth-promo-img-wrap">
+              <img src="/assets/images/signup-redeem-500.jpg" alt="Sign Up and Redeem 500 on First Purchase with code HAPPY500">
+            </div>
+            <div style="background:rgba(213,190,154,0.12);border:1px dashed #D5BE9A;border-radius:8px;padding:12px;text-align:center;">
+              <span style="font-size:0.7rem;color:#B7AA98;text-transform:uppercase;letter-spacing:0.1em;display:block;">FIRST PURCHASE BENEFIT</span>
+              <strong style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#F5F0E8;display:block;">REDEEM &#8377;500/- OFF</strong>
+              <span style="font-size:0.75rem;color:#D5BE9A;font-weight:700;">CODE: HAPPY500 &bull; Min Spend &#8377;25k</span>
+            </div>
+          </div>
+          <ul class="auth-promo-features" style="margin-top:16px;">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 48-Hour White Glove Vizag Delivery</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 10-Year Solid Teak Frame Warranty</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 0% Interest Free EMI on 500+ Pieces</li>
+          </ul>
+        </div>
+
+        <!-- Right: Mobile Login / Register Forms -->
+        <div class="auth-modal-form-wrap">
+          <div class="auth-tabs">
+            <button type="button" class="auth-tab-btn is-active" id="tabLoginBtn" data-target="loginFormBox">Sign In</button>
+            <button type="button" class="auth-tab-btn" id="tabRegisterBtn" data-target="registerFormBox">Create Account</button>
+          </div>
+
+          <!-- TAB 1: MOBILE LOGIN -->
+          <div id="loginFormBox">
+            <h3 class="auth-form-title" id="authModalHeading">Customer Sign In</h3>
+            <p class="auth-form-sub">Enter your 10-digit mobile number to access saved orders and unlocked offers.</p>
+
+            <form id="customerLoginForm">
+              <div class="auth-field-group">
+                <label class="auth-label" for="loginMobile">Mobile Number *</label>
+                <div class="auth-input-wrap">
+                  <span class="auth-prefix">+91</span>
+                  <input type="tel" id="loginMobile" class="auth-input has-prefix" required pattern="[0-9]{10}" maxlength="10" placeholder="90527 51666">
+                </div>
+              </div>
+
+              <!-- OTP simulation section (hidden by default) -->
+              <div class="auth-field-group" id="loginOtpWrap" style="display:none;">
+                <label class="auth-label" for="loginOtp">Enter 4-Digit OTP *</label>
+                <input type="text" id="loginOtp" class="auth-input" maxlength="4" placeholder="e.g. 8492 (Demo OTP: 8492)">
+                <span style="font-size:0.72rem;color:#25D366;display:block;margin-top:4px;">OTP sent to your mobile. Enter 8492 to verify.</span>
+              </div>
+
+              <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">Request OTP / Sign In</button>
+            </form>
+
+            <div class="auth-guest-divider">OR</div>
+
+            <button type="button" class="auth-guest-btn" id="modalGuestBtn">
+              <span>⚡ Continue as Guest (Buy Without Login)</span>
+            </button>
+          </div>
+
+          <!-- TAB 2: REGISTER -->
+          <div id="registerFormBox" style="display:none;">
+            <h3 class="auth-form-title">Create New Account</h3>
+            <p class="auth-form-sub">Sign up &amp; instantly unlock &#8377;500/- voucher (Code: HAPPY500).</p>
+
+            <form id="customerRegisterForm">
+              <div class="auth-grid-2">
+                <div class="auth-field-group">
+                  <label class="auth-label" for="regFirstName">First Name *</label>
+                  <input type="text" id="regFirstName" class="auth-input" required placeholder="e.g. Rahul">
+                </div>
+                <div class="auth-field-group">
+                  <label class="auth-label" for="regLastName">Last Name *</label>
+                  <input type="text" id="regLastName" class="auth-input" required placeholder="e.g. Sharma">
+                </div>
+              </div>
+
+              <div class="auth-field-group">
+                <label class="auth-label" for="regMobile">Mobile Number *</label>
+                <div class="auth-input-wrap">
+                  <span class="auth-prefix">+91</span>
+                  <input type="tel" id="regMobile" class="auth-input has-prefix" required pattern="[0-9]{10}" maxlength="10" placeholder="98765 43210">
+                </div>
+              </div>
+
+              <div class="auth-grid-2">
+                <div class="auth-field-group">
+                  <label class="auth-label" for="regPincode">Pincode *</label>
+                  <input type="text" id="regPincode" class="auth-input" required pattern="[0-9]{6}" maxlength="6" placeholder="530016">
+                </div>
+                <div class="auth-field-group">
+                  <label class="auth-label" for="regEmail">Email ID *</label>
+                  <input type="email" id="regEmail" class="auth-input" required placeholder="rahul@example.com">
+                </div>
+              </div>
+
+              <div style="background:rgba(213,190,154,0.08);border:1px dashed rgba(213,190,154,0.3);border-radius:6px;padding:8px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+                <input type="checkbox" id="regApplyCoupon" checked style="accent-color:#D5BE9A;width:16px;height:16px;">
+                <label for="regApplyCoupon" style="font-size:0.75rem;color:#F5F0E8;cursor:pointer;">
+                  Apply <strong>HAPPY500</strong> (&#8377;500 off on first purchase &ge; &#8377;25,000)
+                </label>
+              </div>
+
+              <button type="submit" class="auth-submit-btn">Create Account &amp; Claim &#8377;500</button>
+            </form>
+
+            <div class="auth-guest-divider">OR</div>
+
+            <button type="button" class="auth-guest-btn" id="modalGuestBtn2">
+              <span>⚡ Continue as Guest (Buy Without Login)</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modalOverlay);
+  }
+
+  // 2. Setup Open/Close and Switcher
+  const closeBtn = document.getElementById('authModalClose');
+  const tabLoginBtn = document.getElementById('tabLoginBtn');
+  const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+  const loginBox = document.getElementById('loginFormBox');
+  const regBox = document.getElementById('registerFormBox');
+  const guestBtn1 = document.getElementById('modalGuestBtn');
+  const guestBtn2 = document.getElementById('modalGuestBtn2');
+
+  function openModal(tab = 'login', guestCallback = null) {
+    window._authGuestCallback = guestCallback;
+    modalOverlay.style.display = 'flex';
+    setTimeout(() => modalOverlay.classList.add('is-active'), 10);
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (tab === 'register') {
+      tabRegisterBtn?.click();
+    } else {
+      tabLoginBtn?.click();
+    }
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('is-active');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      modalOverlay.style.display = 'none';
+    }, 250);
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  modalOverlay?.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('is-active')) {
+      closeModal();
+    }
+  });
+
+  // Tab switching
+  tabLoginBtn?.addEventListener('click', () => {
+    tabLoginBtn.classList.add('is-active');
+    tabRegisterBtn?.classList.remove('is-active');
+    if (loginBox) loginBox.style.display = 'block';
+    if (regBox) regBox.style.display = 'none';
+  });
+
+  tabRegisterBtn?.addEventListener('click', () => {
+    tabRegisterBtn.classList.add('is-active');
+    tabLoginBtn?.classList.remove('is-active');
+    if (loginBox) loginBox.style.display = 'none';
+    if (regBox) regBox.style.display = 'block';
+  });
+
+  // Continue as Guest handler
+  function handleGuest() {
+    closeModal();
+    if (typeof window._authGuestCallback === 'function') {
+      window._authGuestCallback();
+      window._authGuestCallback = null;
+    } else if (window.GrandFurniture?.showToast) {
+      window.GrandFurniture.showToast('Continuing as Guest. You can buy any piece directly!', 'info');
+    }
+  }
+  guestBtn1?.addEventListener('click', handleGuest);
+  guestBtn2?.addEventListener('click', handleGuest);
+
+  // 3. Login Form Submit
+  const loginForm = document.getElementById('customerLoginForm');
+  const loginMobile = document.getElementById('loginMobile');
+  const loginOtpWrap = document.getElementById('loginOtpWrap');
+  const loginOtp = document.getElementById('loginOtp');
+  const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+
+  let otpRequested = false;
+
+  loginForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const phone = loginMobile?.value.trim();
+    if (!phone || phone.length !== 10) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    if (!otpRequested) {
+      otpRequested = true;
+      loginOtpWrap.style.display = 'block';
+      loginOtp.value = '8492';
+      loginSubmitBtn.textContent = 'Verify OTP & Complete Sign In';
+      if (window.GrandFurniture?.showToast) {
+        window.GrandFurniture.showToast(`OTP sent to +91 ${phone}! Auto-filled demo OTP: 8492`, 'success');
+      }
+      return;
+    }
+
+    // Verify OTP
+    const enteredOtp = loginOtp.value.trim();
+    if (enteredOtp !== '8492' && enteredOtp.length !== 4) {
+      alert('Please enter a valid 4-digit OTP.');
+      return;
+    }
+
+    const existing = GrandAuth.getUser();
+    const user = {
+      firstName: existing?.firstName || 'Atelier Patron',
+      lastName: existing?.lastName || '',
+      phone: phone,
+      pincode: existing?.pincode || '530016',
+      email: existing?.email || `client_${phone}@grandliving.in`,
+      hasVoucher: true,
+      voucherCode: 'HAPPY500',
+      voucherAmount: 500
+    };
+    GrandAuth.setUser(user);
+    closeModal();
+
+    if (window.GrandFurniture?.showToast) {
+      window.GrandFurniture.showToast(`Welcome back, ${user.firstName}! Code HAPPY500 unlocked.`, 'success');
+    }
+
+    if (typeof window._authGuestCallback === 'function') {
+      window._authGuestCallback(user);
+      window._authGuestCallback = null;
+    }
+  });
+
+  // 4. Registration Form Submit
+  const regForm = document.getElementById('customerRegisterForm');
+  regForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fn = document.getElementById('regFirstName')?.value.trim();
+    const ln = document.getElementById('regLastName')?.value.trim();
+    const ph = document.getElementById('regMobile')?.value.trim();
+    const pin = document.getElementById('regPincode')?.value.trim();
+    const em = document.getElementById('regEmail')?.value.trim();
+
+    if (!fn || !ln || !ph || !pin || !em) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+    if (ph.length !== 10) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+    if (pin.length !== 6) {
+      alert('Please enter a valid 6-digit Visakhapatnam/India pincode.');
+      return;
+    }
+
+    const newUser = {
+      firstName: fn,
+      lastName: ln,
+      phone: ph,
+      pincode: pin,
+      email: em,
+      hasVoucher: true,
+      voucherCode: 'HAPPY500',
+      voucherAmount: 500
+    };
+    GrandAuth.setUser(newUser);
+    closeModal();
+
+    if (window.GrandFurniture?.showToast) {
+      window.GrandFurniture.showToast(`Account created for ${fn}! ₹500 First Order Voucher (HAPPY500) Unlocked!`, 'success');
+    }
+
+    if (typeof window._authGuestCallback === 'function') {
+      window._authGuestCallback(newUser);
+      window._authGuestCallback = null;
+    }
+  });
+
+  // 5. Update Navbar User UI
+  function syncNavUserUI() {
+    const user = GrandAuth.getUser();
+    const userBtns = document.querySelectorAll('.nav__user-btn');
+    const userNames = document.querySelectorAll('.nav__user-name');
+    const userMenus = document.querySelectorAll('.nav__user-menu');
+
+    if (user) {
+      userNames.forEach(span => {
+        span.textContent = `Hi, ${user.firstName}`;
+      });
+      userBtns.forEach(btn => {
+        btn.setAttribute('title', `Logged in as ${user.firstName} (+91 ${user.phone})`);
+        btn.onclick = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const menu = btn.parentElement.querySelector('.nav__user-menu');
+          if (menu) {
+            menu.classList.toggle('is-active');
+          }
+        };
+      });
+    } else {
+      userNames.forEach(span => {
+        span.textContent = 'Sign In';
+      });
+      userBtns.forEach(btn => {
+        btn.setAttribute('title', 'Sign In or Register');
+        btn.onclick = (e) => {
+          e.preventDefault();
+          openModal('login');
+        };
+      });
+    }
+  }
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav__user-btn') && !e.target.closest('.nav__user-menu')) {
+      document.querySelectorAll('.nav__user-menu').forEach(m => m.classList.remove('is-active'));
+    }
+  });
+
+  window.addEventListener('grand:auth_change', syncNavUserUI);
+  syncNavUserUI();
+
+  // Expose global methods
+  window.GrandAuth = {
+    openModal,
+    closeModal,
+    getUser: GrandAuth.getUser,
+    setUser: GrandAuth.setUser,
+    logout: GrandAuth.logout
+  };
+}
+
+
+// ============================================================
+// PRODUCT BUY & GUEST CHECKOUT FLOW
+// ============================================================
+
+function initProductBuyFlow() {
+  document.querySelectorAll(".btn-buy-now, .btn-buy-piece").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const prodName = btn.getAttribute("data-product") || document.querySelector("h1")?.textContent.trim() || "Luxury Furniture Piece";
+      const prodPrice = btn.getAttribute("data-price") || "";
+
+      const proceedWithPurchase = (customer = null) => {
+        let text = `🏛️ *Grand Living Vizag — Order & Reservation Request*\n\n`;
+        text += `• *Piece:* ${prodName}\n`;
+        if (prodPrice) text += `• *Price:* ${prodPrice}\n`;
+
+        if (customer && customer.firstName) {
+          text += `• *Customer:* ${customer.firstName} ${customer.lastName || ""}\n`;
+          text += `• *Phone:* +91 ${customer.phone}\n`;
+          text += `• *Pincode:* ${customer.pincode}\n`;
+          if (customer.hasVoucher) {
+            text += `• *Coupon Applied:* HAPPY500 (-₹500 First Order Discount)\n`;
+          }
+        } else {
+          text += `• *Order Mode:* Direct Guest Order (No Account Required)\n`;
+        }
+        text += `\nPlease confirm stock availability and delivery schedule across Visakhapatnam!`;
+        window.open(`https://wa.me/919052751666?text=${encodeURIComponent(text)}`, "_blank");
+      };
+
+      const user = window.GrandAuth?.getUser();
+      if (user) {
+        proceedWithPurchase(user);
+      } else {
+        window.GrandAuth?.openModal("login", (customer) => {
+          proceedWithPurchase(customer);
+        });
+      }
+    });
+  });
+}
+
+// ============================================================
 // INIT
 // ============================================================
 
@@ -1297,6 +1731,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmiCalculator();
   initWishlistToggle();
   initBlindfoldOffers();
+  initCustomerAuth();
+  initProductBuyFlow();
 });
 
 // Export utilities for use in other modules

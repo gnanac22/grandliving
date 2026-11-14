@@ -2884,6 +2884,82 @@ h1, h2, h3, h4, h5, h6 {
 
 <script type="module" src="/assets/js/showroom-3d.js"></script>
 
+<section class="furniture-guide" id="furniture-guide" aria-labelledby="furniture-guide-title">
+  <div class="container">
+    <header class="furniture-guide__header">
+      <span class="furniture-guide__eyebrow">A thoughtful guide to furnishing your home</span>
+      <h2 id="furniture-guide-title">Furniture for every room, chosen around you.</h2>
+      <p>Discover considered furniture for the way you live at Grand Living in Visakhapatnam. Explore our collections online, speak with our team about a custom order, or visit our Dwaraka Nagar showroom to see the pieces in person.</p>
+    </header>
+
+    <div class="furniture-guide__grid">
+      <article class="furniture-guide__card">
+        <h3>Living Room</h3>
+        <p>Make the sofa your starting point, then bring the room together with a coffee table, accent chair or console. Explore seating and statement pieces in our <a href="/catalogue.php?category=living-room">living room collection</a>.</p>
+      </article>
+      <article class="furniture-guide__card">
+        <h3>Bedroom</h3>
+        <p>Create a restful room with a bed, bedside table and storage that suits your space. Browse distinctive beds and storage in our <a href="/catalogue.php?category=bedroom">bedroom collection</a> and <a href="/catalogue.php?category=wardrobes">wardrobe collection</a>.</p>
+      </article>
+      <article class="furniture-guide__card">
+        <h3>Dining Room</h3>
+        <p>Choose a dining table to suit everyday meals and the occasions when everyone gathers. Pair it with chairs that feel comfortable and look at home in your space. Explore our <a href="/catalogue.php?category=dining-room">dining collection</a>.</p>
+      </article>
+      <article class="furniture-guide__card">
+        <h3>Study &amp; Home Office</h3>
+        <p>A well-planned workspace makes room for focus. Discover desks, seating and bookshelves for work, reading and study in our <a href="/catalogue.php?category=home-office">home office collection</a>.</p>
+      </article>
+      <article class="furniture-guide__card">
+        <h3>Outdoor Living</h3>
+        <p>Turn a balcony, terrace or garden into a place to unwind with outdoor seating and occasional tables. Find ideas for your open-air space in our <a href="/catalogue.php?category=outdoor">outdoor collection</a>.</p>
+      </article>
+      <article class="furniture-guide__card">
+        <h3>Finishing Touches &amp; Custom Orders</h3>
+        <p>Accent furniture can bring a room together, while a made-to-order piece can help when a standard size or design is not quite right. Tell us what you have in mind through our <a href="/custom-request.php">custom furniture request</a>.</p>
+      </article>
+    </div>
+
+    <div class="furniture-guide__details">
+      <article>
+        <h3>Choose for your space and routine</h3>
+        <p>Measure the room as well as doorways, staircases and lift access before selecting larger furniture. Consider who will use each piece, how much storage you need and how a finish will fit into your everyday routine. Product details and dimensions are available in the catalogue; our team can help with questions.</p>
+      </article>
+      <article>
+        <h3>Explore materials and finishes</h3>
+        <p>Wood, upholstery and surface finishes each bring a different character to a room. Compare colours and textures in person, and ask our team which options are available for the design you are considering. For everyday care, follow the product-specific guidance and use gentle cleaning methods suited to its material.</p>
+      </article>
+      <article>
+        <h3>Experience the collection in person</h3>
+        <p>Photos are a useful first look, but seeing a piece in person can help you judge its scale, finish and comfort. Visit the <a href="/contact.php">Grand Living showroom in Dwaraka Nagar, Visakhapatnam</a> to explore the collection and speak with our team.</p>
+      </article>
+      <article>
+        <h3>Care for the pieces you love</h3>
+        <p>Keep furniture away from excess moisture and prolonged direct sunlight where possible. Dust with a soft cloth, attend to spills promptly and avoid harsh cleaners unless the product-care instructions recommend them. Use protective pads beneath furniture legs to help protect your floors.</p>
+      </article>
+    </div>
+
+    <div class="furniture-guide__faq">
+      <h3>Questions customers often ask</h3>
+      <details>
+        <summary>What furniture can I explore at Grand Living?</summary>
+        <p>Our collections include living room, bedroom, dining, home office, wardrobe and outdoor furniture. Browse the <a href="/catalogue.php">online catalogue</a> to see available designs.</p>
+      </details>
+      <details>
+        <summary>Can I enquire about a custom furniture design?</summary>
+        <p>Yes. Share your requirements through our <a href="/custom-request.php">custom order form</a>, and our team can discuss the design and options with you.</p>
+      </details>
+      <details>
+        <summary>Where can I see the collection in person?</summary>
+        <p>Visit Grand Living at Dwaraka Nagar Main Road, Visakhapatnam. Find directions and contact details on our <a href="/contact.php">showroom page</a>.</p>
+      </details>
+      <details>
+        <summary>How should I prepare before choosing a large piece?</summary>
+        <p>Measure the space where it will go and check the route into your home, including the entrance, stairs and lift. If you have questions about a specific design, contact our team before ordering.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================
      SECTION 9 — FINAL CTA
      ============================================================ -->
