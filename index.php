@@ -94,50 +94,110 @@ if ($db_error || !$db_available) {
 
 /* ── Fallback data ───────────────────────────────────────────────── */
 if ($db_error || empty($categories)) {
-    $fallback_cat_names = ['Living Room','Bedroom','Dining Room','Home Office','Outdoor','Kids Room'];
-    $categories = array_map(function($name) {
-        return [
-            'id'          => 0,
-            'name'        => $name,
-            'slug'        => strtolower(str_replace(' ', '-', $name)),
-            'image'       => '',
-            'description' => '',
-        ];
-    }, $fallback_cat_names);
+    $categories = [
+        ['id' => 1, 'name' => 'Living Room', 'slug' => 'living-room', 'image' => '/uploads/categories/living-room.jpg', 'description' => 'Sweeping sectionals, sculptural armchairs, and handcrafted coffee tables.'],
+        ['id' => 2, 'name' => 'Bedroom', 'slug' => 'bedroom', 'image' => '/uploads/categories/bedroom.jpg', 'description' => 'Solid teak king cots, tufted velvet beds, and nightfall tables.'],
+        ['id' => 3, 'name' => 'Dining Room', 'slug' => 'dining-room', 'image' => '/uploads/categories/dining-room.jpg', 'description' => 'Live-edge dining tables and ergonomic upholstered dining chairs.'],
+        ['id' => 4, 'name' => 'Home Office', 'slug' => 'home-office', 'image' => '/uploads/categories/home-office.jpg', 'description' => 'Executive walnut desks, ergonomic study chairs, and brass bookshelves.'],
+        ['id' => 5, 'name' => 'Outdoor', 'slug' => 'outdoor', 'image' => '/uploads/categories/outdoor.jpg', 'description' => 'All-weather teak and powder-coated aluminum lounge sets.'],
+        ['id' => 6, 'name' => 'Wardrobes', 'slug' => 'wardrobes', 'image' => '/uploads/categories/wardrobes.jpg', 'description' => 'Custom walk-in wardrobe systems with German soft-close fittings.'],
+    ];
 }
 
 if ($db_error || empty($inspiration)) {
-    $fallback_insp_titles = [
-        'Modern Living Room','Master Bedroom Suite','Elegant Dining Space',
-        'Home Office Sanctuary','Cozy Reading Corner','Kids Wonderland',
+    $inspiration = [
+        ['id' => 1, 'title' => 'Curated Living Room Display', 'image' => '/uploads/gallery/showroom-living.jpg', 'slug' => 'showroom-living'],
+        ['id' => 2, 'title' => 'Master Bedroom Sanctuary', 'image' => '/uploads/gallery/inspiration-bedroom.jpg', 'slug' => 'inspiration-bedroom'],
+        ['id' => 3, 'title' => 'Contemporary Living Room', 'image' => '/uploads/gallery/inspiration-living.jpg', 'slug' => 'inspiration-living'],
+        ['id' => 4, 'title' => 'Executive Office Setup', 'image' => '/uploads/gallery/inspiration-office.jpg', 'slug' => 'inspiration-office'],
+        ['id' => 5, 'title' => 'Flagship Showroom Floor', 'image' => '/uploads/gallery/showroom-main.jpg', 'slug' => 'showroom-main'],
+        ['id' => 6, 'title' => 'Showroom Architectural Facade', 'image' => '/uploads/gallery/showroom-entrance.jpg', 'slug' => 'showroom-entrance'],
     ];
-    $inspiration = array_map(function($title) {
-        return ['id' => 0, 'title' => $title, 'image' => '', 'slug' => ''];
-    }, $fallback_insp_titles);
 }
 
 if ($db_error || empty($products)) {
-    $fallback_product_names = [
-        'Mahogany Royal Sofa','Teak King Bed Frame','Italian Marble Dining Table',
-        'Walnut Study Desk','Luxury Recliner Set','Bookshelf Cabinet',
-        'Ottoman Coffee Table','Modular Wardrobe',
+    $products = [
+        [
+            'id' => 1,
+            'name' => 'Meridian Sectional Sofa',
+            'slug' => 'meridian-sectional-sofa',
+            'category_name' => 'Living Room',
+            'description' => 'A sweeping L-shaped modular sectional upholstered in certified Tuscan leather with solid teak undercarriage.',
+            'primary_image' => '/uploads/products/meridian-sectional-sofa.jpg',
+            'image' => '/uploads/products/meridian-sectional-sofa.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 2,
+            'name' => 'Palazzo King Bed',
+            'slug' => 'palazzo-king-bed',
+            'category_name' => 'Bedroom',
+            'description' => 'High-profile tufted headboard with solid teak internal framing and velvet upholstery.',
+            'primary_image' => '/uploads/products/palazzo-king-bed.jpg',
+            'image' => '/uploads/products/palazzo-king-bed.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 3,
+            'name' => 'Vesper Dining Table',
+            'slug' => 'vesper-dining-table',
+            'category_name' => 'Dining Room',
+            'description' => 'Single-slab live-edge dining table with solid brass inlay detailing.',
+            'primary_image' => '/uploads/products/vesper-dining-table.jpg',
+            'image' => '/uploads/products/vesper-dining-table.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 4,
+            'name' => 'Stratton Executive Desk',
+            'slug' => 'stratton-executive-desk',
+            'category_name' => 'Home Office',
+            'description' => 'Executive-grade solid walnut desk with integrated leather blotter and concealed cable channels.',
+            'primary_image' => '/uploads/products/stratton-executive-desk.jpg',
+            'image' => '/uploads/products/stratton-executive-desk.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 5,
+            'name' => 'Azure Outdoor Lounge Set',
+            'slug' => 'azure-outdoor-lounge-set',
+            'category_name' => 'Outdoor',
+            'description' => 'Powder-coated aluminum and teak outdoor sofa set with Sunbrella weather-resistant cushions.',
+            'primary_image' => '/uploads/products/azure-outdoor-lounge-set.jpg',
+            'image' => '/uploads/products/azure-outdoor-lounge-set.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 6,
+            'name' => 'Palisade Walk-in Wardrobe',
+            'slug' => 'palisade-walk-in-wardrobe',
+            'category_name' => 'Wardrobes',
+            'description' => 'Architectural walk-in closet system with integrated sensor LED illumination and fluted glass.',
+            'primary_image' => '/uploads/products/palisade-walk-in-wardrobe.jpg',
+            'image' => '/uploads/products/palisade-walk-in-wardrobe.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 7,
+            'name' => 'Solstice Bar Cabinet',
+            'slug' => 'solstice-bar-cabinet',
+            'category_name' => 'Living Room',
+            'description' => 'Curved fluted wood cabinet with brass handles, stemware rack, and mirror-backed preparation deck.',
+            'primary_image' => '/uploads/products/solstice-bar-cabinet.jpg',
+            'image' => '/uploads/products/solstice-bar-cabinet.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
+        [
+            'id' => 8,
+            'name' => 'Aurelius Coffee Table',
+            'slug' => 'aurelius-coffee-table',
+            'category_name' => 'Living Room',
+            'description' => 'Hand-carved marble-top coffee table with a brushed brass base — a sculptural centrepiece.',
+            'primary_image' => '/uploads/products/aurelius-coffee-table.jpg',
+            'image' => '/uploads/products/aurelius-coffee-table.jpg',
+            'whatsapp_number' => $whatsapp_default,
+        ],
     ];
-    $fallback_cats = [
-        'Living Room','Bedroom','Dining Room','Home Office',
-        'Living Room','Study','Living Room','Bedroom',
-    ];
-    $products = [];
-    foreach ($fallback_product_names as $i => $pname) {
-        $products[] = [
-            'id'               => $i + 1,
-            'name'             => $pname,
-            'slug'             => strtolower(str_replace(' ', '-', $pname)),
-            'category_name'    => $fallback_cats[$i],
-            'description'      => 'Exquisitely crafted with premium materials for lasting elegance and everyday comfort.',
-            'image'            => '',
-            'whatsapp_number'  => $whatsapp_default,
-        ];
-    }
 }
 
 /* Card gradient palettes */

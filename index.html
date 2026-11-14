@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/split-type"></script>
 
   <!-- CSRF Meta -->
-  <meta name="csrf-token" content="f667ca94135b952a369d6b8ff34b5597">
+  <meta name="csrf-token" content="0a3d3a13afea41a06e623f7180fabb7e">
   
   <style>
     /* ============================================================
@@ -2079,7 +2079,10 @@ h1, h2, h3, h4, h5, h6 {
     <div class="collections__grid">
             <a href="/catalogue?category=living-room" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#76543B 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/living-room.jpg"
+               alt="Living Room"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
           <span class="collection-card__name">Living Room</span>
@@ -2088,7 +2091,10 @@ h1, h2, h3, h4, h5, h6 {
       </a>
             <a href="/catalogue?category=bedroom" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#76543B 0%,#D5BE9A 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/bedroom.jpg"
+               alt="Bedroom"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
           <span class="collection-card__name">Bedroom</span>
@@ -2097,7 +2103,10 @@ h1, h2, h3, h4, h5, h6 {
       </a>
             <a href="/catalogue?category=dining-room" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#B7AA98 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/dining-room.jpg"
+               alt="Dining Room"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
           <span class="collection-card__name">Dining Room</span>
@@ -2106,7 +2115,10 @@ h1, h2, h3, h4, h5, h6 {
       </a>
             <a href="/catalogue?category=home-office" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#3D2B1F 0%,#76543B 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/home-office.jpg"
+               alt="Home Office"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
           <span class="collection-card__name">Home Office</span>
@@ -2115,19 +2127,25 @@ h1, h2, h3, h4, h5, h6 {
       </a>
             <a href="/catalogue?category=outdoor" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#29221D 0%,#D5BE9A 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/outdoor.jpg"
+               alt="Outdoor"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
           <span class="collection-card__name">Outdoor</span>
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
-            <a href="/catalogue?category=kids-room" class="collection-card">
+            <a href="/catalogue?category=wardrobes" class="collection-card">
         <div class="collection-card__bg" style="background:linear-gradient(160deg,#54392A 0%,#B7AA98 100%);"></div>
-                  <div class="collection-card__pattern"></div>
+                  <img class="collection-card__img"
+               src="/uploads/categories/wardrobes.jpg"
+               alt="Wardrobes"
+               loading="lazy">
                 <div class="collection-card__overlay"></div>
         <div class="collection-card__body">
-          <span class="collection-card__name">Kids Room</span>
+          <span class="collection-card__name">Wardrobes</span>
           <span class="collection-card__cta">Explore Collection &#8594;</span>
         </div>
       </a>
@@ -2634,51 +2652,75 @@ h1, h2, h3, h4, h5, h6 {
     </div>
 
     <div class="inspiration-grid">
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/showroom-living" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#29221D 0%,#76543B 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/showroom-living.jpg"
+               alt="Curated Living Room Display"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Modern Living Room</h3>
+          <h3 class="inspiration-card__title">Curated Living Room Display</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/inspiration-bedroom" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#3D2B1F 0%,#D5BE9A 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/inspiration-bedroom.jpg"
+               alt="Master Bedroom Sanctuary"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Master Bedroom Suite</h3>
+          <h3 class="inspiration-card__title">Master Bedroom Sanctuary</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/inspiration-living" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#1E1A17 0%,#76543B 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/inspiration-living.jpg"
+               alt="Contemporary Living Room"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Elegant Dining Space</h3>
+          <h3 class="inspiration-card__title">Contemporary Living Room</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/inspiration-office" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#29221D 0%,#B7AA98 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/inspiration-office.jpg"
+               alt="Executive Office Setup"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Home Office Sanctuary</h3>
+          <h3 class="inspiration-card__title">Executive Office Setup</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/showroom-main" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#54392A 0%,#D5BE9A 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/showroom-main.jpg"
+               alt="Flagship Showroom Floor"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Cozy Reading Corner</h3>
+          <h3 class="inspiration-card__title">Flagship Showroom Floor</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
-            <a href="/inspiration" class="inspiration-card">
+            <a href="/inspiration/showroom-entrance" class="inspiration-card">
         <div class="inspiration-card__bg" style="background:linear-gradient(180deg,#29221D 0%,#54392A 100%);"></div>
+                  <img class="inspiration-card__img"
+               src="/uploads/gallery/showroom-entrance.jpg"
+               alt="Showroom Architectural Facade"
+               loading="lazy">
                 <div class="inspiration-card__overlay"></div>
         <div class="inspiration-card__body">
-          <h3 class="inspiration-card__title">Kids Wonderland</h3>
+          <h3 class="inspiration-card__title">Showroom Architectural Facade</h3>
           <span class="inspiration-card__link">View More &#8594;</span>
         </div>
       </a>
@@ -2700,20 +2742,23 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="products-grid">
             <div class="product-card">
-        <a href="/products/mahogany-royal-sofa" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#29221D,#76543B);"></div>
+        <a href="/products/meridian-sectional-sofa" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/meridian-sectional-sofa.jpg"
+                 alt="Meridian Sectional Sofa"
+                 loading="lazy">
                                 <span class="product-card__badge">Living Room</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/mahogany-royal-sofa" style="color:inherit;text-decoration:none;">Mahogany Royal Sofa</a>
+            <a href="/products/meridian-sectional-sofa" style="color:inherit;text-decoration:none;">Meridian Sectional Sofa</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">A sweeping L-shaped modular sectional upholstered in certified Tuscan leather with solid teak undercarriage.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/mahogany-royal-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Mahogany%20Royal%20Sofa" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Meridian%20Sectional%20Sofa" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
@@ -2724,20 +2769,23 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="/products/teak-king-bed-frame" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#3D2B1F,#D5BE9A);"></div>
+        <a href="/products/palazzo-king-bed" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/palazzo-king-bed.jpg"
+                 alt="Palazzo King Bed"
+                 loading="lazy">
                                 <span class="product-card__badge">Bedroom</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/teak-king-bed-frame" style="color:inherit;text-decoration:none;">Teak King Bed Frame</a>
+            <a href="/products/palazzo-king-bed" style="color:inherit;text-decoration:none;">Palazzo King Bed</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">High-profile tufted headboard with solid teak internal framing and velvet upholstery.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/teak-king-bed-frame" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Teak%20King%20Bed%20Frame" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Palazzo%20King%20Bed" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
@@ -2748,20 +2796,23 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="/products/italian-marble-dining-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#1E1A17,#76543B);"></div>
+        <a href="/products/vesper-dining-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/vesper-dining-table.jpg"
+                 alt="Vesper Dining Table"
+                 loading="lazy">
                                 <span class="product-card__badge">Dining Room</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/italian-marble-dining-table" style="color:inherit;text-decoration:none;">Italian Marble Dining Table</a>
+            <a href="/products/vesper-dining-table" style="color:inherit;text-decoration:none;">Vesper Dining Table</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">Single-slab live-edge dining table with solid brass inlay detailing.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/italian-marble-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Italian%20Marble%20Dining%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Vesper%20Dining%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
@@ -2772,20 +2823,23 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="/products/walnut-study-desk" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#29221D,#B7AA98);"></div>
+        <a href="/products/stratton-executive-desk" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/stratton-executive-desk.jpg"
+                 alt="Stratton Executive Desk"
+                 loading="lazy">
                                 <span class="product-card__badge">Home Office</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/walnut-study-desk" style="color:inherit;text-decoration:none;">Walnut Study Desk</a>
+            <a href="/products/stratton-executive-desk" style="color:inherit;text-decoration:none;">Stratton Executive Desk</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">Executive-grade solid walnut desk with integrated leather blotter and concealed cable channels.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/walnut-study-desk" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/stratton-executive-desk" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Walnut%20Study%20Desk" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Stratton%20Executive%20Desk" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
@@ -2796,20 +2850,77 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="/products/luxury-recliner-set" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#54392A,#D5BE9A);"></div>
+        <a href="/products/azure-outdoor-lounge-set" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/azure-outdoor-lounge-set.jpg"
+                 alt="Azure Outdoor Lounge Set"
+                 loading="lazy">
+                                <span class="product-card__badge">Outdoor</span>
+                  </a>
+        <div class="product-card__body">
+          <h3 class="product-card__name">
+            <a href="/products/azure-outdoor-lounge-set" style="color:inherit;text-decoration:none;">Azure Outdoor Lounge Set</a>
+          </h3>
+                      <p class="product-card__desc">Powder-coated aluminum and teak outdoor sofa set with Sunbrella weather-resistant cushions.</p>
+                    <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
+            <a href="/products/azure-outdoor-lounge-set" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+              View Piece
+            </a>
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Azure%20Outdoor%20Lounge%20Set" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
+            </svg>
+            Enquire
+          </a>
+          </div>
+        </div>
+      </div>
+            <div class="product-card">
+        <a href="/products/palisade-walk-in-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/palisade-walk-in-wardrobe.jpg"
+                 alt="Palisade Walk-in Wardrobe"
+                 loading="lazy">
+                                <span class="product-card__badge">Wardrobes</span>
+                  </a>
+        <div class="product-card__body">
+          <h3 class="product-card__name">
+            <a href="/products/palisade-walk-in-wardrobe" style="color:inherit;text-decoration:none;">Palisade Walk-in Wardrobe</a>
+          </h3>
+                      <p class="product-card__desc">Architectural walk-in closet system with integrated sensor LED illumination and fluted glass.</p>
+                    <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
+            <a href="/products/palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+              View Piece
+            </a>
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Palisade%20Walk-in%20Wardrobe" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
+            </svg>
+            Enquire
+          </a>
+          </div>
+        </div>
+      </div>
+            <div class="product-card">
+        <a href="/products/solstice-bar-cabinet" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/solstice-bar-cabinet.jpg"
+                 alt="Solstice Bar Cabinet"
+                 loading="lazy">
                                 <span class="product-card__badge">Living Room</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/luxury-recliner-set" style="color:inherit;text-decoration:none;">Luxury Recliner Set</a>
+            <a href="/products/solstice-bar-cabinet" style="color:inherit;text-decoration:none;">Solstice Bar Cabinet</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">Curved fluted wood cabinet with brass handles, stemware rack, and mirror-backed preparation deck.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/luxury-recliner-set" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/solstice-bar-cabinet" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Luxury%20Recliner%20Set" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Solstice%20Bar%20Cabinet" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
@@ -2820,68 +2931,23 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
             <div class="product-card">
-        <a href="/products/bookshelf-cabinet" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#29221D,#54392A);"></div>
-                                <span class="product-card__badge">Study</span>
-                  </a>
-        <div class="product-card__body">
-          <h3 class="product-card__name">
-            <a href="/products/bookshelf-cabinet" style="color:inherit;text-decoration:none;">Bookshelf Cabinet</a>
-          </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
-                    <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/bookshelf-cabinet" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
-              View Piece
-            </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Bookshelf%20Cabinet" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
-            </svg>
-            Enquire
-          </a>
-          </div>
-        </div>
-      </div>
-            <div class="product-card">
-        <a href="/products/ottoman-coffee-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#3D2B1F,#76543B);"></div>
+        <a href="/products/aurelius-coffee-table" class="product-card__img-wrap" style="text-decoration:none;display:block;">
+                      <img class="product-card__img"
+                 src="/uploads/products/aurelius-coffee-table.jpg"
+                 alt="Aurelius Coffee Table"
+                 loading="lazy">
                                 <span class="product-card__badge">Living Room</span>
                   </a>
         <div class="product-card__body">
           <h3 class="product-card__name">
-            <a href="/products/ottoman-coffee-table" style="color:inherit;text-decoration:none;">Ottoman Coffee Table</a>
+            <a href="/products/aurelius-coffee-table" style="color:inherit;text-decoration:none;">Aurelius Coffee Table</a>
           </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
+                      <p class="product-card__desc">Hand-carved marble-top coffee table with a brushed brass base — a sculptural centrepiece.</p>
                     <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/ottoman-coffee-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
+            <a href="/products/aurelius-coffee-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
               View Piece
             </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Ottoman%20Coffee%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
-            </svg>
-            Enquire
-          </a>
-          </div>
-        </div>
-      </div>
-            <div class="product-card">
-        <a href="/products/modular-wardrobe" class="product-card__img-wrap" style="text-decoration:none;display:block;">
-                      <div class="product-card__placeholder" style="background:linear-gradient(145deg,#1E1A17,#D5BE9A);"></div>
-                                <span class="product-card__badge">Bedroom</span>
-                  </a>
-        <div class="product-card__body">
-          <h3 class="product-card__name">
-            <a href="/products/modular-wardrobe" style="color:inherit;text-decoration:none;">Modular Wardrobe</a>
-          </h3>
-                      <p class="product-card__desc">Exquisitely crafted with premium materials for lasting elegance and everyday comfort.</p>
-                    <div style="display:flex;gap:8px;align-items:center;margin-top:auto;width:100%;">
-            <a href="/products/modular-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">
-              View Piece
-            </a>
-            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Modular%20Wardrobe" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
+            <a href="https://wa.me/919052751666?text=Hello%20Grand%20Living%2C%20I%20am%20inquiring%20about%20Aurelius%20Coffee%20Table" class="product-card__btn" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
