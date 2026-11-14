@@ -126,7 +126,7 @@ require_once __DIR__ . '/includes/header.php';
       voucherCode: 'HAPPY500',
       voucherAmount: 500
     };
-    GrandAuth.setUser(user);
+    GrandAuth.registerUser(user);
     if (window.GrandFurniture && window.GrandFurniture.showToast) {
       window.GrandFurniture.showToast('Account created for ' + user.firstName + '! Voucher HAPPY500 unlocked!', 'success');
     }

@@ -1,6 +1,7 @@
 /**
  * @file cursor.js
  * @description Ultra-fast 120fps hardware-accelerated cursor for Grand Living Vizag
+ * Optimized for luxury aesthetic with native I-beam on inputs
  */
 
 'use strict';
@@ -52,6 +53,12 @@ class LuxuryCursor {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
 
+      // Prevent ring jump on initial mouse entrance
+      if (this.ringX === -100 && this.ringY === -100) {
+        this.ringX = this.mouseX;
+        this.ringY = this.mouseY;
+      }
+
       if (!document.body.classList.contains('has-custom-cursor')) {
         document.body.classList.add('has-custom-cursor');
       }
@@ -71,6 +78,13 @@ class LuxuryCursor {
     // Single event delegation for hover states
     document.addEventListener('mouseover', (e) => {
       const target = e.target;
+
+      // If hovering over form inputs, hide custom cursor dot so native text cursor shines
+      if (target.closest('input, textarea, select, [contenteditable="true"]')) {
+        this.hide();
+        return;
+      }
+
       const interactive = target.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, [role="button"]');
       
       if (interactive && this.ring) {
@@ -89,6 +103,12 @@ class LuxuryCursor {
 
     document.addEventListener('mouseout', (e) => {
       const related = e.relatedTarget;
+
+      // Leaving form input, bring custom cursor back
+      if (e.target.closest('input, textarea, select, [contenteditable="true"]') && (!related || !related.closest('input, textarea, select, [contenteditable="true"]'))) {
+        this.show();
+      }
+
       if (!related || !related.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, [role="button"]')) {
         this.isHovering = false;
         if (this.ring) {
@@ -135,8 +155,14 @@ class LuxuryCursor {
 
   init() {
     if (this.initialized) return;
-    // Don't activate on touch-only mobile devices
-    if ('ontouchstart' in window && window.innerWidth < 768) return;
+
+    // Don't activate on touch-only mobile devices with small screens
+    if (window.matchMedia && window.matchMedia('(pointer: coarse) and (hover: none)').matches) {
+      return;
+    }
+    if ('ontouchstart' in window && window.innerWidth < 768) {
+      return;
+    }
 
     this.initialized = true;
     this._createElement();

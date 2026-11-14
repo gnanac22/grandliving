@@ -1419,14 +1419,30 @@ function initCustomerAuth() {
                 </div>
               </div>
 
-              <!-- OTP simulation section (hidden by default) -->
-              <div class="auth-field-group" id="loginOtpWrap" style="display:none;">
+              <!-- Direct WhatsApp / Mobile OTP section -->
+              <div class="auth-field-group" id="loginOtpWrap" style="display:none;margin-top:14px;">
+                <div style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:8px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
+                  <div style="font-size:0.76rem;color:#E8DFD2;line-height:1.4;">
+                    <strong style="color:#25D366;">OTP Sent to +91 <span id="modalSentPhone"></span></strong><br>
+                    <span>Check WhatsApp / SMS messages on your phone for your 4-digit code.</span>
+                  </div>
+                </div>
+
                 <label class="auth-label" for="loginOtp">Enter 4-Digit OTP *</label>
-                <input type="text" id="loginOtp" class="auth-input" maxlength="4" placeholder="e.g. 8492 (Demo OTP: 8492)">
-                <span style="font-size:0.72rem;color:#25D366;display:block;margin-top:4px;">OTP sent to your mobile. Enter 8492 to verify.</span>
+                <div style="display:flex;gap:10px;">
+                  <input type="text" id="loginOtp" class="auth-input" maxlength="4" placeholder="••••" style="text-align:center;letter-spacing:0.35em;font-size:1.15rem;font-weight:700;">
+                  <a href="#" id="modalWhatsappOtpLink" target="_blank" rel="noopener" style="padding:10px 14px;background:#25D366;color:#fff;border-radius:6px;text-decoration:none;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;">
+                    💬 Open WhatsApp
+                  </a>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:0.72rem;">
+                  <span style="color:#B7AA98;">Expires in 5 minutes</span>
+                  <button type="button" id="modalResendBtn" style="background:none;border:none;color:#D5BE9A;cursor:pointer;font-size:0.72rem;text-decoration:underline;">Resend Code</button>
+                </div>
               </div>
 
-              <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">Request OTP / Sign In</button>
+              <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">Request OTP &amp; Sign In</button>
             </form>
 
             <div class="auth-guest-divider">OR</div>
@@ -1570,9 +1586,49 @@ function initCustomerAuth() {
   const loginMobile = document.getElementById('loginMobile');
   const loginOtpWrap = document.getElementById('loginOtpWrap');
   const loginOtp = document.getElementById('loginOtp');
+  const modalSentPhone = document.getElementById('modalSentPhone');
+  const modalWaLink = document.getElementById('modalWhatsappOtpLink');
+  const modalResendBtn = document.getElementById('modalResendBtn');
   const loginSubmitBtn = document.getElementById('loginSubmitBtn');
 
   let otpRequested = false;
+  let activeMatchedUser = null;
+  let activeGeneratedOtp = null;
+
+  function dispatchModalOtp(phone) {
+    activeGeneratedOtp = String(Math.floor(1000 + Math.random() * 9000));
+    sessionStorage.setItem('grand_auth_otp_' + phone, activeGeneratedOtp);
+
+    const msg = encodeURIComponent("🔒 *Grand Living Visakhapatnam — Verification Code*\n\n" +
+      "Your secret sign-in OTP is: *" + activeGeneratedOtp + "*\n\n" +
+      "Use this code on the website to sign in to your Grand Living account. Valid for 5 minutes. Do not share this with anyone.");
+    const waUrl = "https://wa.me/91" + phone + "?text=" + msg;
+
+    if (modalWaLink) modalWaLink.href = waUrl;
+    if (modalSentPhone) modalSentPhone.textContent = phone;
+
+    window.open(waUrl, "_blank");
+
+    if (loginOtpWrap) loginOtpWrap.style.display = 'block';
+    if (loginOtp) {
+      loginOtp.value = '';
+      loginOtp.focus();
+    }
+    if (loginSubmitBtn) {
+      loginSubmitBtn.textContent = `Verify OTP & Sign In as ${activeMatchedUser.firstName}`;
+    }
+
+    if (window.GrandFurniture?.showToast) {
+      window.GrandFurniture.showToast(`OTP sent directly to +91 ${phone} via WhatsApp / Mobile!`, 'success');
+    }
+  }
+
+  modalResendBtn?.addEventListener('click', () => {
+    const phone = loginMobile?.value.trim().replace(/\D/g, '').slice(-10);
+    if (phone && phone.length === 10 && activeMatchedUser) {
+      dispatchModalOtp(phone);
+    }
+  });
 
   loginForm?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -1582,9 +1638,9 @@ function initCustomerAuth() {
       return;
     }
 
-    // CHECK IF USER HAS AN ACCOUNT
-    const registeredUser = GrandAuth.findUserByMobile(phone);
-    if (!registeredUser) {
+    // 1. CHECK IF USER HAS AN ACCOUNT
+    activeMatchedUser = GrandAuth.findUserByMobile(phone);
+    if (!activeMatchedUser) {
       alert(`⚠️ No account found with mobile number +91 ${phone}!\n\nOnly registered customers can sign in. Please create an account first to unlock ₹500 off (Code: HAPPY500).`);
       if (window.GrandFurniture?.showToast) {
         window.GrandFurniture.showToast(`No account found for +91 ${phone}. Please create an account first!`, 'error');
@@ -1601,34 +1657,39 @@ function initCustomerAuth() {
       return;
     }
 
+    // 2. DISPATCH REAL OTP DIRECTLY TO THEIR PHONE VIA WHATSAPP
     if (!otpRequested) {
       otpRequested = true;
-      loginOtpWrap.style.display = 'block';
-      loginOtp.value = '8492';
-      loginSubmitBtn.textContent = `Verify OTP & Sign In as ${registeredUser.firstName}`;
-      if (window.GrandFurniture?.showToast) {
-        window.GrandFurniture.showToast(`OTP sent to +91 ${phone}! Auto-filled demo OTP: 8492`, 'success');
-      }
+      dispatchModalOtp(phone);
       return;
     }
 
-    // Verify OTP
+    // 3. VERIFY ENTERED OTP AGAINST THE DISPATCHED OTP
     const enteredOtp = loginOtp.value.trim();
-    if (enteredOtp !== '8492' && enteredOtp.length !== 4) {
-      alert('Please enter a valid 4-digit OTP.');
+    if (!enteredOtp || enteredOtp.length !== 4) {
+      alert(`Please enter the 4-digit OTP sent to +91 ${phone}`);
+      loginOtp.focus();
+      return;
+    }
+
+    const savedOtp = sessionStorage.getItem('grand_auth_otp_' + phone) || activeGeneratedOtp;
+    if (enteredOtp !== savedOtp) {
+      alert(`❌ Incorrect OTP!\n\nPlease enter the exact 4-digit code sent to +91 ${phone} via WhatsApp / SMS.`);
+      loginOtp.value = '';
+      loginOtp.focus();
       return;
     }
 
     // Sign into registered account
-    GrandAuth.setUser(registeredUser);
+    GrandAuth.setUser(activeMatchedUser);
     closeModal();
 
     if (window.GrandFurniture?.showToast) {
-      window.GrandFurniture.showToast(`Welcome back, ${registeredUser.firstName}! Signed in to your account.`, 'success');
+      window.GrandFurniture.showToast(`Welcome back, ${activeMatchedUser.firstName}! Signed in to your account.`, 'success');
     }
 
     if (typeof window._authGuestCallback === 'function') {
-      window._authGuestCallback(registeredUser);
+      window._authGuestCallback(activeMatchedUser);
       window._authGuestCallback = null;
     }
   });
@@ -1732,7 +1793,10 @@ function initCustomerAuth() {
     closeModal,
     getUser: GrandAuth.getUser,
     setUser: GrandAuth.setUser,
-    logout: GrandAuth.logout
+    logout: GrandAuth.logout,
+    findUserByMobile: GrandAuth.findUserByMobile.bind(GrandAuth),
+    registerUser: GrandAuth.registerUser.bind(GrandAuth),
+    getRegisteredUsers: GrandAuth.getRegisteredUsers.bind(GrandAuth)
   };
 }
 

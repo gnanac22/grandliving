@@ -3,20 +3,20 @@
  * Ultra-performance hardware-accelerated luxury cursor
  */
 
-/* Only hide default cursor on body when custom cursor is actively running */
-body.has-custom-cursor,
-body.has-custom-cursor a,
-body.has-custom-cursor button,
-body.has-custom-cursor .btn,
-body.has-custom-cursor [role="button"] {
-  cursor: none !important;
-}
+@media (hover: hover) and (pointer: fine) {
+  /* Hide standard cursor everywhere when luxury cursor is active */
+  body.has-custom-cursor,
+  body.has-custom-cursor *:not(input):not(textarea):not(select):not([contenteditable="true"]) {
+    cursor: none !important;
+  }
 
-/* ALWAYS keep native text cursor on form inputs so typing is effortless */
-body.has-custom-cursor input,
-body.has-custom-cursor textarea,
-body.has-custom-cursor select {
-  cursor: text !important;
+  /* ALWAYS keep native text cursor on form inputs so typing is effortless */
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor select,
+  body.has-custom-cursor [contenteditable="true"] {
+    cursor: text !important;
+  }
 }
 
 /* Small precise instant gold dot */
@@ -28,12 +28,12 @@ body.has-custom-cursor select {
   height: 8px;
   background-color: #D5BE9A;
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 9999999;
   will-change: transform;
   transform: translate3d(-100px, -100px, 0);
   transition: opacity 150ms ease, width 200ms ease, height 200ms ease, background-color 200ms ease;
-  box-shadow: 0 0 10px rgba(213, 190, 154, 0.5);
+  box-shadow: 0 0 10px rgba(213, 190, 154, 0.6);
 }
 
 /* Larger smooth follower ring */
@@ -45,7 +45,7 @@ body.has-custom-cursor select {
   height: 36px;
   border: 1.5px solid rgba(213, 190, 154, 0.7);
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 9999998;
   will-change: transform;
   transform: translate3d(-100px, -100px, 0);
@@ -68,7 +68,7 @@ body.has-custom-cursor select {
   text-transform: uppercase;
   color: #171614;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none !important;
   transition: opacity 150ms ease;
   user-select: none;
 }
@@ -96,10 +96,11 @@ body.has-custom-cursor select {
 
 .cursor--hidden {
   opacity: 0 !important;
+  visibility: hidden;
 }
 
-/* Disable on touch screens */
-@media (hover: none), (pointer: coarse) {
+/* Touch devices: disable custom cursor markup entirely */
+@media (hover: none) and (pointer: coarse) {
   .cursor__dot,
   .cursor__ring {
     display: none !important;
