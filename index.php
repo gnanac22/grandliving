@@ -1577,6 +1577,12 @@ h1, h2, h3, h4, h5, h6 {
   <div class="hero__overlay"></div>
 
   <div class="hero__content">
+    <!-- Live Deal Urgency Banner (Royaloak Style) -->
+    <div class="hero-countdown-pill" id="heroCountdownPill">
+      <span>🔥 <strong>FESTIVE SHOWROOM SALE:</strong> Special Pricing Ends In</span>
+      <span class="countdown-digits" id="heroCountdown">06h : 45m : 20s</span>
+    </div>
+
     <span class="hero__deco-line" id="heroDeco1"></span>
 
     <h1 class="hero__headline" id="heroHeadline">
@@ -1601,6 +1607,165 @@ h1, h2, h3, h4, h5, h6 {
     <div class="hero__scroll-line"></div>
   </div>
 </section>
+
+<!-- ============================================================
+     ROYALOAK-STYLE POPULAR CATEGORY ROUNDELS
+     ============================================================ -->
+<section class="category-roundels-section" aria-label="Browse popular categories">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:#F5F0E8;font-weight:400;letter-spacing:0.02em;">
+        Popular Curations <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;color:#D5BE9A;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-left:8px;">• 500+ Showroom Pieces</span>
+      </span>
+      <a href="/catalogue" style="font-family:'Manrope',sans-serif;font-size:0.75rem;color:#D5BE9A;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:4px;">
+        View All Categories &rarr;
+      </a>
+    </div>
+
+    <div class="category-roundels-wrapper">
+      <a href="/catalogue?category=living-room" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/living-room.jpg" alt="Living Room Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Sofas &amp; Couches</span>
+        <span class="roundel-offer-tag">Up to 45% Off</span>
+      </a>
+
+      <a href="/catalogue?category=bedroom" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/bedroom.jpg" alt="Beds &amp; Bedroom Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Royal Cots &amp; Beds</span>
+        <span class="roundel-offer-tag">100% Teak</span>
+      </a>
+
+      <a href="/catalogue?category=dining-room" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/dining-room.jpg" alt="Dining Room Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Solid Dining Sets</span>
+        <span class="roundel-offer-tag">Live Edge</span>
+      </a>
+
+      <a href="/catalogue?category=wardrobes" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/wardrobes.jpg" alt="Wardrobes &amp; Closets">
+          </div>
+        </div>
+        <span class="roundel-label">Luxury Wardrobes</span>
+        <span class="roundel-offer-tag">Custom Fit</span>
+      </a>
+
+      <a href="/catalogue?category=home-office" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/home-office.jpg" alt="Home Office Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Executive Desks</span>
+        <span class="roundel-offer-tag">Ergonomic</span>
+      </a>
+
+      <a href="/catalogue?category=living-room" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/products/solstice-bar-cabinet.jpg" alt="Bar Cabinets">
+          </div>
+        </div>
+        <span class="roundel-label">Bar Cabinets</span>
+        <span class="roundel-offer-tag">Brass Accent</span>
+      </a>
+
+      <a href="/catalogue?category=outdoor" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/outdoor.jpg" alt="Outdoor Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Garden Lounges</span>
+        <span class="roundel-offer-tag">All Weather</span>
+      </a>
+
+      <a href="/catalogue?category=kids-youth" class="category-roundel">
+        <div class="roundel-avatar-wrap">
+          <div class="roundel-avatar-inner">
+            <img src="/uploads/categories/kids-youth.jpg" alt="Kids &amp; Youth Furniture">
+          </div>
+        </div>
+        <span class="roundel-label">Kids &amp; Youth</span>
+        <span class="roundel-offer-tag">Safe Rounded</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5 PILLARS / VALUE PROPOSITIONS STRIP (Royaloak Style)
+     ============================================================ -->
+<div class="value-props-strip">
+  <div class="container">
+    <div class="value-props-grid">
+      
+      <div class="value-prop-card">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="value-prop-content">
+          <h4>30+ Years Heritage</h4>
+          <p>Vizag's most trusted atelier since 1994.</p>
+        </div>
+      </div>
+
+      <div class="value-prop-card">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="value-prop-content">
+          <h4>100% Genuine Teak</h4>
+          <p>CP &amp; Burma teak; Italian leather.</p>
+        </div>
+      </div>
+
+      <div class="value-prop-card">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="value-prop-content">
+          <h4>White-Glove Delivery</h4>
+          <p>Complimentary setup across Vizag.</p>
+        </div>
+      </div>
+
+      <div class="value-prop-card">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="value-prop-content">
+          <h4>0% EMI Options</h4>
+          <p>Easy no-cost installments available.</p>
+        </div>
+      </div>
+
+      <div class="value-prop-card">
+        <div class="value-prop-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="value-prop-content">
+          <h4>10-Year Warranty</h4>
+          <p>Comprehensive frame &amp; joinery protection.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ============================================================
      SECTION 2 — BRAND INTRODUCTION
@@ -1675,6 +1840,268 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </a>
       <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROYALOAK-INSPIRED INTERNATIONAL COLLECTIONS SECTION
+     ============================================================ -->
+<section class="international-collections-section" id="international-collections">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto;">
+      <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#D5BE9A;display:block;margin-bottom:8px;font-weight:700;">World-Class Craftsmanship</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem, 4.5vw, 3.4rem);color:#F5F0E8;font-weight:300;line-height:1.2;margin-bottom:14px;">
+        Go Around The World With Grand Living
+      </h2>
+      <p style="font-family:'Manrope',sans-serif;font-size:0.92rem;color:#B7AA98;line-height:1.7;">
+        Explore furniture crafted with global architectural aesthetics — from Tuscan full-grain leather to royal Indian solid teak and German ergonomics.
+      </p>
+    </div>
+
+    <!-- Country Tabs -->
+    <div class="intl-tabs-wrap">
+      <button class="intl-tab-btn is-active" data-country="all">
+        <span>🌐</span> All Global Masterpieces
+      </button>
+      <button class="intl-tab-btn" data-country="italy">
+        <span>🇮🇹</span> Italian Collection
+      </button>
+      <button class="intl-tab-btn" data-country="india">
+        <span>🇮🇳</span> Royal Teak Heritage
+      </button>
+      <button class="intl-tab-btn" data-country="usa">
+        <span>🇺🇸</span> American Lounge
+      </button>
+      <button class="intl-tab-btn" data-country="germany">
+        <span>🇩🇪</span> German Precision
+      </button>
+      <button class="intl-tab-btn" data-country="turkey">
+        <span>🇹🇷</span> Turkish Velvet
+      </button>
+    </div>
+
+    <!-- International Products Grid -->
+    <div class="intl-grid">
+      <!-- 1. Italian Sectional -->
+      <article class="intl-card" data-country="italy" data-id="1">
+        <div class="intl-card__media">
+          <img src="/uploads/products/meridian-sectional-sofa.jpg" alt="Meridian Sectional Sofa" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
+          <span class="intl-card__discount-pill">38% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="1" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Full-Grain Italian Leather</span>
+          <h3 class="intl-card__title">Meridian Sectional Sofa</h3>
+          <p class="intl-card__desc">A sweeping L-shaped modular sectional upholstered in certified Tuscan leather with solid teak undercarriage.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹2,80,000</span>
+              <span class="intl-price-mrp">₹4,50,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="280000">
+              ⚡ or ₹23,333/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Meridian+Sectional+Sofa." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Royal Teak Cot -->
+      <article class="intl-card" data-country="india" data-id="2">
+        <div class="intl-card__media">
+          <img src="/uploads/products/classic-teak-cot.jpg" alt="Classic Burma Teak Cot" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇳 Royal Teak Heritage</span>
+          <span class="intl-card__discount-pill">35% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="2" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Grade-A Central Province Teak</span>
+          <h3 class="intl-card__title">Heirloom Hand-Carved Teak Cot</h3>
+          <p class="intl-card__desc">Generational mortise-and-tenon woodworking with hand-rubbed organic oil polish for natural golden patina.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,45,000</span>
+              <span class="intl-price-mrp">₹2,25,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="145000">
+              ⚡ or ₹12,083/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/classic-teak-cot" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Heirloom+Teak+Cot." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Turkish Velvet Palazzo Bed -->
+      <article class="intl-card" data-country="turkey" data-id="3">
+        <div class="intl-card__media">
+          <img src="/uploads/products/palazzo-king-bed.jpg" alt="Palazzo King Bed" loading="lazy">
+          <span class="intl-card__flag-badge">🇹🇷 Turkish Opulence</span>
+          <span class="intl-card__discount-pill">40% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="3" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Royal Blue Crushed Velvet</span>
+          <h3 class="intl-card__title">Palazzo Grand King Bed</h3>
+          <p class="intl-card__desc">Fluted architectural headboard in high-density foam wrapped in imported Ottoman-inspired royal blue velvet.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,95,000</span>
+              <span class="intl-price-mrp">₹3,25,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="195000">
+              ⚡ or ₹16,250/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palazzo+King+Bed." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. American Lounge Riviera Chair -->
+      <article class="intl-card" data-country="usa" data-id="4">
+        <div class="intl-card__media">
+          <img src="/uploads/products/riviera-accent-chair.jpg" alt="Riviera Accent Chair" loading="lazy">
+          <span class="intl-card__flag-badge">🇺🇸 American Lounge</span>
+          <span class="intl-card__discount-pill">30% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="4" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Bouclé Fabric &amp; Solid Walnut</span>
+          <h3 class="intl-card__title">Riviera Ergonomic Barrel Chair</h3>
+          <p class="intl-card__desc">Sculptural barrel-back silhouette crafted for deep lounging with American walnut dowel base.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹65,000</span>
+              <span class="intl-price-mrp">₹95,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="65000">
+              ⚡ or ₹5,416/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/riviera-accent-chair" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Riviera+Chair." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. German Precision Palisade Wardrobe -->
+      <article class="intl-card" data-country="germany" data-id="5">
+        <div class="intl-card__media">
+          <img src="/uploads/products/palisade-walk-in-wardrobe.jpg" alt="Palisade Walk-in Wardrobe" loading="lazy">
+          <span class="intl-card__flag-badge">🇩🇪 German Precision</span>
+          <span class="intl-card__discount-pill">32% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="5" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Anodized Aluminium &amp; Fluted Glass</span>
+          <h3 class="intl-card__title">Palisade Architectural Wardrobe</h3>
+          <p class="intl-card__desc">German soft-close track fittings with integrated motion sensor LED illumination and bespoke storage modules.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹3,40,000</span>
+              <span class="intl-price-mrp">₹5,00,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="340000">
+              ⚡ or ₹28,333/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palisade+Wardrobe." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Italian Live-Edge Vesper Table -->
+      <article class="intl-card" data-country="italy" data-id="6">
+        <div class="intl-card__media">
+          <img src="/uploads/products/vesper-dining-table.jpg" alt="Vesper Dining Table" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
+          <span class="intl-card__discount-pill">36% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="6" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Single-Slab Live Edge &amp; Brass</span>
+          <h3 class="intl-card__title">Vesper Sculptural Dining Table</h3>
+          <p class="intl-card__desc">Single continuous natural slab seated on sculptural matte black architectural trestle legs.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,85,000</span>
+              <span class="intl-price-mrp">₹2,90,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="185000">
+              ⚡ or ₹15,416/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Vesper+Dining+Table." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROYALOAK-INSPIRED "SHOP BY LOOK" / ROOM LOOKBOOK
+     ============================================================ -->
+<section class="shop-the-look-section" id="shop-the-look">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px;">
+      <div>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#D5BE9A;display:block;margin-bottom:8px;font-weight:700;">Spatial Visualizer</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem, 4vw, 3.2rem);color:#F5F0E8;font-weight:300;line-height:1.2;margin:0;">
+          Shop By Look — Curated Rooms
+        </h2>
+      </div>
+      <a href="/gallery" class="btn btn-outline" style="padding:12px 24px;">View Full Visual Archive &rarr;</a>
+    </div>
+
+    <div class="look-grid">
+      <!-- Look 1 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-living.jpg" alt="Living Room Suite Inspiration" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Curated Living Suite</span>
+          <h3 class="look-card__title">The Dwaraka Penthouse Suite</h3>
+          <p class="look-card__sub">Complete set including Meridian Leather Sectional, Aurelius Table &amp; Accent Armchair.</p>
+          <a href="/custom-request" class="look-card__btn">Request This Room Look &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Look 2 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-bedroom.jpg" alt="Master Bedroom Collection" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Presidential Bedroom</span>
+          <h3 class="look-card__title">The Palm Beach Sanctuary</h3>
+          <p class="look-card__sub">Palazzo Velvet King Bed paired with Nightfall bedside tables and Lumiere Wardrobe.</p>
+          <a href="/custom-request" class="look-card__btn">Request This Room Look &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Look 3 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-main.jpg" alt="Architectural Flagship Space" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Flagship Display</span>
+          <h3 class="look-card__title">The Coastal Atelier Salon</h3>
+          <p class="look-card__sub">Live edge dining centerpiece accompanied by bespoke bar console and dining chairs.</p>
+          <a href="/contact" class="look-card__btn">Tour This Setup In Showroom &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1949,6 +2376,268 @@ h1, h2, h3, h4, h5, h6 {
         </div>
       </a>
       <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROYALOAK-INSPIRED INTERNATIONAL COLLECTIONS SECTION
+     ============================================================ -->
+<section class="international-collections-section" id="international-collections">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto;">
+      <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#D5BE9A;display:block;margin-bottom:8px;font-weight:700;">World-Class Craftsmanship</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem, 4.5vw, 3.4rem);color:#F5F0E8;font-weight:300;line-height:1.2;margin-bottom:14px;">
+        Go Around The World With Grand Living
+      </h2>
+      <p style="font-family:'Manrope',sans-serif;font-size:0.92rem;color:#B7AA98;line-height:1.7;">
+        Explore furniture crafted with global architectural aesthetics — from Tuscan full-grain leather to royal Indian solid teak and German ergonomics.
+      </p>
+    </div>
+
+    <!-- Country Tabs -->
+    <div class="intl-tabs-wrap">
+      <button class="intl-tab-btn is-active" data-country="all">
+        <span>🌐</span> All Global Masterpieces
+      </button>
+      <button class="intl-tab-btn" data-country="italy">
+        <span>🇮🇹</span> Italian Collection
+      </button>
+      <button class="intl-tab-btn" data-country="india">
+        <span>🇮🇳</span> Royal Teak Heritage
+      </button>
+      <button class="intl-tab-btn" data-country="usa">
+        <span>🇺🇸</span> American Lounge
+      </button>
+      <button class="intl-tab-btn" data-country="germany">
+        <span>🇩🇪</span> German Precision
+      </button>
+      <button class="intl-tab-btn" data-country="turkey">
+        <span>🇹🇷</span> Turkish Velvet
+      </button>
+    </div>
+
+    <!-- International Products Grid -->
+    <div class="intl-grid">
+      <!-- 1. Italian Sectional -->
+      <article class="intl-card" data-country="italy" data-id="1">
+        <div class="intl-card__media">
+          <img src="/uploads/products/meridian-sectional-sofa.jpg" alt="Meridian Sectional Sofa" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
+          <span class="intl-card__discount-pill">38% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="1" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Full-Grain Italian Leather</span>
+          <h3 class="intl-card__title">Meridian Sectional Sofa</h3>
+          <p class="intl-card__desc">A sweeping L-shaped modular sectional upholstered in certified Tuscan leather with solid teak undercarriage.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹2,80,000</span>
+              <span class="intl-price-mrp">₹4,50,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="280000">
+              ⚡ or ₹23,333/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Meridian+Sectional+Sofa." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Royal Teak Cot -->
+      <article class="intl-card" data-country="india" data-id="2">
+        <div class="intl-card__media">
+          <img src="/uploads/products/classic-teak-cot.jpg" alt="Classic Burma Teak Cot" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇳 Royal Teak Heritage</span>
+          <span class="intl-card__discount-pill">35% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="2" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Grade-A Central Province Teak</span>
+          <h3 class="intl-card__title">Heirloom Hand-Carved Teak Cot</h3>
+          <p class="intl-card__desc">Generational mortise-and-tenon woodworking with hand-rubbed organic oil polish for natural golden patina.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,45,000</span>
+              <span class="intl-price-mrp">₹2,25,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="145000">
+              ⚡ or ₹12,083/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/classic-teak-cot" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Heirloom+Teak+Cot." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Turkish Velvet Palazzo Bed -->
+      <article class="intl-card" data-country="turkey" data-id="3">
+        <div class="intl-card__media">
+          <img src="/uploads/products/palazzo-king-bed.jpg" alt="Palazzo King Bed" loading="lazy">
+          <span class="intl-card__flag-badge">🇹🇷 Turkish Opulence</span>
+          <span class="intl-card__discount-pill">40% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="3" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Royal Blue Crushed Velvet</span>
+          <h3 class="intl-card__title">Palazzo Grand King Bed</h3>
+          <p class="intl-card__desc">Fluted architectural headboard in high-density foam wrapped in imported Ottoman-inspired royal blue velvet.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,95,000</span>
+              <span class="intl-price-mrp">₹3,25,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="195000">
+              ⚡ or ₹16,250/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palazzo+King+Bed." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. American Lounge Riviera Chair -->
+      <article class="intl-card" data-country="usa" data-id="4">
+        <div class="intl-card__media">
+          <img src="/uploads/products/riviera-accent-chair.jpg" alt="Riviera Accent Chair" loading="lazy">
+          <span class="intl-card__flag-badge">🇺🇸 American Lounge</span>
+          <span class="intl-card__discount-pill">30% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="4" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Bouclé Fabric &amp; Solid Walnut</span>
+          <h3 class="intl-card__title">Riviera Ergonomic Barrel Chair</h3>
+          <p class="intl-card__desc">Sculptural barrel-back silhouette crafted for deep lounging with American walnut dowel base.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹65,000</span>
+              <span class="intl-price-mrp">₹95,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="65000">
+              ⚡ or ₹5,416/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/riviera-accent-chair" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Riviera+Chair." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. German Precision Palisade Wardrobe -->
+      <article class="intl-card" data-country="germany" data-id="5">
+        <div class="intl-card__media">
+          <img src="/uploads/products/palisade-walk-in-wardrobe.jpg" alt="Palisade Walk-in Wardrobe" loading="lazy">
+          <span class="intl-card__flag-badge">🇩🇪 German Precision</span>
+          <span class="intl-card__discount-pill">32% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="5" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Anodized Aluminium &amp; Fluted Glass</span>
+          <h3 class="intl-card__title">Palisade Architectural Wardrobe</h3>
+          <p class="intl-card__desc">German soft-close track fittings with integrated motion sensor LED illumination and bespoke storage modules.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹3,40,000</span>
+              <span class="intl-price-mrp">₹5,00,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="340000">
+              ⚡ or ₹28,333/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palisade+Wardrobe." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Italian Live-Edge Vesper Table -->
+      <article class="intl-card" data-country="italy" data-id="6">
+        <div class="intl-card__media">
+          <img src="/uploads/products/vesper-dining-table.jpg" alt="Vesper Dining Table" loading="lazy">
+          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
+          <span class="intl-card__discount-pill">36% OFF</span>
+          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="6" aria-label="Save to Wishlist">♡</button>
+        </div>
+        <div class="intl-card__content">
+          <span class="intl-card__meta">Single-Slab Live Edge &amp; Brass</span>
+          <h3 class="intl-card__title">Vesper Sculptural Dining Table</h3>
+          <p class="intl-card__desc">Single continuous natural slab seated on sculptural matte black architectural trestle legs.</p>
+          <div class="intl-pricing-box">
+            <div class="intl-prices">
+              <span class="intl-price-current">₹1,85,000</span>
+              <span class="intl-price-mrp">₹2,90,000</span>
+            </div>
+            <div class="intl-emi-pill trigger-emi-calc" data-price="185000">
+              ⚡ or ₹15,416/mo • 0% EMI Options &gt;
+            </div>
+            <div class="intl-card__actions">
+              <a href="/products/vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
+              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Vesper+Dining+Table." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROYALOAK-INSPIRED "SHOP BY LOOK" / ROOM LOOKBOOK
+     ============================================================ -->
+<section class="shop-the-look-section" id="shop-the-look">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px;">
+      <div>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#D5BE9A;display:block;margin-bottom:8px;font-weight:700;">Spatial Visualizer</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem, 4vw, 3.2rem);color:#F5F0E8;font-weight:300;line-height:1.2;margin:0;">
+          Shop By Look — Curated Rooms
+        </h2>
+      </div>
+      <a href="/gallery" class="btn btn-outline" style="padding:12px 24px;">View Full Visual Archive &rarr;</a>
+    </div>
+
+    <div class="look-grid">
+      <!-- Look 1 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-living.jpg" alt="Living Room Suite Inspiration" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Curated Living Suite</span>
+          <h3 class="look-card__title">The Dwaraka Penthouse Suite</h3>
+          <p class="look-card__sub">Complete set including Meridian Leather Sectional, Aurelius Table &amp; Accent Armchair.</p>
+          <a href="/custom-request" class="look-card__btn">Request This Room Look &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Look 2 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-bedroom.jpg" alt="Master Bedroom Collection" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Presidential Bedroom</span>
+          <h3 class="look-card__title">The Palm Beach Sanctuary</h3>
+          <p class="look-card__sub">Palazzo Velvet King Bed paired with Nightfall bedside tables and Lumiere Wardrobe.</p>
+          <a href="/custom-request" class="look-card__btn">Request This Room Look &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Look 3 -->
+      <div class="look-card">
+        <img src="/uploads/gallery/showroom-main.jpg" alt="Architectural Flagship Space" loading="lazy">
+        <div class="look-card__overlay">
+          <span class="look-card__tag">Flagship Display</span>
+          <h3 class="look-card__title">The Coastal Atelier Salon</h3>
+          <p class="look-card__sub">Live edge dining centerpiece accompanied by bespoke bar console and dining chairs.</p>
+          <a href="/contact" class="look-card__btn">Tour This Setup In Showroom &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2482,5 +3171,43 @@ h1, h2, h3, h4, h5, h6 {
 
 })();
 </script>
+
+<!-- Interactive FinTech EMI Calculator Modal (Royaloak Style) -->
+<div class="emi-modal-backdrop" id="emiModalBackdrop" aria-hidden="true">
+  <div class="emi-modal-card">
+    <button class="emi-close-btn" id="emiModalClose" aria-label="Close EMI Calculator">&times;</button>
+    <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#D5BE9A;font-weight:700;display:block;margin-bottom:8px;">Instant FinTech Calculator</span>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#F5F0E8;font-weight:400;margin-bottom:6px;">No-Cost Furniture EMI</h3>
+    <p style="font-size:0.84rem;color:#B7AA98;line-height:1.5;margin-bottom:24px;">Split your luxury furniture investment into easy interest-free monthly installments.</p>
+
+    <div style="background:#141210;padding:20px;border-radius:4px;border:1px solid rgba(213,190,154,0.18);margin-bottom:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <span style="font-size:0.8rem;color:#B7AA98;">Piece Value:</span>
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#D5BE9A;" id="emiModalAmount">₹1,50,000</strong>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#D5BE9A;margin-bottom:6px;">Select Tenure Plan:</label>
+        <select id="emiTenureSelect" style="width:100%;background:#1C1916;border:1px solid rgba(213,190,154,0.3);color:#F5F0E8;padding:10px 14px;border-radius:2px;font-size:0.9rem;outline:none;cursor:pointer;">
+          <option value="3">3 Months No-Cost EMI (0% Interest)</option>
+          <option value="6" selected>6 Months No-Cost EMI (0% Interest)</option>
+          <option value="9">9 Months Low-Cost EMI</option>
+          <option value="12">12 Months Easy Installments</option>
+        </select>
+      </div>
+
+      <div style="padding-top:14px;border-top:1px dashed rgba(213,190,154,0.2);display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.82rem;color:#F5F0E8;font-weight:600;">Estimated Monthly EMI:</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#4EBE7B;font-weight:700;" id="emiMonthlyOutput">₹25,000 / month</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;">
+      <a href="https://wa.me/919052751666?text=Hello+Grand+Living%21+I+am+interested+in+the+0%25+No-Cost+EMI+options+for+my+furniture+order." target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;text-align:center;padding:12px;">
+        Avail EMI On WhatsApp &rarr;
+      </a>
+    </div>
+  </div>
+</div>
 
 <?php require_once 'includes/footer.php'; ?>

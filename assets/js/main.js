@@ -1016,6 +1016,174 @@ const initQuickEnquiryToWhatsApp = () => {
 };
 
 // ============================================================
+// ROYALOAK-INSPIRED E-COMMERCE & INTERACTIVE LOGIC
+// ============================================================
+
+const initCountdownTimer = () => {
+  const countdownEl = document.getElementById('heroCountdown');
+  if (!countdownEl) return;
+
+  let totalSeconds = 6 * 3600 + 45 * 60 + 20;
+
+  const update = () => {
+    totalSeconds--;
+    if (totalSeconds < 0) totalSeconds = 24 * 3600;
+
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+    const pad = (n) => (n < 10 ? '0' + n : n);
+    countdownEl.textContent = `${pad(h)}h : ${pad(m)}m : ${pad(s)}s`;
+  };
+
+  update();
+  setInterval(update, 1000);
+};
+
+const initHeroSlider = () => {
+  const slides = document.querySelectorAll('.hero__slide-item');
+  const dots = document.querySelectorAll('.hero-slider-dot');
+  if (slides.length <= 1) return;
+
+  let current = 0;
+  let timer = null;
+
+  const showSlide = (index) => {
+    slides.forEach((s, i) => {
+      s.classList.toggle('is-active', i === index);
+      s.style.opacity = i === index ? '1' : '0';
+      s.style.pointerEvents = i === index ? 'auto' : 'none';
+    });
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    current = index;
+  };
+
+  const nextSlide = () => {
+    showSlide((current + 1) % slides.length);
+  };
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer);
+      showSlide(idx);
+      timer = setInterval(nextSlide, 5500);
+    });
+  });
+
+  timer = setInterval(nextSlide, 5500);
+};
+
+const initInternationalCollections = () => {
+  const tabs = document.querySelectorAll('.intl-tab-btn');
+  const cards = document.querySelectorAll('.intl-card');
+
+  if (!tabs.length || !cards.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      const country = tab.dataset.country || 'all';
+
+      cards.forEach((card) => {
+        const cardCountry = card.dataset.country || '';
+        if (country === 'all' || cardCountry === country) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.4s ease';
+            card.style.opacity = '1';
+          }, 20);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+};
+
+const initEmiCalculator = () => {
+  const backdrop = document.getElementById('emiModalBackdrop');
+  const closeBtn = document.getElementById('emiModalClose');
+  const emiPills = document.querySelectorAll('.trigger-emi-calc');
+  const amountDisplay = document.getElementById('emiModalAmount');
+  const emiOutput = document.getElementById('emiMonthlyOutput');
+  const tenureSelect = document.getElementById('emiTenureSelect');
+
+  if (!backdrop) return;
+
+  let currentPrincipal = 150000;
+
+  const calculate = () => {
+    const months = parseInt(tenureSelect?.value || '6', 10);
+    const monthly = Math.round(currentPrincipal / months);
+    if (emiOutput) {
+      emiOutput.textContent = '₹' + monthly.toLocaleString('en-IN') + ' / month';
+    }
+    if (amountDisplay) {
+      amountDisplay.textContent = '₹' + currentPrincipal.toLocaleString('en-IN');
+    }
+  };
+
+  emiPills.forEach((pill) => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      const price = parseInt(pill.dataset.price || '150000', 10);
+      currentPrincipal = price;
+      calculate();
+      backdrop.classList.add('is-open');
+    });
+  });
+
+  if (tenureSelect) {
+    tenureSelect.addEventListener('change', calculate);
+  }
+
+  const close = () => backdrop.classList.remove('is-open');
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) close();
+  });
+};
+
+const initWishlistToggle = () => {
+  const btns = document.querySelectorAll('.wishlist-toggle');
+  let saved = [];
+  try {
+    saved = JSON.parse(localStorage.getItem('grand_wishlist') || '[]');
+  } catch (err) {}
+
+  btns.forEach((btn) => {
+    const id = btn.dataset.productId || btn.closest('.intl-card')?.dataset.id || Math.random().toString();
+    if (saved.includes(id)) {
+      btn.classList.add('is-active');
+      btn.innerHTML = '♥';
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isActive = btn.classList.toggle('is-active');
+      if (isActive) {
+        btn.innerHTML = '♥';
+        if (!saved.includes(id)) saved.push(id);
+        if (window.GrandFurniture?.showToast) {
+          window.GrandFurniture.showToast('Piece added to your Curated Wishlist!', 'success');
+        }
+      } else {
+        btn.innerHTML = '♡';
+        saved = saved.filter((item) => item !== id);
+      }
+      try {
+        localStorage.setItem('grand_wishlist', JSON.stringify(saved));
+      } catch (err) {}
+    });
+  });
+};
+
+// ============================================================
 // INIT
 // ============================================================
 
@@ -1032,6 +1200,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsApp();
   initScrollProgress();
   initRevealObserver();
+  initCountdownTimer();
+  initHeroSlider();
+  initInternationalCollections();
+  initEmiCalculator();
+  initWishlistToggle();
 });
 
 // Export utilities for use in other modules
