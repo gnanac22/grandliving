@@ -170,6 +170,7 @@
 </footer>
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/cursor.js" defer></script>
 <script>
 // Standalone Register Submit
 (function() {
@@ -180,13 +181,21 @@
   var pin = document.getElementById('stRegPincode');
   var em = document.getElementById('stRegEmail');
 
+  // Check URL params for pre-filling phone
+  var params = new URLSearchParams(window.location.search);
+  var urlPhone = params.get('phone') || params.get('mobile');
+  if (urlPhone && ph) {
+    ph.value = urlPhone.replace(/\D/g, '').slice(-10);
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     if (!fn.value.trim() || !ln.value.trim() || !ph.value.trim() || !pin.value.trim() || !em.value.trim()) {
       alert('Please fill out all required fields.');
       return;
     }
-    if (ph.value.trim().length !== 10) {
+    var cleanPh = ph.value.trim().replace(/\D/g, '').slice(-10);
+    if (cleanPh.length !== 10) {
       alert('Please enter a valid 10-digit mobile number.');
       return;
     }
@@ -198,14 +207,16 @@
     var user = {
       firstName: fn.value.trim(),
       lastName: ln.value.trim(),
-      phone: ph.value.trim(),
+      phone: cleanPh,
       pincode: pin.value.trim(),
       email: em.value.trim(),
       hasVoucher: true,
       voucherCode: 'HAPPY500',
-      voucherAmount: 500
+      voucherAmount: 500,
+      registeredAt: new Date().toISOString()
     };
-    GrandAuth.setUser(user);
+    // Save to permanent registered accounts database
+    GrandAuth.registerUser(user);
     if (window.GrandFurniture && window.GrandFurniture.showToast) {
       window.GrandFurniture.showToast('Account created for ' + user.firstName + '! Voucher HAPPY500 unlocked!', 'success');
     }

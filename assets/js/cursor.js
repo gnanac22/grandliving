@@ -1,6 +1,6 @@
 /**
  * @file cursor.js
- * @description Ultra-fast 120fps hardware-accelerated cursor for Grand Furniture Vizag
+ * @description Ultra-fast 120fps hardware-accelerated cursor for Grand Living Vizag
  */
 
 'use strict';
@@ -16,17 +16,20 @@ class LuxuryCursor {
     this.ringX = -100;
     this.ringY = -100;
 
-    // Responsive lerp factor for instant tactile feel
     this.LERP_FACTOR = 0.22;
-
     this.isHovering = false;
     this.isHidden = false;
-    this.isExpanded = false;
     this.rafId = null;
+    this.initialized = false;
   }
 
   _createElement() {
-    if (document.querySelector('.cursor__dot')) return;
+    if (document.querySelector('.cursor__dot')) {
+      this.dot = document.querySelector('.cursor__dot');
+      this.ring = document.querySelector('.cursor__ring');
+      this.label = document.querySelector('.cursor__label');
+      return;
+    }
 
     this.dot = document.createElement('div');
     this.dot.className = 'cursor__dot';
@@ -45,10 +48,13 @@ class LuxuryCursor {
   }
 
   _bindEvents() {
-    // Immediate dot positioning without waiting for RAF
     window.addEventListener('mousemove', (e) => {
       this.mouseX = e.clientX;
       this.mouseY = e.clientY;
+
+      if (!document.body.classList.contains('has-custom-cursor')) {
+        document.body.classList.add('has-custom-cursor');
+      }
 
       if (this.dot) {
         this.dot.style.transform = `translate3d(${this.mouseX - 4}px, ${this.mouseY - 4}px, 0)`;
@@ -62,12 +68,12 @@ class LuxuryCursor {
     document.addEventListener('mouseleave', () => this.hide());
     document.addEventListener('mouseenter', () => this.show());
 
-    // Single efficient event delegation for hover states
+    // Single event delegation for hover states
     document.addEventListener('mouseover', (e) => {
       const target = e.target;
-      const interactive = target.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, input, select, textarea');
+      const interactive = target.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, [role="button"]');
       
-      if (interactive) {
+      if (interactive && this.ring) {
         this.isHovering = true;
         this.ring.classList.add('cursor__ring--hover');
 
@@ -83,9 +89,11 @@ class LuxuryCursor {
 
     document.addEventListener('mouseout', (e) => {
       const related = e.relatedTarget;
-      if (!related || !related.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, input, select, textarea')) {
+      if (!related || !related.closest('a, button, .btn, .product-card, .collection-card, .inspiration-card, [role="button"]')) {
         this.isHovering = false;
-        this.ring.classList.remove('cursor__ring--hover', 'cursor__ring--expanded');
+        if (this.ring) {
+          this.ring.classList.remove('cursor__ring--hover', 'cursor__ring--expanded');
+        }
         this.setLabel('');
       }
     }, { passive: true });
@@ -115,7 +123,6 @@ class LuxuryCursor {
   }
 
   update() {
-    // Fast lerp interpolation for the follower ring
     this.ringX += (this.mouseX - this.ringX) * this.LERP_FACTOR;
     this.ringY += (this.mouseY - this.ringY) * this.LERP_FACTOR;
 
@@ -127,18 +134,35 @@ class LuxuryCursor {
   }
 
   init() {
+    if (this.initialized) return;
+    // Don't activate on touch-only mobile devices
+    if ('ontouchstart' in window && window.innerWidth < 768) return;
+
+    this.initialized = true;
     this._createElement();
     this._bindEvents();
     this.update();
   }
 }
 
-// Only on fine-pointer (mouse) devices
-if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  const cursor = new LuxuryCursor();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => cursor.init());
-  } else {
-    cursor.init();
+// Global initializer
+window.initLuxuryCursor = function() {
+  if (!window._luxuryCursorInstance) {
+    window._luxuryCursorInstance = new LuxuryCursor();
+    window._luxuryCursorInstance.init();
   }
+};
+
+// Initialize automatically on mousemove or DOM ready
+if (typeof window !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.initLuxuryCursor);
+  } else {
+    window.initLuxuryCursor();
+  }
+  // Wake up immediately on first mouse interaction
+  window.addEventListener('mousemove', function onFirstMouse() {
+    window.initLuxuryCursor();
+    window.removeEventListener('mousemove', onFirstMouse);
+  }, { passive: true, once: true });
 }

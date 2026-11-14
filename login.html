@@ -163,8 +163,9 @@
 </footer>
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/cursor.js" defer></script>
 <script>
-// Standalone Login Submit
+// Standalone Login Submit with Registered Account Validation
 (function() {
   var form = document.getElementById('standaloneLoginForm');
   var mobile = document.getElementById('stLoginMobile');
@@ -172,12 +173,28 @@
   var otpInput = document.getElementById('stLoginOtp');
   var btn = document.getElementById('stSubmitBtn');
   var requested = false;
+  var matchedUser = null;
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var ph = mobile.value.trim();
+    var ph = mobile.value.trim().replace(/\D/g, '').slice(-10);
     if (ph.length !== 10) {
       alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    // CHECK IF ACCOUNT EXISTS
+    matchedUser = GrandAuth.findUserByMobile(ph);
+    if (!matchedUser) {
+      alert('⚠️ No account found with mobile number +91 ' + ph + '!\n\nOnly registered customers can log in. Please create an account first to sign in and claim ₹500 off (Code: HAPPY500).');
+      if (window.GrandFurniture && window.GrandFurniture.showToast) {
+        window.GrandFurniture.showToast('No account found for +91 ' + ph + '. Please register!', 'error');
+      }
+      setTimeout(function() {
+        if (confirm('No account found for +91 ' + ph + '.\n\nWould you like to register now and get ₹500 OFF with code HAPPY500?')) {
+          window.location.href = '/register?phone=' + ph;
+        }
+      }, 200);
       return;
     }
 
@@ -185,26 +202,22 @@
       requested = true;
       otpWrap.style.display = 'block';
       otpInput.value = '8492';
-      btn.textContent = 'Verify OTP & Complete Sign In';
+      btn.textContent = 'Verify OTP & Sign In as ' + matchedUser.firstName;
       if (window.GrandFurniture && window.GrandFurniture.showToast) {
         window.GrandFurniture.showToast('OTP sent! Auto-filled demo code: 8492', 'success');
       }
       return;
     }
 
-    var user = {
-      firstName: 'Atelier Patron',
-      lastName: '',
-      phone: ph,
-      pincode: '530016',
-      email: 'client_' + ph + '@grandliving.in',
-      hasVoucher: true,
-      voucherCode: 'HAPPY500',
-      voucherAmount: 500
-    };
-    GrandAuth.setUser(user);
+    // Verify OTP
+    if (otpInput.value.trim() !== '8492' && otpInput.value.trim().length !== 4) {
+      alert('Please enter valid 4-digit OTP.');
+      return;
+    }
+
+    GrandAuth.setUser(matchedUser);
     if (window.GrandFurniture && window.GrandFurniture.showToast) {
-      window.GrandFurniture.showToast('Signed in successfully! Code HAPPY500 unlocked.', 'success');
+      window.GrandFurniture.showToast('Welcome back, ' + matchedUser.firstName + '! Signed in successfully.', 'success');
     }
     setTimeout(function() {
       window.location.href = '/catalogue';

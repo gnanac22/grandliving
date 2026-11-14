@@ -1295,6 +1295,67 @@ const GrandAuth = {
     } catch (e) {}
   },
 
+  // Database of registered accounts in localStorage
+  getRegisteredUsers() {
+    try {
+      const data = localStorage.getItem('grand_registered_users');
+      let list = data ? JSON.parse(data) : [];
+      if (!list || list.length === 0) {
+        // Pre-seed showroom test/admin accounts
+        list = [
+          {
+            firstName: 'Gnanachandra',
+            lastName: 'Patron',
+            phone: '9052751666',
+            pincode: '530016',
+            email: 'gnanacreats@grandliving.in',
+            hasVoucher: true,
+            voucherCode: 'HAPPY500',
+            voucherAmount: 500
+          },
+          {
+            firstName: 'Showroom',
+            lastName: 'Patron',
+            phone: '9876543210',
+            pincode: '530016',
+            email: 'patron@grandliving.in',
+            hasVoucher: true,
+            voucherCode: 'HAPPY500',
+            voucherAmount: 500
+          }
+        ];
+        localStorage.setItem('grand_registered_users', JSON.stringify(list));
+      }
+      return list;
+    } catch (e) {
+      return [];
+    }
+  },
+
+  findUserByMobile(mobile) {
+    if (!mobile) return null;
+    const cleanMobile = String(mobile).replace(/\D/g, '').slice(-10);
+    const list = this.getRegisteredUsers();
+    return list.find(u => {
+      const uPhone = String(u.phone).replace(/\D/g, '').slice(-10);
+      return uPhone === cleanMobile;
+    }) || null;
+  },
+
+  registerUser(user) {
+    const list = this.getRegisteredUsers();
+    const cleanMobile = String(user.phone).replace(/\D/g, '').slice(-10);
+    const existingIndex = list.findIndex(u => String(u.phone).replace(/\D/g, '').slice(-10) === cleanMobile);
+    
+    if (existingIndex >= 0) {
+      list[existingIndex] = { ...list[existingIndex], ...user };
+    } else {
+      list.push(user);
+    }
+    localStorage.setItem('grand_registered_users', JSON.stringify(list));
+    this.setUser(user);
+  },
+
   logout() {
     try {
       localStorage.removeItem('grand_user');
@@ -1515,9 +1576,28 @@ function initCustomerAuth() {
 
   loginForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const phone = loginMobile?.value.trim();
+    const phone = loginMobile?.value.trim().replace(/\D/g, '').slice(-10);
     if (!phone || phone.length !== 10) {
       alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    // CHECK IF USER HAS AN ACCOUNT
+    const registeredUser = GrandAuth.findUserByMobile(phone);
+    if (!registeredUser) {
+      alert(`⚠️ No account found with mobile number +91 ${phone}!\n\nOnly registered customers can sign in. Please create an account first to unlock ₹500 off (Code: HAPPY500).`);
+      if (window.GrandFurniture?.showToast) {
+        window.GrandFurniture.showToast(`No account found for +91 ${phone}. Please create an account first!`, 'error');
+      }
+      // Reset OTP view and flip to registration tab
+      otpRequested = false;
+      if (loginOtpWrap) loginOtpWrap.style.display = 'none';
+      if (loginSubmitBtn) loginSubmitBtn.textContent = 'Request OTP / Sign In';
+      if (tabRegisterBtn) {
+        tabRegisterBtn.click();
+        const regPh = document.getElementById('regMobile');
+        if (regPh) regPh.value = phone;
+      }
       return;
     }
 
@@ -1525,7 +1605,7 @@ function initCustomerAuth() {
       otpRequested = true;
       loginOtpWrap.style.display = 'block';
       loginOtp.value = '8492';
-      loginSubmitBtn.textContent = 'Verify OTP & Complete Sign In';
+      loginSubmitBtn.textContent = `Verify OTP & Sign In as ${registeredUser.firstName}`;
       if (window.GrandFurniture?.showToast) {
         window.GrandFurniture.showToast(`OTP sent to +91 ${phone}! Auto-filled demo OTP: 8492`, 'success');
       }
@@ -1539,26 +1619,16 @@ function initCustomerAuth() {
       return;
     }
 
-    const existing = GrandAuth.getUser();
-    const user = {
-      firstName: existing?.firstName || 'Atelier Patron',
-      lastName: existing?.lastName || '',
-      phone: phone,
-      pincode: existing?.pincode || '530016',
-      email: existing?.email || `client_${phone}@grandliving.in`,
-      hasVoucher: true,
-      voucherCode: 'HAPPY500',
-      voucherAmount: 500
-    };
-    GrandAuth.setUser(user);
+    // Sign into registered account
+    GrandAuth.setUser(registeredUser);
     closeModal();
 
     if (window.GrandFurniture?.showToast) {
-      window.GrandFurniture.showToast(`Welcome back, ${user.firstName}! Code HAPPY500 unlocked.`, 'success');
+      window.GrandFurniture.showToast(`Welcome back, ${registeredUser.firstName}! Signed in to your account.`, 'success');
     }
 
     if (typeof window._authGuestCallback === 'function') {
-      window._authGuestCallback(user);
+      window._authGuestCallback(registeredUser);
       window._authGuestCallback = null;
     }
   });
@@ -1569,7 +1639,7 @@ function initCustomerAuth() {
     e.preventDefault();
     const fn = document.getElementById('regFirstName')?.value.trim();
     const ln = document.getElementById('regLastName')?.value.trim();
-    const ph = document.getElementById('regMobile')?.value.trim();
+    const ph = document.getElementById('regMobile')?.value.trim().replace(/\D/g, '').slice(-10);
     const pin = document.getElementById('regPincode')?.value.trim();
     const em = document.getElementById('regEmail')?.value.trim();
 
@@ -1594,9 +1664,10 @@ function initCustomerAuth() {
       email: em,
       hasVoucher: true,
       voucherCode: 'HAPPY500',
-      voucherAmount: 500
+      voucherAmount: 500,
+      registeredAt: new Date().toISOString()
     };
-    GrandAuth.setUser(newUser);
+    GrandAuth.registerUser(newUser);
     closeModal();
 
     if (window.GrandFurniture?.showToast) {
