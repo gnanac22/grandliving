@@ -1538,6 +1538,9 @@ function initCustomerAuth() {
     modalOverlay.classList.remove('is-active');
     modalOverlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    try {
+      sessionStorage.setItem('grand_welcome_popup_dismissed', '1');
+    } catch (e) {}
     setTimeout(() => {
       modalOverlay.style.display = 'none';
     }, 250);
@@ -1798,6 +1801,20 @@ function initCustomerAuth() {
     registerUser: GrandAuth.registerUser.bind(GrandAuth),
     getRegisteredUsers: GrandAuth.getRegisteredUsers.bind(GrandAuth)
   };
+
+  // Auto-prompt first-time visitors after 4 seconds to claim HAPPY500 voucher (Royaloak pattern)
+  try {
+    const isDismissed = sessionStorage.getItem('grand_welcome_popup_dismissed');
+    const isUser = GrandAuth.getUser();
+    if (!isUser && !isDismissed) {
+      setTimeout(() => {
+        if (!GrandAuth.getUser() && !sessionStorage.getItem('grand_welcome_popup_dismissed')) {
+          sessionStorage.setItem('grand_welcome_popup_dismissed', '1');
+          openModal('register');
+        }
+      }, 4000);
+    }
+  } catch (e) {}
 }
 
 

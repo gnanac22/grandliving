@@ -2023,6 +2023,43 @@ h1, h2, h3, h4, h5, h6 {
       </a>
     </div>
 
+    <!-- ============================================================
+         ROYALOAK-INSPIRED FIRST PURCHASE WELCOME VOUCHER (HAPPY500)
+         ============================================================ -->
+    <div class="welcome-voucher-banner" style="margin:36px 0 10px;background:linear-gradient(135deg, #0b1a13 0%, #172b20 50%, #1a1614 100%);border:1px solid rgba(213,190,154,0.35);border-radius:14px;padding:24px 28px;box-shadow:0 12px 32px rgba(0,0,0,0.45);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:22px;flex:1 1 360px;">
+        <div style="width:115px;height:125px;border-radius:10px;overflow:hidden;flex-shrink:0;border:1px solid rgba(213,190,154,0.4);box-shadow:0 6px 16px rgba(0,0,0,0.5);">
+          <img src="/assets/images/signup-redeem-500.jpg" alt="Sign Up and Redeem 500 On First Purchase" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+        </div>
+        <div>
+          <span style="font-family:'Manrope',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#D5BE9A;font-weight:700;display:block;margin-bottom:6px;">STARTER PRIVILEGE &bull; SIGN UP OFFER</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem, 2.8vw, 2.1rem);color:#F5F0E8;font-weight:400;line-height:1.2;margin:0 0 6px 0;">
+            Sign Up &amp; Redeem &#8377;500/- <span style="font-style:italic;color:#D5BE9A;">On Your First Purchase</span>
+          </h3>
+          <p style="font-family:'Manrope',sans-serif;font-size:0.86rem;color:#B7AA98;margin:0;line-height:1.5;">
+            Register with your mobile number to unlock instant &#8377;500 discount on orders &ge; &#8377;25,000.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;flex-shrink:0;">
+        <div style="background:#FFF9F0;color:#171614;border:2px dashed #C8A46A;border-radius:8px;padding:10px 18px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+          <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;display:block;color:#76543B;font-weight:700;">USE CODE</span>
+          <strong style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:0.06em;color:#171614;display:block;line-height:1.1;">HAPPY500</strong>
+          <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:#8F7359;display:block;margin-top:2px;">T&amp;C Min Spend &#8377;25,000</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button type="button" class="btn btn-primary" onclick="GrandAuth.openModal('register')" style="padding:12px 24px;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;white-space:nowrap;background:linear-gradient(135deg,#D5BE9A 0%,#B89C74 100%);color:#171614;border:none;cursor:pointer;">
+            SIGN UP NOW &rarr;
+          </button>
+          <a href="https://wa.me/919052751666?text=Hi%20Grand%20Living%20Vizag%2C%20I%20would%20like%20to%20claim%20the%20HAPPY500%20(Rs.500%20off)%20voucher%20for%20my%20furniture%20purchase." target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:0.72rem;text-align:center;white-space:nowrap;border-color:rgba(213,190,154,0.4);color:#F5F0E8;">
+            Claim on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2161,191 +2198,8 @@ h1, h2, h3, h4, h5, h6 {
       </a>
       <?php endforeach; ?>
     </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     ROYALOAK-INSPIRED INTERNATIONAL COLLECTIONS SECTION
-     ============================================================ -->
-<section class="international-collections-section" id="international-collections">
-  <div class="container">
-    <div style="text-align:center;max-width:700px;margin:0 auto;">
-      <span style="font-family:'Manrope',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#D5BE9A;display:block;margin-bottom:8px;font-weight:700;">World-Class Craftsmanship</span>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem, 4.5vw, 3.4rem);color:#F5F0E8;font-weight:300;line-height:1.2;margin-bottom:14px;">
-        Go Around The World With Grand Living
-      </h2>
-      <p style="font-family:'Manrope',sans-serif;font-size:0.92rem;color:#B7AA98;line-height:1.7;">
-        Explore furniture crafted with global architectural aesthetics — from Tuscan full-grain leather to royal Indian solid teak and German ergonomics.
-      </p>
-    </div>
-
-    <!-- Country Tabs -->
-    <div class="intl-tabs-wrap">
-      <button class="intl-tab-btn is-active" data-country="all">
-        <span>🌐</span> All Global Masterpieces
-      </button>
-      <button class="intl-tab-btn" data-country="italy">
-        <span>🇮🇹</span> Italian Collection
-      </button>
-      <button class="intl-tab-btn" data-country="india">
-        <span>🇮🇳</span> Royal Teak Heritage
-      </button>
-      <button class="intl-tab-btn" data-country="usa">
-        <span>🇺🇸</span> American Lounge
-      </button>
-      <button class="intl-tab-btn" data-country="germany">
-        <span>🇩🇪</span> German Precision
-      </button>
-      <button class="intl-tab-btn" data-country="turkey">
-        <span>🇹🇷</span> Turkish Velvet
-      </button>
-    </div>
-
-    <!-- International Products Grid -->
-    <div class="intl-grid">
-      <!-- 1. Italian Sectional -->
-      <article class="intl-card" data-country="italy" data-id="1">
-        <div class="intl-card__media">
-          <img src="/uploads/products/meridian-sectional-sofa.jpg" alt="Meridian Sectional Sofa" loading="lazy">
-          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="1" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Full-Grain Italian Leather</span>
-          <h3 class="intl-card__title">Meridian Sectional Sofa</h3>
-          <p class="intl-card__desc">A sweeping L-shaped modular sectional upholstered in certified Tuscan leather with solid teak undercarriage.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/meridian-sectional-sofa" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Meridian+Sectional+Sofa." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2. Royal Teak Cot -->
-      <article class="intl-card" data-country="india" data-id="2">
-        <div class="intl-card__media">
-          <img src="/uploads/products/classic-teak-cot.jpg" alt="Classic Burma Teak Cot" loading="lazy">
-          <span class="intl-card__flag-badge">🇮🇳 Royal Teak Heritage</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="2" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Grade-A Central Province Teak</span>
-          <h3 class="intl-card__title">Heirloom Hand-Carved Teak Cot</h3>
-          <p class="intl-card__desc">Generational mortise-and-tenon woodworking with hand-rubbed organic oil polish for natural golden patina.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/classic-teak-cot" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Heirloom+Teak+Cot." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. Turkish Velvet Palazzo Bed -->
-      <article class="intl-card" data-country="turkey" data-id="3">
-        <div class="intl-card__media">
-          <img src="/uploads/products/palazzo-king-bed.jpg" alt="Palazzo King Bed" loading="lazy">
-          <span class="intl-card__flag-badge">🇹🇷 Turkish Opulence</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="3" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Royal Blue Crushed Velvet</span>
-          <h3 class="intl-card__title">Palazzo Grand King Bed</h3>
-          <p class="intl-card__desc">Fluted architectural headboard in high-density foam wrapped in imported Ottoman-inspired royal blue velvet.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/palazzo-king-bed" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palazzo+King+Bed." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4. American Lounge Riviera Chair -->
-      <article class="intl-card" data-country="usa" data-id="4">
-        <div class="intl-card__media">
-          <img src="/uploads/products/riviera-accent-chair.jpg" alt="Riviera Accent Chair" loading="lazy">
-          <span class="intl-card__flag-badge">🇺🇸 American Lounge</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="4" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Bouclé Fabric &amp; Solid Walnut</span>
-          <h3 class="intl-card__title">Riviera Ergonomic Barrel Chair</h3>
-          <p class="intl-card__desc">Sculptural barrel-back silhouette crafted for deep lounging with American walnut dowel base.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/riviera-accent-chair" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Riviera+Chair." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5. German Precision Palisade Wardrobe -->
-      <article class="intl-card" data-country="germany" data-id="5">
-        <div class="intl-card__media">
-          <img src="/uploads/products/palisade-walk-in-wardrobe.jpg" alt="Palisade Walk-in Wardrobe" loading="lazy">
-          <span class="intl-card__flag-badge">🇩🇪 German Precision</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="5" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Anodized Aluminium &amp; Fluted Glass</span>
-          <h3 class="intl-card__title">Palisade Architectural Wardrobe</h3>
-          <p class="intl-card__desc">German soft-close track fittings with integrated motion sensor LED illumination and bespoke storage modules.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/palisade-walk-in-wardrobe" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Palade+Wardrobe." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 6. Italian Live-Edge Vesper Table -->
-      <article class="intl-card" data-country="italy" data-id="6">
-        <div class="intl-card__media">
-          <img src="/uploads/products/vesper-dining-table.jpg" alt="Vesper Dining Table" loading="lazy">
-          <span class="intl-card__flag-badge">🇮🇹 Italian Modernist</span>
-          <button class="intl-card__wishlist-btn wishlist-toggle" data-product-id="6" aria-label="Save to Wishlist">♡</button>
-        </div>
-        <div class="intl-card__content">
-          <span class="intl-card__meta">Single-Slab Live Edge &amp; Brass</span>
-          <h3 class="intl-card__title">Vesper Sculptural Dining Table</h3>
-          <p class="intl-card__desc">Single continuous natural slab seated on sculptural matte black architectural trestle legs.</p>
-          <div class="intl-pricing-box" style="margin-top:14px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;margin-bottom:12px;">Price on Request</div>
-            <div class="intl-card__actions" style="display:flex;gap:10px;">
-              <a href="/products/vesper-dining-table" class="btn btn-outline" style="padding:10px 14px;font-size:0.75rem;flex:1;text-align:center;">View Details</a>
-              <a href="https://wa.me/919052751666?text=Hello+Grand+Living+Vizag%21+I+would+like+to+enquire+about+the+Vesper+Dining+Table." target="_blank" rel="noopener" class="btn btn-champagne" style="padding:10px 14px;font-size:0.75rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/></svg>
-                Enquire
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="/catalogue.php" class="btn btn-primary" style="padding:16px 36px;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;">Explore Full Catalogue (15+ Masterpieces) &rarr;</a>
     </div>
   </div>
 </section>
@@ -2521,81 +2375,7 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 </section>
 
-<!-- ============================================================
-     SECTION 4B — OUR CORE VALUES
-     ============================================================ -->
-<section class="our-values" id="our-values">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-header__label"><?= htmlspecialchars($values_label ?? 'What We Stand For') ?></span>
-      <h2 class="section-header__title"><?= htmlspecialchars($values_title ?? 'Our Core Values') ?></h2>
-      <p class="section-header__sub"><?= htmlspecialchars($values_sub ?? 'Four foundational pillars guiding three decades of master woodworking and architectural living.') ?></p>
-    </div>
 
-    <div class="values-grid">
-
-      <!-- Value 1: Quality -->
-      <div class="value-card" data-value="1">
-        <div class="value-card__header">
-          <div class="value-card__icon-wrap">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 3h12l4 6-10 13L2 9z"/>
-              <path d="M11 3L8 9l4 13 4-13-3-6"/>
-              <path d="M2 9h20"/>
-            </svg>
-          </div>
-          <span class="value-card__badge">01</span>
-        </div>
-        <h3 class="value-card__title"><?= htmlspecialchars($value_1_title ?? 'Quality') ?></h3>
-        <p class="value-card__body"><?= htmlspecialchars($value_1_desc ?? 'We refuse to compromise on materials, finish, or detail. Every product leaves our workshop meeting the highest standards.') ?></p>
-      </div>
-
-      <!-- Value 2: Craftsmanship -->
-      <div class="value-card" data-value="2">
-        <div class="value-card__header">
-          <div class="value-card__icon-wrap">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <span class="value-card__badge">02</span>
-        </div>
-        <h3 class="value-card__title"><?= htmlspecialchars($value_2_title ?? 'Craftsmanship') ?></h3>
-        <p class="value-card__body"><?= htmlspecialchars($value_2_desc ?? 'Our artisans bring generations of woodworking knowledge to every piece. No two items are ever truly identical.') ?></p>
-      </div>
-
-      <!-- Value 3: Integrity -->
-      <div class="value-card" data-value="3">
-        <div class="value-card__header">
-          <div class="value-card__icon-wrap">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <span class="value-card__badge">03</span>
-        </div>
-        <h3 class="value-card__title"><?= htmlspecialchars($value_3_title ?? 'Integrity') ?></h3>
-        <p class="value-card__body"><?= htmlspecialchars($value_3_desc ?? 'We price fairly, deliver on time, and stand behind everything we sell. Your trust is our most valuable asset.') ?></p>
-      </div>
-
-      <!-- Value 4: Service -->
-      <div class="value-card" data-value="4">
-        <div class="value-card__header">
-          <div class="value-card__icon-wrap">
-            <svg class="value-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>
-              <path d="M12 5.36L8.87 8.5a2.13 2.13 0 003 3L12 11l1.13-1.5a2.13 2.13 0 003-3L13 5.36"/>
-            </svg>
-          </div>
-          <span class="value-card__badge">04</span>
-        </div>
-        <h3 class="value-card__title"><?= htmlspecialchars($value_4_title ?? 'Service') ?></h3>
-        <p class="value-card__body"><?= htmlspecialchars($value_4_desc ?? 'From your first visit to our showroom through years of after-sales care, we are committed to your satisfaction.') ?></p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      SECTION 5 — BRAND STATS
@@ -2673,6 +2453,9 @@ h1, h2, h3, h4, h5, h6 {
       </a>
       <?php endforeach; ?>
     </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="/catalogue.php" class="btn btn-primary" style="padding:16px 36px;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;">Explore Full Catalogue (15+ Masterpieces) &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -2700,7 +2483,7 @@ h1, h2, h3, h4, h5, h6 {
           'linear-gradient(145deg,#3D2B1F,#76543B)',
           'linear-gradient(145deg,#1E1A17,#D5BE9A)',
       ];
-      foreach ($products as $idx => $product):
+      foreach (array_slice($products, 0, 4) as $idx => $product):
           $grad         = $prodGrads[$idx % count($prodGrads)];
           $prodName     = sanitizeOutput($product['name']);
           $prodSlug     = sanitizeOutput($product['slug'] ?? '');
@@ -2753,6 +2536,9 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <?php endforeach; ?>
     </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="/catalogue.php" class="btn btn-primary" style="padding:16px 36px;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;">Explore Full Catalogue (15+ Masterpieces) &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -2792,6 +2578,9 @@ h1, h2, h3, h4, h5, h6 {
           </div>
         </div>
       <?php endforeach; ?>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="/catalogue.php" class="btn btn-primary" style="padding:16px 36px;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;">Explore Full Catalogue (15+ Masterpieces) &rarr;</a>
     </div>
   </div>
 </section>
@@ -2865,81 +2654,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <script type="module" src="/assets/js/showroom-3d.js"></script>
 
-<section class="furniture-guide" id="furniture-guide" aria-labelledby="furniture-guide-title">
-  <div class="container">
-    <header class="furniture-guide__header">
-      <span class="furniture-guide__eyebrow">A thoughtful guide to furnishing your home</span>
-      <h2 id="furniture-guide-title">Furniture for every room, chosen around you.</h2>
-      <p>Discover considered furniture for the way you live at Grand Living in Visakhapatnam. Explore our collections online, speak with our team about a custom order, or visit our Dwaraka Nagar showroom to see the pieces in person.</p>
-    </header>
 
-    <div class="furniture-guide__grid">
-      <article class="furniture-guide__card">
-        <h3>Living Room</h3>
-        <p>Make the sofa your starting point, then bring the room together with a coffee table, accent chair or console. Explore seating and statement pieces in our <a href="/catalogue.php?category=living-room">living room collection</a>.</p>
-      </article>
-      <article class="furniture-guide__card">
-        <h3>Bedroom</h3>
-        <p>Create a restful room with a bed, bedside table and storage that suits your space. Browse distinctive beds and storage in our <a href="/catalogue.php?category=bedroom">bedroom collection</a> and <a href="/catalogue.php?category=wardrobes">wardrobe collection</a>.</p>
-      </article>
-      <article class="furniture-guide__card">
-        <h3>Dining Room</h3>
-        <p>Choose a dining table to suit everyday meals and the occasions when everyone gathers. Pair it with chairs that feel comfortable and look at home in your space. Explore our <a href="/catalogue.php?category=dining-room">dining collection</a>.</p>
-      </article>
-      <article class="furniture-guide__card">
-        <h3>Study &amp; Home Office</h3>
-        <p>A well-planned workspace makes room for focus. Discover desks, seating and bookshelves for work, reading and study in our <a href="/catalogue.php?category=home-office">home office collection</a>.</p>
-      </article>
-      <article class="furniture-guide__card">
-        <h3>Outdoor Living</h3>
-        <p>Turn a balcony, terrace or garden into a place to unwind with outdoor seating and occasional tables. Find ideas for your open-air space in our <a href="/catalogue.php?category=outdoor">outdoor collection</a>.</p>
-      </article>
-      <article class="furniture-guide__card">
-        <h3>Finishing Touches &amp; Custom Orders</h3>
-        <p>Accent furniture can bring a room together, while a made-to-order piece can help when a standard size or design is not quite right. Tell us what you have in mind through our <a href="/custom-request.php">custom furniture request</a>.</p>
-      </article>
-    </div>
-
-    <div class="furniture-guide__details">
-      <article>
-        <h3>Choose for your space and routine</h3>
-        <p>Measure the room as well as doorways, staircases and lift access before selecting larger furniture. Consider who will use each piece, how much storage you need and how a finish will fit into your everyday routine. Product details and dimensions are available in the catalogue; our team can help with questions.</p>
-      </article>
-      <article>
-        <h3>Explore materials and finishes</h3>
-        <p>Wood, upholstery and surface finishes each bring a different character to a room. Compare colours and textures in person, and ask our team which options are available for the design you are considering. For everyday care, follow the product-specific guidance and use gentle cleaning methods suited to its material.</p>
-      </article>
-      <article>
-        <h3>Experience the collection in person</h3>
-        <p>Photos are a useful first look, but seeing a piece in person can help you judge its scale, finish and comfort. Visit the <a href="/contact.php">Grand Living showroom in Dwaraka Nagar, Visakhapatnam</a> to explore the collection and speak with our team.</p>
-      </article>
-      <article>
-        <h3>Care for the pieces you love</h3>
-        <p>Keep furniture away from excess moisture and prolonged direct sunlight where possible. Dust with a soft cloth, attend to spills promptly and avoid harsh cleaners unless the product-care instructions recommend them. Use protective pads beneath furniture legs to help protect your floors.</p>
-      </article>
-    </div>
-
-    <div class="furniture-guide__faq">
-      <h3>Questions customers often ask</h3>
-      <details>
-        <summary>What furniture can I explore at Grand Living?</summary>
-        <p>Our collections include living room, bedroom, dining, home office, wardrobe and outdoor furniture. Browse the <a href="/catalogue.php">online catalogue</a> to see available designs.</p>
-      </details>
-      <details>
-        <summary>Can I enquire about a custom furniture design?</summary>
-        <p>Yes. Share your requirements through our <a href="/custom-request.php">custom order form</a>, and our team can discuss the design and options with you.</p>
-      </details>
-      <details>
-        <summary>Where can I see the collection in person?</summary>
-        <p>Visit Grand Living at Dwaraka Nagar Main Road, Visakhapatnam. Find directions and contact details on our <a href="/contact.php">showroom page</a>.</p>
-      </details>
-      <details>
-        <summary>How should I prepare before choosing a large piece?</summary>
-        <p>Measure the space where it will go and check the route into your home, including the entrance, stairs and lift. If you have questions about a specific design, contact our team before ordering.</p>
-      </details>
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      SECTION 9 — FINAL CTA

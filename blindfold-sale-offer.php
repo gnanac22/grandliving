@@ -97,6 +97,43 @@ require_once __DIR__ . '/includes/header.php';
         </p>
       </div>
 
+      <!-- ============================================================
+           ROYALOAK-INSPIRED FIRST PURCHASE WELCOME VOUCHER (HAPPY500)
+           ============================================================ -->
+      <div class="welcome-voucher-banner" style="margin:20px 0 40px;background:linear-gradient(135deg, #0b1a13 0%, #172b20 50%, #1a1614 100%);border:1px solid rgba(213,190,154,0.35);border-radius:14px;padding:24px 28px;box-shadow:0 12px 32px rgba(0,0,0,0.45);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+        <div style="display:flex;align-items:center;gap:22px;flex:1 1 360px;">
+          <div style="width:115px;height:125px;border-radius:10px;overflow:hidden;flex-shrink:0;border:1px solid rgba(213,190,154,0.4);box-shadow:0 6px 16px rgba(0,0,0,0.5);">
+            <img src="/assets/images/signup-redeem-500.jpg" alt="Sign Up and Redeem 500 On First Purchase" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          </div>
+          <div>
+            <span style="font-family:'Manrope',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#D5BE9A;font-weight:700;display:block;margin-bottom:6px;">STARTER PRIVILEGE &bull; SIGN UP OFFER</span>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem, 2.8vw, 2.1rem);color:#F5F0E8;font-weight:400;line-height:1.2;margin:0 0 6px 0;">
+              Sign Up &amp; Redeem &#8377;500/- <span style="font-style:italic;color:#D5BE9A;">On Your First Purchase</span>
+            </h3>
+            <p style="font-family:'Manrope',sans-serif;font-size:0.86rem;color:#B7AA98;margin:0;line-height:1.5;">
+              Register with your mobile number to unlock instant &#8377;500 discount on orders &ge; &#8377;25,000.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;flex-shrink:0;">
+          <div style="background:#FFF9F0;color:#171614;border:2px dashed #C8A46A;border-radius:8px;padding:10px 18px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+            <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;display:block;color:#76543B;font-weight:700;">USE CODE</span>
+            <strong style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:0.06em;color:#171614;display:block;line-height:1.1;">HAPPY500</strong>
+            <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:#8F7359;display:block;margin-top:2px;">T&amp;C Min Spend &#8377;25,000</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <button type="button" class="btn btn-primary" onclick="GrandAuth.openModal('register')" style="padding:12px 24px;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;white-space:nowrap;background:linear-gradient(135deg,#D5BE9A 0%,#B89C74 100%);color:#171614;border:none;cursor:pointer;">
+              SIGN UP NOW &rarr;
+            </button>
+            <a href="https://wa.me/919052751666?text=Hi%20Grand%20Living%20Vizag%2C%20I%20would%20like%20to%20claim%20the%20HAPPY500%20(Rs.500%20off)%20voucher%20for%20my%20furniture%20purchase." target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:0.72rem;text-align:center;white-space:nowrap;border-color:rgba(213,190,154,0.4);color:#F5F0E8;">
+              Claim on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Filters -->
       <div class="blindfold-filters">
         <button type="button" class="blindfold-filter-btn is-active" data-slab="all">All 5 Offers</button>
