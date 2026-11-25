@@ -44,22 +44,37 @@
     },
     {
       "source": "/login.php",
-      "destination": "/login",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/register.php",
-      "destination": "/register",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/register",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/signup",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/customer/account/create",
-      "destination": "/register",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/customer/account/login",
-      "destination": "/login",
+      "destination": "/",
       "permanent": true
     }
   ],
@@ -111,18 +126,6 @@
     {
       "source": "/offers",
       "destination": "/blindfold-sale-offer.html"
-    },
-    {
-      "source": "/login",
-      "destination": "/login.html"
-    },
-    {
-      "source": "/register",
-      "destination": "/register.html"
-    },
-    {
-      "source": "/signup",
-      "destination": "/register.html"
     },
     {
       "source": "/products/:slug",
