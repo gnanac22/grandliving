@@ -257,25 +257,23 @@ include 'includes/header.php';
                   <?= htmlspecialchars($p['short_description']) ?>
                 </p>
 
-                <?php if (!empty($p['price_range'])): ?>
                   <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(213,190,154,0.12);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
                     <div>
-                      <span style="display:block;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(183,170,152,0.65);font-weight:600;">Est. Price</span>
-                      <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#D5BE9A;font-weight:600;letter-spacing:0.02em;"><?= htmlspecialchars($p['price_range']) ?></span>
+                      <span style="display:block;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(183,170,152,0.65);font-weight:600;">Pricing</span>
+                      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#D5BE9A;font-style:italic;letter-spacing:0.02em;">Price on Request</span>
                     </div>
                     <div style="display:flex;gap:8px;">
                       <a href="<?= $waLink ?>" target="_blank" rel="noopener" style="padding:9px 14px;background:#25D366;color:#fff;border-radius:2px;font-size:0.74rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:all 0.3s ease;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.374 0 0 5.373 0 12c0 2.113.554 4.121 1.523 5.868L.057 23.887l6.187-1.44A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 01-5.009-1.368l-.36-.214-3.724.868.9-3.63-.234-.373A9.806 9.806 0 012.182 12C2.182 6.564 6.563 2.182 12 2.182S21.818 6.564 21.818 12 17.437 21.818 12 21.818z"/>
                         </svg>
-                        WhatsApp
+                        Enquire
                       </a>
                       <a href="/product.php?slug=<?= urlencode($p['slug']) ?>" class="btn btn-ghost-champ" style="padding:9px 14px;font-size:0.74rem;">
                         View Piece &rarr;
                       </a>
                     </div>
                   </div>
-                <?php endif; ?>
               </div>
             </article>
           <?php endforeach; ?>

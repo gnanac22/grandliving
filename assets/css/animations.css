@@ -754,3 +754,95 @@
     transition: none;
   }
 }
+
+/* ============================================================
+   HAUTE-COUTURE CLASSY LUXURY ANIMATIONS
+   ============================================================ */
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes luxuryGlow {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 26px rgba(37, 211, 102, 0.55), 0 0 0 5px rgba(37, 211, 102, 0.15);
+  }
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px #D5BE9A;
+  }
+}
+
+@keyframes luxuryFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxurySoftZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Classy Utility Classes */
+.anim-luxury-fade-up {
+  animation: luxuryFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-gold-pulse {
+  animation: goldPulse 2.4s ease-in-out infinite;
+}
+
+.anim-luxury-glow {
+  animation: luxuryGlow 3.5s ease-in-out infinite;
+}
+
+.luxury-card-hover {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(213, 190, 154, 0.12);
+  border-color: rgba(213, 190, 154, 0.45);
+}
+
+/* Mobile Touch Micro-Interactions (Expensive Haptic Feel) */
+@media (hover: none) {
+  .btn:active,
+  button:active,
+  .luxury-card-hover:active,
+  .atelier-nav__item:active,
+  .category-roundel:active {
+    transform: scale(0.975);
+    transition: transform 0.12s ease;
+  }
+}
+

@@ -71,15 +71,14 @@ require_once __DIR__ . '/includes/header.php';
   <!-- Hero Header -->
   <section class="offer-page-hero">
     <div class="container">
-      <div class="offer-page-badge">👑 FESTIVE BLINDFOLD CAMPAIGN &bull; VISAKHAPATNAM</div>
-      <h1 class="offer-page-title">Blindfold Sale Offers &amp; <span>Free Luxury Gifts</span></h1>
+      <div class="offer-page-badge">EXCLUSIVE FESTIVE ATELIER &bull; VISAKHAPATNAM</div>
+      <h1 class="offer-page-title">Blindfold Sale Offers &amp; <span>Showroom Privileges</span></h1>
       <p class="offer-page-sub">
-        Inspired by national luxury atelier sales, Grand Living introduces Visakhapatnam's premier festive furniture offer. Add products matching our 5 spending slabs and claim guaranteed complimentary executive chairs, recliners, and Italian marble centerpieces.
+        Grand Living introduces Visakhapatnam's premier festive furniture privileges. Select masterworks matching our 5 spending slabs and claim guaranteed complimentary executive seating, luxury lounge recliners, and sculpted Italian marble centerpieces.
       </p>
       
       <div class="offer-countdown-box">
-        <span>🔥 Limited Period Campaign Ends In:</span>
-        <span class="offer-countdown-time" id="heroCountdown">06h : 45m : 20s</span>
+        <span>Showroom Privilege &bull; In-Store &amp; WhatsApp Concierge</span>
       </div>
     </div>
   </section>
@@ -90,7 +89,7 @@ require_once __DIR__ . '/includes/header.php';
 
       <div class="blindfold-header">
         <div class="blindfold-pill-tag">
-          <span>⚡ SELECT YOUR ORDER SLAB</span>
+          <span>SELECT YOUR SHOWROOM ORDER SLAB</span>
         </div>
         <h2 class="blindfold-title">The 5 Blindfold <span>Showroom Slabs</span></h2>
         <p class="blindfold-sub">

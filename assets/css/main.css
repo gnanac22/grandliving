@@ -3297,81 +3297,14 @@ html {
    ============================================================ */
 
 /* Top Utility Announcement Bar */
+/* Top Utility Announcement Bar — Fully Removed */
 .top-announcement-bar {
-  background: linear-gradient(90deg, #12100E 0%, #2A1F18 50%, #12100E 100%);
-  border-bottom: 1px solid rgba(213, 190, 154, 0.18);
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  color: #D2C8BC;
-  padding: 8px 0;
-  position: relative;
-  z-index: 210;
-}
-.top-announcement-bar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.announcement-left, .announcement-right {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.announcement-pincode {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #D5BE9A;
-  font-weight: 600;
-  cursor: pointer;
-}
-.announcement-badge {
-  background: rgba(213, 190, 154, 0.15);
-  border: 1px solid rgba(213, 190, 154, 0.35);
-  color: #D5BE9A;
-  padding: 2px 8px;
-  border-radius: 2px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.announcement-center {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-}
-.announcement-center strong {
-  color: #F5F0E8;
-}
-.announcement-link {
-  color: #D5BE9A;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-.announcement-link:hover {
-  color: #F5F0E8;
-  text-decoration: underline;
-}
-
-@media (max-width: 992px) {
-  .top-announcement-bar .announcement-right {
-    display: none;
-  }
-}
-@media (max-width: 640px) {
-  .top-announcement-bar .announcement-center {
-    display: none;
-  }
-  .top-announcement-bar .container {
-    justify-content: center;
-  }
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Category Roundels Carousel (Royaloak Style) */
@@ -3917,6 +3850,37 @@ html {
   width: 54px;
   background: #D5BE9A;
   box-shadow: 0 0 10px rgba(213, 190, 154, 0.5);
+}
+.hero-atelier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(23, 22, 20, 0.82);
+  border: 1px solid rgba(213, 190, 154, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 22px;
+  border-radius: 40px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(0.68rem, 1.2vw, 0.76rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #D5BE9A;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(213, 190, 154, 0.15);
+  transition: all 0.35s ease;
+}
+.hero-atelier-badge:hover {
+  border-color: #D5BE9A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(213, 190, 154, 0.3);
+}
+.hero-atelier-badge__crest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: goldPulse 2.4s ease-in-out infinite;
 }
 .hero-countdown-pill {
   display: inline-flex;
@@ -4951,4 +4915,428 @@ html {
     max-width: 460px;
   }
 }
+
+/* ============================================================
+   HAUTE-COUTURE MOBILE POLISH & CLASSY TOUCH EXPERIENCE
+   ============================================================ */
+
+/* 1. Global Viewport & Mobile Fluidity */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  /* Snug, classy sticky navbar */
+  .nav {
+    height: 62px !important;
+  }
+  .nav.is-scrolled {
+    height: 56px !important;
+  }
+  .nav__inner {
+    padding: 0 16px !important;
+  }
+  .nav__logo-text > span:first-child {
+    font-size: 1.05rem !important;
+    letter-spacing: 0.14em !important;
+  }
+  .nav__logo-text > span:last-child {
+    font-size: 0.48rem !important;
+    letter-spacing: 0.26em !important;
+  }
+  .nav__actions {
+    gap: 8px !important;
+  }
+  .nav__action-btn {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 6px !important;
+  }
+  .nav__user-name {
+    display: none !important;
+  }
+  .nav__user-btn {
+    padding: 6px !important;
+  }
+  .nav__user-menu {
+    right: 0 !important;
+    left: auto !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 300px !important;
+  }
+
+  /* Full-Screen Atelier Mobile Drawer */
+  .atelier-nav__container {
+    padding: 72px 18px 24px !important;
+    min-height: 100svh !important;
+  }
+  .atelier-nav__eyebrow {
+    margin-bottom: 14px !important;
+    font-size: 0.64rem !important;
+  }
+  .atelier-nav__item {
+    padding: 12px 0 !important;
+    gap: 14px !important;
+  }
+  .atelier-nav__num {
+    font-size: 1.05rem !important;
+    min-width: 22px !important;
+  }
+  .atelier-nav__title {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem) !important;
+    line-height: 1.15 !important;
+  }
+  .atelier-nav__sub {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.06em !important;
+  }
+  .atelier-nav__right {
+    margin-top: 20px !important;
+  }
+  .atelier-nav__card {
+    padding: 18px 16px !important;
+  }
+  .atelier-nav__card-title {
+    font-size: 1.35rem !important;
+  }
+  .atelier-nav__card-desc {
+    font-size: 0.78rem !important;
+    margin-bottom: 14px !important;
+  }
+  .atelier-nav__card-details {
+    margin-bottom: 14px !important;
+    gap: 8px !important;
+  }
+  .atelier-nav__detail-row {
+    font-size: 0.74rem !important;
+  }
+  .atelier-nav__btn-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .atelier-nav__cat-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .atelier-nav__cat-pills a {
+    font-size: 0.68rem !important;
+    padding: 3px 8px !important;
+  }
+  .atelier-nav__footer {
+    padding-top: 20px !important;
+    margin-top: 16px !important;
+  }
+
+  /* Hero on Mobile */
+  .hero {
+    min-height: 92svh !important;
+    padding: 72px 16px 36px !important;
+  }
+  .hero-atelier-badge {
+    margin-bottom: 16px !important;
+    padding: 6px 14px !important;
+    font-size: 0.64rem !important;
+    letter-spacing: 0.16em !important;
+    max-width: 95% !important;
+  }
+  .hero__headline {
+    font-size: clamp(2.1rem, 8.8vw, 2.9rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 14px !important;
+  }
+  .hero__subtitle {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    max-width: 320px !important;
+    margin: 0 auto 24px !important;
+  }
+  .hero__ctas {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .hero__ctas .btn {
+    width: 100% !important;
+    max-width: 290px !important;
+    padding: 13px 20px !important;
+    text-align: center !important;
+    font-size: 0.78rem !important;
+  }
+  .hero__scroll {
+    display: none !important;
+  }
+
+  /* Vertically Stacked Floating Action Buttons (NO OVERLAP) */
+  .whatsapp-float {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important;
+    right: 1rem !important;
+    width: 50px !important;
+    height: 50px !important;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4) !important;
+    animation: luxuryGlow 3.5s ease-in-out infinite !important;
+  }
+  .whatsapp-float svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  #scrollTop {
+    bottom: calc(4.65rem + env(safe-area-inset-bottom, 0px)) !important;
+    right: 1rem !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Horizontal Smooth Touch Carousels */
+  .category-roundels-wrapper {
+    padding: 8px 16px 16px !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-padding: 0 16px !important;
+  }
+  .category-roundel {
+    scroll-snap-align: start !important;
+    width: 82px !important;
+  }
+  .roundel-avatar-wrap {
+    width: 68px !important;
+    height: 68px !important;
+    margin-bottom: 8px !important;
+  }
+  .roundel-label {
+    font-size: 0.7rem !important;
+  }
+  .roundel-offer-tag {
+    font-size: 0.58rem !important;
+  }
+
+  /* Blindfold Carousel on Mobile */
+  .blindfold-section {
+    padding: 44px 0 36px !important;
+  }
+  .blindfold-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.4rem) !important;
+  }
+  .blindfold-sub {
+    font-size: 0.82rem !important;
+  }
+  .blindfold-filters {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding: 0 16px 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .blindfold-filters::-webkit-scrollbar {
+    display: none !important;
+  }
+  .blindfold-filter-btn {
+    flex-shrink: 0 !important;
+    font-size: 0.72rem !important;
+    padding: 7px 15px !important;
+    white-space: nowrap !important;
+  }
+  .blindfold-carousel-nav {
+    display: none !important; /* Hide desktop arrows on touch */
+  }
+  .blindfold-carousel-track {
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 6px 16px 20px !important;
+    gap: 14px !important;
+  }
+  .blindfold-card {
+    flex: 0 0 clamp(265px, 82vw, 310px) !important;
+    scroll-snap-align: center !important;
+    padding: 20px 16px 16px !important;
+    border-radius: 14px !important;
+  }
+  .blindfold-card__img-wrap {
+    height: 165px !important;
+  }
+  .blindfold-card__slab-amount {
+    font-size: 1.55rem !important;
+  }
+  .blindfold-card__reward-heading {
+    font-size: 1.25rem !important;
+  }
+  .blindfold-card__reward-desc {
+    font-size: 0.76rem !important;
+  }
+  .blindfold-claim-btn {
+    padding: 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* 5 Pillars on Mobile: Clean 2-Column Compact Grid */
+  .value-props-strip {
+    padding: 20px 0 !important;
+  }
+  .value-props-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .value-prop-card {
+    border-right: none !important;
+    border-bottom: none !important;
+    padding: 12px 10px !important;
+    background: rgba(30, 26, 23, 0.45) !important;
+    border: 1px solid rgba(213, 190, 154, 0.12) !important;
+    border-radius: 6px !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .value-prop-card:last-child {
+    grid-column: span 2 !important;
+  }
+  .value-prop-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .value-prop-content h4 {
+    font-size: 1rem !important;
+  }
+  .value-prop-content p {
+    font-size: 0.7rem !important;
+  }
+
+  /* International Collections on Mobile */
+  .international-collections-section {
+    padding: 50px 0 !important;
+  }
+  .intl-tabs-wrap {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding: 0 16px 12px !important;
+    margin: 24px 0 28px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .intl-tabs-wrap::-webkit-scrollbar {
+    display: none !important;
+  }
+  .intl-tab-btn {
+    flex-shrink: 0 !important;
+    padding: 8px 16px !important;
+    font-size: 0.74rem !important;
+    white-space: nowrap !important;
+  }
+  .intl-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .intl-card__actions {
+    display: flex !important;
+    gap: 8px !important;
+  }
+
+  /* Shop By Look */
+  .shop-the-look-section {
+    padding: 50px 0 !important;
+  }
+  .look-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .look-card {
+    aspect-ratio: 4/5 !important;
+  }
+  .look-card__title {
+    font-size: 1.5rem !important;
+  }
+
+  /* Signature Showcase 30 Years on Mobile */
+  .signature-showcase {
+    padding: 50px 0 !important;
+  }
+  .signature-showcase__grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .signature-deco {
+    min-height: 340px !important;
+    padding: 20px 10px !important;
+    overflow: hidden !important;
+  }
+  .signature-deco__ring--outer {
+    width: 260px !important;
+    height: 260px !important;
+  }
+  .signature-deco__ring--middle {
+    width: 210px !important;
+    height: 210px !important;
+  }
+  .signature-deco__ring--inner {
+    width: 155px !important;
+    height: 155px !important;
+  }
+  .signature-deco__year {
+    font-size: 4.2rem !important;
+  }
+
+  /* Brand Stats */
+  .brand-stats {
+    padding: 40px 0 !important;
+  }
+  .brand-stats__row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .stat-item {
+    border-left: none !important;
+    border: 1px solid rgba(213, 190, 154, 0.12) !important;
+    border-radius: 6px !important;
+    padding: 16px 8px !important;
+    text-align: center !important;
+  }
+  .stat-item__number {
+    font-size: 2.2rem !important;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 60px 0 !important;
+  }
+  .final-cta__headline {
+    font-size: clamp(2rem, 7.5vw, 2.8rem) !important;
+  }
+  .final-cta__ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+  .final-cta__ctas .btn {
+    width: 100% !important;
+    max-width: 290px !important;
+    text-align: center !important;
+  }
+
+  /* Luxury Footer on Mobile */
+  .luxury-footer {
+    padding-top: 50px !important;
+  }
+  .luxury-footer__marquee-track {
+    opacity: 0.12 !important;
+  }
+  .luxury-footer__bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
 
